@@ -122,20 +122,14 @@ comboDesc   =   {
       riposteEnabledDuration   =   0.495
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_sphere_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
             healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
-            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
                __type   =   "Vector3d"
             }
-            __type   =   "MeleeExtraDamageSettings"
+            __type   =   "MeleeExtraDamageSettingsMarineRiposte"
          }
       }
       parryStanceAnim   =   {
@@ -290,9 +284,12 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_AFTERSHOCK_PREPARATION_TIME"
-                  ]
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_AFTERSHOCK_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
                   forceFeedBackUid   =   "Thunderhammer.ThammerLightHoldPrepare_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
@@ -768,11 +765,11 @@ comboDesc   =   {
             HandleEvent_1_1_1_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   6689.411
-                  y   =   6220.924
+                  x   =   6300
+                  y   =   6250
                }
                OnHandle   =   [
-                  "MeleePreparing/AddPreparingToCombo"
+                  "If_2/Input"
                ]
                eventUidRefParam   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -783,8 +780,8 @@ comboDesc   =   {
             }
             CheckModifierFlag   =   {
                viewData   =   {
-                  x   =   6000
-                  y   =   6250
+                  x   =   6300
+                  y   =   6350
                }
                flag   =   "HEAVY_NEW_STRIKE"
                IsEnabled   =   [
@@ -822,9 +819,12 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_AFTERSHOCK_PREPARATION_TIME"
-                  ]
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_AFTERSHOCK_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
                   forceFeedBackUid   =   "Thunderhammer.ThammerLightHoldPrepare_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
@@ -930,8 +930,8 @@ comboDesc   =   {
             }
             If_2   =   {
                viewData   =   {
-                  x   =   6500
-                  y   =   6200
+                  x   =   6600
+                  y   =   6250
                }
                OnTrue   =   [
                   "MeleePreparing_1/AddPreparingToCombo"

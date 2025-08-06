@@ -124,14 +124,20 @@ comboDesc   =   {
       riposteEnabledDuration   =   0.495
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
             healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
+            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
                __type   =   "Vector3d"
             }
-            __type   =   "MeleeExtraDamageSettingsMarineRiposte"
+            __type   =   "MeleeExtraDamageSettings"
          }
       }
       parryStanceAnim   =   {
@@ -1192,6 +1198,7 @@ comboDesc   =   {
             canKnockback   =   True
             isGuardbreak   =   False
             isPervasive   =   True
+            shouldForceHeavyHit   =   True
             knockbackAngle   =   13
             radiusScale   =   1
             __type   =   "MeleeDamageSettings"

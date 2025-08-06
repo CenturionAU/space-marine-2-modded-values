@@ -122,20 +122,14 @@ comboDesc   =   {
       riposteEnabledDuration   =   0.495
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_sphere_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
             healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
-            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
                __type   =   "Vector3d"
             }
-            __type   =   "MeleeExtraDamageSettings"
+            __type   =   "MeleeExtraDamageSettingsMarineRiposte"
          }
       }
       parryStanceAnim   =   {
@@ -1399,8 +1393,12 @@ comboDesc   =   {
          }
          playerSettingsOverrides   =   {
             StrikeShake   =   {
-               strikeShakeUid   =   "ChainswordLight5"
+               strikeShakeUid   =   "ChainswordLight5_v2"
                __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "ChainswordLight5_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
             }
          }
          animLink   =   {
@@ -1432,7 +1430,7 @@ comboDesc   =   {
          strikeDirection   =   "UP"
          playerSettingsOverrides   =   {
             StrikeShake   =   {
-               strikeShakeUid   =   "ChainswordLight5_v2"
+               strikeShakeUid   =   "ChainswordLight5_v2_mirrored"
                __type   =   "MeleePlayerSettingsParamStrikeShake"
             }
             StrikeForceFeedback   =   {
@@ -2045,7 +2043,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   500
-               healthDmgPercent   =   400
+               healthDmgPercent   =   640
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -2133,7 +2131,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   500
-               healthDmgPercent   =   400
+               healthDmgPercent   =   640
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True

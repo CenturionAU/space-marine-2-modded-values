@@ -49,12 +49,12 @@ meleeDetectorSettings   =   {
       rootTrackerLocator   =   "ARM2L"
       endTrackerOffset   =   {
          sslModule   =   "math.vector_3d"
-         x   =   -2
-         y   =   0
+         x   =   2
+         y   =   2
          z   =   2
          __type   =   "Vector3d"
       }
-      endTrackerLocator   =   "GUN_L"
+      endTrackerLocator   =   "ARM2L"
       staticCheckEndOffset   =   -1.6
       __type   =   "MeleeDetectorSettings"
    }
@@ -126,22 +126,17 @@ comboDesc   =   {
       parryEnabledDuration   =   0.66
       riposteEnabledStartTime   =   0.165
       riposteEnabledDuration   =   0.495
+      perfectBlockEnabledDuration   =   0
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_sphere_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
             healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
-            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
                __type   =   "Vector3d"
             }
-            __type   =   "MeleeExtraDamageSettings"
+            __type   =   "MeleeExtraDamageSettingsMarineRiposte"
          }
       }
       parryStanceAnim   =   {
@@ -297,8 +292,8 @@ comboDesc   =   {
             HandleEvent_1_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   9054
-                  y   =   5950
+                  x   =   9000
+                  y   =   5900
                }
                OnHandle   =   [
                   "MeleeComboStrike_1/AddStrikeToCombo"
@@ -516,7 +511,7 @@ comboDesc   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
                   x   =   8450
-                  y   =   6600
+                  y   =   6850
                   colors   =   [
                      "#FF8D61BE",
                      "#FFDAB4FC"
@@ -534,14 +529,14 @@ comboDesc   =   {
             }
             MeleePreparing_1_1   =   {
                viewData   =   {
-                  x   =   8850
-                  y   =   6600
+                  x   =   8800
+                  y   =   6850
                }
                OnPrepared   =   [
                   "MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1/AddStrikeToCombo"
                ]
                OnUnprepared   =   [
-                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_Ea7a2zbc/TriggerBlueprintEvent"
                ]
                meleePreparing   =   {
                   minPreparationDuration   =   0.1
@@ -566,8 +561,8 @@ comboDesc   =   {
             MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9450
-                  y   =   6700
+                  x   =   9500
+                  y   =   6850
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
@@ -575,10 +570,10 @@ comboDesc   =   {
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_Ea7a2e1g/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1_1_1/AddStrikeToCombo"
+                  "TriggerEvent_1_3_3_2_2_Ea7a0Q9U/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
@@ -598,7 +593,7 @@ comboDesc   =   {
             MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9000
+                  x   =   9100
                   y   =   6450
                }
                strikeLibraryLinkRef   =   {
@@ -617,7 +612,7 @@ comboDesc   =   {
             TriggerEvent_1_3_2   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   9850
+                  x   =   9450
                   y   =   6450
                }
                eventUid   =   {
@@ -655,7 +650,7 @@ comboDesc   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
                   x   =   10300
-                  y   =   5950
+                  y   =   6050
                }
                eventUid   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -667,8 +662,8 @@ comboDesc   =   {
             TriggerEvent_1_3_3_2_2_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   10150
-                  y   =   6700
+                  x   =   9450
+                  y   =   6550
                }
                eventUid   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -680,8 +675,8 @@ comboDesc   =   {
             MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1_1_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9850
-                  y   =   6700
+                  x   =   9000
+                  y   =   7600
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
@@ -689,10 +684,10 @@ comboDesc   =   {
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_Ea7a313s/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_3_2_2_1/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_3_2_Ea7dMmaS/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
@@ -710,8 +705,8 @@ comboDesc   =   {
             HandleEvent_E48ed0c5   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   8700
-                  y   =   6850
+                  x   =   8450
+                  y   =   7200
                   colors   =   [
                      "#FF8D61BE",
                      "#FFDAB4FC"
@@ -730,8 +725,8 @@ comboDesc   =   {
             HandleEvent_E48edG3i   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   9550
-                  y   =   6850
+                  x   =   8450
+                  y   =   7600
                   colors   =   [
                      "#FF8D61BE",
                      "#FFDAB4FC"
@@ -751,7 +746,7 @@ comboDesc   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
                   x   =   9000
-                  y   =   6800
+                  y   =   7200
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
@@ -759,10 +754,10 @@ comboDesc   =   {
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_Ea7a2AbA/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_3_2_2_1/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_3_2_2_Ea7dMefE/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
@@ -778,6 +773,97 @@ comboDesc   =   {
                   "MeleeComboStrike_5_1_1/AddStrikeToCombo"
                ]
                __type   =   "BlueprintNodeIf"
+            }
+            TriggerEvent_1_3_3_2_2_Ea7a0Q9U   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9900
+                  y   =   6950
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "heavy_attack_left"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_Ea7a2e1g   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9896.86
+                  y   =   6841.938
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_Ea7a2zbc   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9500
+                  y   =   7050
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_Ea7a2AbA   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9500
+                  y   =   7200
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_Ea7a313s   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9500
+                  y   =   7600
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_3_2_2_Ea7dMefE   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9500
+                  y   =   7300
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "heavy_attack_left"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_3_2_Ea7dMmaS   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9500
+                  y   =   7700
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "heavy_attack_right"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
             }
          }
          variables   =   {
@@ -804,8 +890,8 @@ comboDesc   =   {
             "Light Combo"   =   {
                x   =   8400
                y   =   5800
-               width   =   3219.406
-               height   =   1150
+               width   =   3219
+               height   =   2095.747
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"
@@ -842,6 +928,15 @@ comboDesc   =   {
                y   =   5100
                width   =   1899.664
                height   =   498.663
+               comment   =   ""
+               isCollapsed   =   False
+               __type   =   "NodeGroup"
+            }
+            UNUSED   =   {
+               x   =   8428.301
+               y   =   6357.343
+               width   =   1351.562
+               height   =   328.8281
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"

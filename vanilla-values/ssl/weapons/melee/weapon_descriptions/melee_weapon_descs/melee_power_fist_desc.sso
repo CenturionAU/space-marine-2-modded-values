@@ -125,20 +125,14 @@ comboDesc   =   {
       riposteEnabledDuration   =   0.495
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_sphere_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
             healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
-            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
                __type   =   "Vector3d"
             }
-            __type   =   "MeleeExtraDamageSettings"
+            __type   =   "MeleeExtraDamageSettingsMarineRiposte"
          }
       }
       parryStanceAnim   =   {
@@ -276,11 +270,11 @@ comboDesc   =   {
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.75
-                  maxDuration   =   4
-                  maxTicks   =   1
-                  bonusDamage   =   350
-                  bonusPeriodSec   =   3.9
+                  minPreparationDuration   =   0.5
+                  maxDuration   =   3
+                  maxTicks   =   2
+                  bonusDamage   =   175
+                  bonusPeriodSec   =   1.25
                   shakeUid   =   "FistLightHoldPrepare1_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
@@ -292,9 +286,12 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
-                  ]
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
                   forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare1_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
@@ -562,7 +559,7 @@ comboDesc   =   {
             MeleeComboStrike_5_2   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9800
+                  x   =   9850
                   y   =   6300
                }
                strikeLibraryLinkRef   =   {
@@ -592,11 +589,11 @@ comboDesc   =   {
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.75
-                  maxDuration   =   4
-                  maxTicks   =   1
-                  bonusDamage   =   350
-                  bonusPeriodSec   =   3.9
+                  minPreparationDuration   =   0.5
+                  maxDuration   =   3
+                  maxTicks   =   2
+                  bonusDamage   =   175
+                  bonusPeriodSec   =   1.25
                   shakeUid   =   "FistLightHoldPrepare2_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
@@ -608,9 +605,12 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
-                  ]
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
                   forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare2_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
@@ -670,7 +670,7 @@ comboDesc   =   {
                   "Pipe_2_1_2_1/Input"
                ]
                OnLightHold   =   [
-                  "Pipe_2_1_3/Input"
+                  "If_F2d9bL0U1/Input"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
@@ -688,11 +688,11 @@ comboDesc   =   {
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.75
-                  maxDuration   =   4
-                  maxTicks   =   1
-                  bonusDamage   =   350
-                  bonusPeriodSec   =   3.9
+                  minPreparationDuration   =   0.5
+                  maxDuration   =   3
+                  maxTicks   =   2
+                  bonusDamage   =   175
+                  bonusPeriodSec   =   1.25
                   shakeUid   =   "FistLightHoldPrepare3_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
@@ -704,9 +704,12 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
-                  ]
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
                   forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare3_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
@@ -781,11 +784,11 @@ comboDesc   =   {
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.75
-                  maxDuration   =   4
-                  maxTicks   =   1
-                  bonusDamage   =   350
-                  bonusPeriodSec   =   3.9
+                  minPreparationDuration   =   0.5
+                  maxDuration   =   3
+                  maxTicks   =   2
+                  bonusDamage   =   175
+                  bonusPeriodSec   =   1.25
                   shakeUid   =   "FistLightHoldPrepare4_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
@@ -797,9 +800,12 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
-                  ]
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
                   forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare4_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
@@ -832,7 +838,7 @@ comboDesc   =   {
                   y   =   6250
                }
                OnHandle   =   [
-                  "MeleePreparing_1/AddPreparingToCombo"
+                  "If_F2d98q3a/Input"
                ]
                eventUidRefParam   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -978,11 +984,11 @@ comboDesc   =   {
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.75
-                  maxDuration   =   4
-                  maxTicks   =   1
-                  bonusDamage   =   350
-                  bonusPeriodSec   =   3.9
+                  minPreparationDuration   =   0.5
+                  maxDuration   =   3
+                  maxTicks   =   2
+                  bonusDamage   =   175
+                  bonusPeriodSec   =   1.25
                   shakeUid   =   "FistLightHoldPrepare5_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
@@ -994,9 +1000,12 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
-                  ]
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
                   forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare5_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
@@ -1243,11 +1252,11 @@ comboDesc   =   {
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.75
-                  maxDuration   =   4
-                  maxTicks   =   1
-                  bonusDamage   =   350
-                  bonusPeriodSec   =   3.9
+                  minPreparationDuration   =   0.5
+                  maxDuration   =   3
+                  maxTicks   =   2
+                  bonusDamage   =   175
+                  bonusPeriodSec   =   1.25
                   shakeUid   =   "FistLightHoldPrepare1_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
@@ -1259,10 +1268,13 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierTypes   =   [
-                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
-                  ]
-                  forceFeedBackUid   =   "Powerfist.FistLightHold1_v2"
+                  preparationDurationModifierStack   =   {
+                     ownerModifierTypes   =   [
+                        "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                     ]
+                     __type   =   "ModifiersStack"
+                  }
+                  forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare1_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
                __type   =   "BlueprintNodeMeleeComboPreparing"
@@ -1309,8 +1321,8 @@ comboDesc   =   {
             HandleEvent_1_1_1_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   9950
-                  y   =   6500
+                  x   =   9850
+                  y   =   6450
                }
                OnHandle   =   [
                   "Pipe_2_1/Input"
@@ -1357,6 +1369,54 @@ comboDesc   =   {
                ]
                OnFalse   =   [
                   "MeleeComboStrike_5_1_2_1/AddStrikeToCombo"
+               ]
+               __type   =   "BlueprintNodeIf"
+            }
+            CheckModifierFlag_F2d98j0I   =   {
+               viewData   =   {
+                  x   =   9000
+                  y   =   6350
+               }
+               flag   =   "FIST_NEW_STRIKE"
+               IsEnabled   =   [
+                  "If_F2d98q3a/condition/cb"
+               ]
+               __type   =   "BlueprintNodeCheckModifierFlag"
+            }
+            If_F2d98q3a   =   {
+               viewData   =   {
+                  x   =   9200
+                  y   =   6200
+               }
+               OnTrue   =   [
+                  "MeleeComboStrike_5_2/AddStrikeToCombo"
+               ]
+               OnFalse   =   [
+                  "MeleePreparing_1/AddPreparingToCombo"
+               ]
+               __type   =   "BlueprintNodeIf"
+            }
+            CheckModifierFlag_F2d9bL0U   =   {
+               viewData   =   {
+                  x   =   11000
+                  y   =   6450
+               }
+               flag   =   "FIST_NEW_STRIKE"
+               IsEnabled   =   [
+                  "If_F2d9bL0U1/condition/cb"
+               ]
+               __type   =   "BlueprintNodeCheckModifierFlag"
+            }
+            If_F2d9bL0U1   =   {
+               viewData   =   {
+                  x   =   11000
+                  y   =   6300
+               }
+               OnTrue   =   [
+                  "MeleeComboStrike_5_2_2/AddStrikeToCombo"
+               ]
+               OnFalse   =   [
+                  "Pipe_2_1_3/Input"
                ]
                __type   =   "BlueprintNodeIf"
             }
@@ -1744,7 +1804,7 @@ comboDesc   =   {
                canKnockback   =   True
                isPervasive   =   True
                knockbackAngle   =   15
-               radiusScale   =   4
+               radiusScale   =   10
                damageLocator   =   "Trajectory"
                damageOffset   =   {
                   y   =   1
@@ -1952,7 +2012,7 @@ comboDesc   =   {
                canKnockback   =   True
                isPervasive   =   True
                knockbackAngle   =   15
-               radiusScale   =   4
+               radiusScale   =   10
                damageLocator   =   "Trajectory"
                damageOffset   =   {
                   y   =   1
@@ -2058,7 +2118,7 @@ comboDesc   =   {
                canKnockback   =   True
                isPervasive   =   True
                knockbackAngle   =   15
-               radiusScale   =   4
+               radiusScale   =   10
                damageLocator   =   "Trajectory"
                damageOffset   =   {
                   y   =   1
@@ -2164,7 +2224,7 @@ comboDesc   =   {
                canKnockback   =   True
                isPervasive   =   True
                knockbackAngle   =   15
-               radiusScale   =   4
+               radiusScale   =   10
                damageLocator   =   "Trajectory"
                damageOffset   =   {
                   y   =   1
@@ -2270,7 +2330,7 @@ comboDesc   =   {
                canKnockback   =   True
                isPervasive   =   True
                knockbackAngle   =   15
-               radiusScale   =   4
+               radiusScale   =   10
                damageLocator   =   "Trajectory"
                damageOffset   =   {
                   y   =   1
@@ -2328,7 +2388,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   500
-               healthDmgPercent   =   430
+               healthDmgPercent   =   508
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -2416,7 +2476,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   900
-               healthDmgPercent   =   430
+               healthDmgPercent   =   508
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True

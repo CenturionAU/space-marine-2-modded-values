@@ -1,33 +1,44 @@
 meleePresets   =   {
    default   =   {
-      perDamageStrikeUids   =   [
-         "JetpackAir1",
-         "JetpackLand1"
-      ]
       settingsCollection   =   {
          COMMON   =   {
             settings   =   {
                LIGHT_TAP   =   {
                   healthRestoringPercent   =   1
                   healthRestoringMin   =   1
-                  regenHealthMax   =   1
+                  maxHealthPerAction   =   1
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                LIGHT_HOLD   =   {
                   healthRestoringPercent   =   1.5
                   healthRestoringMin   =   1.5
-                  regenHealthMax   =   1.5
+                  maxHealthPerAction   =   1.5
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_TAP   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_HOLD   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+               CUSTOM   =   {
+                  healthRestoringPercent   =   100
+                  maxHealthRestorePerDamage   =   10
+                  maxHealthRegenPerDamage   =   10
+                  maxTargetsToRestoreHealthPerAction   =   1
+                  __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+            }
+            customUidsToTypesOverrides   =   {
+               JetpackAir1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
+               }
+               JetpackLand1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
                }
             }
             __type   =   "DamagePointsRestoringMeleeSettingsCollection"
@@ -37,24 +48,39 @@ meleePresets   =   {
                LIGHT_TAP   =   {
                   healthRestoringPercent   =   10
                   healthRestoringMin   =   1
-                  regenHealthMax   =   1
+                  maxHealthPerAction   =   1
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                LIGHT_HOLD   =   {
                   healthRestoringPercent   =   10
                   healthRestoringMin   =   1.5
-                  regenHealthMax   =   1.5
+                  maxHealthPerAction   =   1.5
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_TAP   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_HOLD   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+               CUSTOM   =   {
+                  healthRestoringPercent   =   100
+                  maxHealthRestorePerDamage   =   10
+                  maxHealthRegenPerDamage   =   10
+                  maxTargetsToRestoreHealthPerAction   =   1
+                  __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+            }
+            customUidsToTypesOverrides   =   {
+               JetpackAir1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
+               }
+               JetpackLand1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
                }
             }
             __type   =   "DamagePointsRestoringMeleeSettingsCollection"
@@ -64,24 +90,39 @@ meleePresets   =   {
                LIGHT_TAP   =   {
                   healthRestoringPercent   =   1
                   healthRestoringMin   =   1
-                  regenHealthMax   =   1
+                  maxHealthPerAction   =   1
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                LIGHT_HOLD   =   {
                   healthRestoringPercent   =   1.5
                   healthRestoringMin   =   1.5
-                  regenHealthMax   =   1.5
+                  maxHealthPerAction   =   1.5
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_TAP   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_HOLD   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+               CUSTOM   =   {
+                  healthRestoringPercent   =   100
+                  maxHealthRestorePerDamage   =   10
+                  maxHealthRegenPerDamage   =   10
+                  maxTargetsToRestoreHealthPerAction   =   1
+                  __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+            }
+            customUidsToTypesOverrides   =   {
+               JetpackAir1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
+               }
+               JetpackLand1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
                }
             }
             __type   =   "DamagePointsRestoringMeleeSettingsCollection"
@@ -91,24 +132,39 @@ meleePresets   =   {
                LIGHT_TAP   =   {
                   healthRestoringPercent   =   1
                   healthRestoringMin   =   1
-                  regenHealthMax   =   1
+                  maxHealthPerAction   =   1
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                LIGHT_HOLD   =   {
                   healthRestoringPercent   =   1.5
                   healthRestoringMin   =   1.5
-                  regenHealthMax   =   1.5
+                  maxHealthPerAction   =   1.5
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_TAP   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_HOLD   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+               CUSTOM   =   {
+                  healthRestoringPercent   =   100
+                  maxHealthRestorePerDamage   =   10
+                  maxHealthRegenPerDamage   =   10
+                  maxTargetsToRestoreHealthPerAction   =   1
+                  __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+            }
+            customUidsToTypesOverrides   =   {
+               JetpackAir1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
+               }
+               JetpackLand1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
                }
             }
             __type   =   "DamagePointsRestoringMeleeSettingsCollection"
@@ -118,24 +174,39 @@ meleePresets   =   {
                LIGHT_TAP   =   {
                   healthRestoringPercent   =   1
                   healthRestoringMin   =   1
-                  regenHealthMax   =   1
+                  maxHealthPerAction   =   1
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                LIGHT_HOLD   =   {
                   healthRestoringPercent   =   1.5
                   healthRestoringMin   =   1.5
-                  regenHealthMax   =   1.5
+                  maxHealthPerAction   =   1.5
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_TAP   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_HOLD   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+               CUSTOM   =   {
+                  healthRestoringPercent   =   100
+                  maxHealthRestorePerDamage   =   10
+                  maxHealthRegenPerDamage   =   10
+                  maxTargetsToRestoreHealthPerAction   =   1
+                  __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+            }
+            customUidsToTypesOverrides   =   {
+               JetpackAir1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
+               }
+               JetpackLand1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
                }
             }
             __type   =   "DamagePointsRestoringMeleeSettingsCollection"
@@ -145,24 +216,39 @@ meleePresets   =   {
                LIGHT_TAP   =   {
                   healthRestoringPercent   =   1
                   healthRestoringMin   =   1
-                  regenHealthMax   =   1
+                  maxHealthPerAction   =   1
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                LIGHT_HOLD   =   {
                   healthRestoringPercent   =   1.5
                   healthRestoringMin   =   1.5
-                  regenHealthMax   =   1.5
+                  maxHealthPerAction   =   1.5
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_TAP   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
                }
                HEAVY_HOLD   =   {
                   armorRegenPercentByHit   =   0
-                  regenArmorMax   =   0
                   __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+               CUSTOM   =   {
+                  healthRestoringPercent   =   100
+                  maxHealthRestorePerDamage   =   10
+                  maxHealthRegenPerDamage   =   10
+                  maxTargetsToRestoreHealthPerAction   =   1
+                  __type   =   "DamagePointsRestoringMeleeSettings"
+               }
+            }
+            customUidsToTypesOverrides   =   {
+               JetpackAir1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
+               }
+               JetpackLand1   =   {
+                  __value   =   "CUSTOM"
+                  __type   =   "MeleeStrikeType"
                }
             }
             __type   =   "DamagePointsRestoringMeleeSettingsCollection"
@@ -234,49 +320,49 @@ firearmPresets   =   {
          COMMON   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.1
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          ELITE   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.1
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          SPECIAL   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.1
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          MINIBOSS   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.1
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          BOSS   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.1
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          FODDER   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.1
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
       }
@@ -290,47 +376,415 @@ firearmPresets   =   {
          COMMON   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.075
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          ELITE   =   {
-            healthRestoringPercent   =   1
+            healthRestoringPercent   =   2
             healthRestoringMin   =   0.075
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          SPECIAL   =   {
-            healthRestoringPercent   =   1
+            healthRestoringPercent   =   2
             healthRestoringMin   =   0.075
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          MINIBOSS   =   {
-            healthRestoringPercent   =   1
+            healthRestoringPercent   =   5
             healthRestoringMin   =   0.075
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          BOSS   =   {
-            healthRestoringPercent   =   1
+            healthRestoringPercent   =   5
             healthRestoringMin   =   0.075
-            shouldRestoreByDamage   =   True
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
+            shouldRestoreByDamage   =   True
             __type   =   "DamagePointsRestoringFirearmSettings"
          }
          FODDER   =   {
             healthRestoringPercent   =   1
             healthRestoringMin   =   0.075
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
             shouldRestoreByDamage   =   True
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+      }
+      __type   =   "DamagePointsRestoringFirearmPresetPve"
+   }
+   H_MeltaGun   =   {
+      firearmUids   =   [
+         "hwpn_support_heavy_meltagun"
+      ]
+      settings   =   {
+         COMMON   =   {
+            healthRestoringPercent   =   5
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         ELITE   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.25
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         SPECIAL   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.4
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         MINIBOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         BOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         FODDER   =   {
+            healthRestoringPercent   =   5
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+      }
+      __type   =   "DamagePointsRestoringFirearmPresetPve"
+   }
+   H_plasma   =   {
+      firearmUids   =   [
+         "hwpn_support_plasma_incinerator"
+      ]
+      settings   =   {
+         COMMON   =   {
+            healthRestoringPercent   =   6
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         ELITE   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.25
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         SPECIAL   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.4
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         MINIBOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         BOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         FODDER   =   {
+            healthRestoringPercent   =   6
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+      }
+      __type   =   "DamagePointsRestoringFirearmPresetPve"
+   }
+   MeltaGun   =   {
+      firearmUids   =   [
+         "shotgun_meltagun"
+      ]
+      settings   =   {
+         COMMON   =   {
+            healthRestoringPercent   =   5
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         ELITE   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.25
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         SPECIAL   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.4
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         MINIBOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         BOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         FODDER   =   {
+            healthRestoringPercent   =   5
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+      }
+      __type   =   "DamagePointsRestoringFirearmPresetPve"
+   }
+   PlasmaGun   =   {
+      firearmUids   =   [
+         "pwpn_plasma_exterminator"
+      ]
+      settings   =   {
+         COMMON   =   {
+            healthRestoringPercent   =   6
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         ELITE   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.25
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         SPECIAL   =   {
+            healthRestoringPercent   =   15
+            healthRestoringMin   =   0.4
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         MINIBOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         BOSS   =   {
+            healthRestoringPercent   =   20
+            healthRestoringMin   =   0.5
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
+            healthRegenPercentByHeadshotKill   =   0
+            armorRegenPercentByHeadshotHit   =   0
+            __type   =   "DamagePointsRestoringFirearmSettings"
+         }
+         FODDER   =   {
+            healthRestoringPercent   =   6
+            healthRestoringMin   =   0.1
+            maxHealthRestorePerDamage   =   5
+            baseForHealthRestoring   =   "RAW_DAMAGE_AMOUNT"
+            healthRegenPercentByKill   =   0
+            maxHealthRegenPerDamage   =   15
+            maxHealthPerAction   =   -1
+            maxTargetsToRestoreHealthPerAction   =   3
+            armorRegenPercentByKill   =   0
             healthRegenPercentByHeadshotKill   =   0
             armorRegenPercentByHeadshotHit   =   0
             __type   =   "DamagePointsRestoringFirearmSettings"
@@ -497,16 +951,25 @@ healingSettings   =   {
       healSource   =   "ABILITIES"
       __type   =   "DamagePontsRestoringHealingSettings"
    }
+   Camo   =   {
+      isInstant   =   True
+      __type   =   "DamagePontsRestoringHealingSettings"
+   }
+   pcHelbruteHealing   =   {
+      healthRestoringPercent   =   50
+      healSource   =   "ABILITIES"
+      __type   =   "DamagePontsRestoringHealingSettings"
+   }
 }
 riposteSettings   =   {
    COMMON   =   {
       isArmorRegenBySegments   =   True
       armorRegenPercentByKill   =   100
+      isRegenArmorMaxBySegments   =   True
+      maxArmorPerAction   =   100
       armorRegenModifiers   =   [
          "ARMOR_REGEN_BY_FINISHER_COMMON"
       ]
-      isRegenArmorMaxBySegments   =   True
-      regenArmorMax   =   100
       __type   =   "DamagePointsRestoringMeleeSettings"
    }
    ELITE   =   {
@@ -524,11 +987,11 @@ riposteSettings   =   {
    FODDER   =   {
       isArmorRegenBySegments   =   True
       armorRegenPercentByKill   =   100
+      isRegenArmorMaxBySegments   =   True
+      maxArmorPerAction   =   100
       armorRegenModifiers   =   [
          "ARMOR_REGEN_BY_FINISHER_FODDER"
       ]
-      isRegenArmorMaxBySegments   =   True
-      regenArmorMax   =   100
       __type   =   "DamagePointsRestoringMeleeSettings"
    }
 }

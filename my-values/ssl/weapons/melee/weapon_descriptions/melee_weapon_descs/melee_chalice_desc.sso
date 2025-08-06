@@ -1,9 +1,9 @@
 sslModule   =   "weapons.melee.weapon_descriptions.melee_weapon_desc"
 ownerTplName   =   "cc_titus"
-weaponType   =   "FIREARM"
-weaponActorUid   =   "firearm_fake"
-healthDamage   =   10
-morphemeWeaponType   =   5
+weaponType   =   "CHALICE"
+weaponActorUid   =   "chalice_fake"
+healthDamage   =  100
+morphemeWeaponType   =   0
 meleeDetectorSettings   =   {
    RightHand   =   {
       sslModule   =   "weapons.melee.melee_detector_settings"
@@ -49,12 +49,12 @@ meleeDetectorSettings   =   {
       rootTrackerLocator   =   "ARM2L"
       endTrackerOffset   =   {
          sslModule   =   "math.vector_3d"
-         x   =   2
-         y   =   2
+         x   =   -2
+         y   =   0
          z   =   2
          __type   =   "Vector3d"
       }
-      endTrackerLocator   =   "ARM2L"
+      endTrackerLocator   =   "GUN_L"
       staticCheckEndOffset   =   -1.6
       __type   =   "MeleeDetectorSettings"
    }
@@ -129,8 +129,8 @@ comboDesc   =   {
       perfectBlockEnabledDuration   =   0
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
-            healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
+            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
@@ -158,7 +158,7 @@ comboDesc   =   {
       }
       riposteAnim   =   {
          sslModule   =   "animation.animation_table"
-         link   =   "Primaris.Melee.BodyRipost1"
+         link   =   "Primaris.Melee.CombatKnifeRipost1"
          __type   =   "AnimTableLink"
       }
       abortAnim   =   {
@@ -176,7 +176,7 @@ comboDesc   =   {
    }
    slowdownSettings   =   {
       sslModule   =   "weapons.melee.weapon_descriptions.melee_combo_slowdown_settings"
-      slowdownTime   =   0.198
+      slowdownTime   =   0.00
       slowdownDesc   =   {
          type   =   {
             __type   =   "MeleeComboSlowdownProject"
@@ -201,48 +201,10 @@ comboDesc   =   {
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "MeleeComboStrike_1/AddStrikeToCombo"
+                  "MeleeComboStrike_E9aaDA9r/AddStrikeToCombo"
                ]
                OnLightHold   =   [
                   "TriggerEvent_1_3_3_2/TriggerBlueprintEvent"
-               ]
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            MeleeComboStrike_1   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   9350
-                  y   =   6050
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "Light2"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               OnLightTap   =   [
-                  "MeleeComboStrike_2/AddStrikeToCombo"
-               ]
-               OnLightHold   =   [
-                  "TriggerEvent_1_3_3_2_1/TriggerBlueprintEvent"
-               ]
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            MeleeComboStrike_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   9900
-                  y   =   6050
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "Light3_cycled"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               OnLightTap   =   [
-                  "TriggerEvent_1_3_1/TriggerBlueprintEvent"
-               ]
-               OnLightHold   =   [
-                  "TriggerEvent_1_3_3_2_1_1/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
@@ -289,22 +251,6 @@ comboDesc   =   {
                }
                __type   =   "BlueprintNodeTriggerCustomEvent"
             }
-            HandleEvent_1_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
-               viewData   =   {
-                  x   =   9000
-                  y   =   5900
-               }
-               OnHandle   =   [
-                  "MeleeComboStrike_1/AddStrikeToCombo"
-               ]
-               eventUidRefParam   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeHandleEvent"
-            }
             MeleeComboStart_1_2_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_start"
                viewData   =   {
@@ -312,12 +258,10 @@ comboDesc   =   {
                   y   =   7250
                }
                OnLightTap   =   [
-                  "MeleeComboStrike_5_1_1/AddStrikeToCombo",
-                  "If_E7nfTdg3/Input"
+                  "MeleeComboStrike_5_1_1/AddStrikeToCombo"
                ]
                OnLightHold   =   [
-                  "MeleeComboStrike_5_1_1/AddStrikeToCombo",
-                  "If_E7nfTdg3/Input"
+                  "MeleeComboStrike_5_1_1/AddStrikeToCombo"
                ]
                priorityRef   =   {
                   def   =   1
@@ -345,84 +289,6 @@ comboDesc   =   {
                ]
                __type   =   "BlueprintNodeCheckBodyStateCondition"
             }
-            MeleeComboStart_1   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_start"
-               viewData   =   {
-                  x   =   6450
-                  y   =   6850
-               }
-               OnLightTap   =   [
-                  "MeleeComboStrike_4/AddStrikeToCombo"
-               ]
-               OnLightHold   =   [
-                  "MeleeComboStrike_4/AddStrikeToCombo"
-               ]
-               priorityRef   =   {
-                  def   =   2
-                  __type   =   "IntRefParam"
-               }
-               __type   =   "BlueprintNodeMeleeComboStart"
-            }
-            MeleeComboStrike_4   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   6750
-                  y   =   6850
-               }
-               strikeLibraryLinkRef   =   {
-                  def   =   "FallingAttack"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               OnLightTap   =   [
-                  "TriggerEvent_1_3_1_1/TriggerBlueprintEvent"
-               ]
-               OnLightHold   =   [
-                  "TriggerEvent_1_3_1_2_2_2/TriggerBlueprintEvent"
-               ]
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            CheckCharacterCommandInProgress_1   =   {
-               sslModule   =   "actions.commands.blueprint_commands.blueprint_node_check_character_command_in_progress"
-               viewData   =   {
-                  x   =   6550
-                  y   =   7000
-               }
-               commandTypeRef   =   {
-                  def   =   "FALLING_ATTACK"
-                  __type   =   "CharacterCommandTypeRefParam"
-               }
-               IsInProgress   =   [
-                  "MeleeComboStart_1/conditionRef/cb",
-                  "If_E7nfTdg3/condition/cb"
-               ]
-               __type   =   "BlueprintNodeCheckCharacterCommandInProgress"
-            }
-            TriggerEvent_1_3_1_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   7100
-                  y   =   6850
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "start_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_1_2_2_2   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   7100
-                  y   =   6950
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "heavy_attack"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
             MeleeComboStrike_5_1_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
@@ -431,29 +297,13 @@ comboDesc   =   {
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "LightDashLeft"
+                  def   =   "Light1"
                   __type   =   "StrikeSettingsLinkRefParam"
                }
-               OnLightTap   =   [
-                  "TriggerEvent_1_3_1_4/TriggerBlueprintEvent"
-               ]
                OnLightHold   =   [
                   "TriggerEvent_1_3_1_2_2_1_1/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            TriggerEvent_1_3_1_4   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   7250
-                  y   =   7250
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
             }
             TriggerEvent_1_3_1_2_2_1_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
@@ -471,34 +321,8 @@ comboDesc   =   {
             TriggerEvent_1_3_3_2   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   9350
-                  y   =   6200
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "heavy_attack_left"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_3_2_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9900
-                  y   =   6200
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "heavy_attack_right"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_3_2_1_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   10300
-                  y   =   6200
+                  x   =   9200
+                  y   =   6250
                }
                eventUid   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -511,7 +335,7 @@ comboDesc   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
                   x   =   8450
-                  y   =   6850
+                  y   =   6600
                   colors   =   [
                      "#FF8D61BE",
                      "#FFDAB4FC"
@@ -529,14 +353,14 @@ comboDesc   =   {
             }
             MeleePreparing_1_1   =   {
                viewData   =   {
-                  x   =   8800
-                  y   =   6850
+                  x   =   8850
+                  y   =   6600
                }
                OnPrepared   =   [
                   "MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1/AddStrikeToCombo"
                ]
                OnUnprepared   =   [
-                  "TriggerEvent_1_3_Ea7a2zbc/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
                ]
                meleePreparing   =   {
                   minPreparationDuration   =   0.1
@@ -561,8 +385,8 @@ comboDesc   =   {
             MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9500
-                  y   =   6850
+                  x   =   9450
+                  y   =   6650
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
@@ -570,10 +394,10 @@ comboDesc   =   {
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "TriggerEvent_1_3_Ea7a2e1g/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_3_2_2_Ea7a0Q9U/TriggerBlueprintEvent"
+                  "MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1_1_1/AddStrikeToCombo"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
@@ -593,7 +417,7 @@ comboDesc   =   {
             MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9100
+                  x   =   9000
                   y   =   6450
                }
                strikeLibraryLinkRef   =   {
@@ -612,7 +436,7 @@ comboDesc   =   {
             TriggerEvent_1_3_2   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   9450
+                  x   =   9850
                   y   =   6450
                }
                eventUid   =   {
@@ -646,24 +470,11 @@ comboDesc   =   {
                ]
                __type   =   "BlueprintNodeGetVariable"
             }
-            TriggerEvent_1_3_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   10300
-                  y   =   6050
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
             TriggerEvent_1_3_3_2_2_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   9450
-                  y   =   6550
+                  x   =   10150
+                  y   =   6700
                }
                eventUid   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -675,8 +486,8 @@ comboDesc   =   {
             MeleeComboStrike_4_1_3_1_1_1_1_2_3_1_2_1_1_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9000
-                  y   =   7600
+                  x   =   9850
+                  y   =   6700
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
@@ -684,29 +495,18 @@ comboDesc   =   {
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "TriggerEvent_1_3_Ea7a313s/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_3_2_Ea7dMmaS/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_3_2_2_1/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            AdditivePreparing_D92exT3q   =   {
-               viewData   =   {
-                  x   =   6450
-                  y   =   5350
-                  colors   =   [
-                     "#00FFFFFF",
-                     "#00FFFFFF"
-                  ]
-               }
-               __type   =   "BlueprintFunctionMeleeAdditivePreparing"
             }
             HandleEvent_E48ed0c5   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   8450
-                  y   =   7200
+                  x   =   8700
+                  y   =   6850
                   colors   =   [
                      "#FF8D61BE",
                      "#FFDAB4FC"
@@ -725,8 +525,8 @@ comboDesc   =   {
             HandleEvent_E48edG3i   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   8450
-                  y   =   7600
+                  x   =   9550
+                  y   =   6850
                   colors   =   [
                      "#FF8D61BE",
                      "#FFDAB4FC"
@@ -746,7 +546,7 @@ comboDesc   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
                   x   =   9000
-                  y   =   7200
+                  y   =   6800
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
@@ -754,116 +554,28 @@ comboDesc   =   {
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "TriggerEvent_1_3_Ea7a2AbA/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_2/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_3_2_2_Ea7dMefE/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_3_2_2_1/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
-            If_E7nfTdg3   =   {
+            MeleeComboStrike_E9aaDA9r   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   6700
-                  y   =   7150
+                  x   =   9200
+                  y   =   6050
                }
-               OnTrue   =   [
-                  "MeleeComboStrike_4/AddStrikeToCombo"
+               strikeLibraryLinkRef   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
+                  def   =   "Light2"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               OnLightHold   =   [
+                  "TriggerEvent_1_3_3_2/TriggerBlueprintEvent"
                ]
-               OnFalse   =   [
-                  "MeleeComboStrike_5_1_1/AddStrikeToCombo"
-               ]
-               __type   =   "BlueprintNodeIf"
-            }
-            TriggerEvent_1_3_3_2_2_Ea7a0Q9U   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9900
-                  y   =   6950
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "heavy_attack_left"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_Ea7a2e1g   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9896.86
-                  y   =   6841.938
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "start_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_Ea7a2zbc   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9500
-                  y   =   7050
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "start_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_Ea7a2AbA   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9500
-                  y   =   7200
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "start_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_Ea7a313s   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9500
-                  y   =   7600
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "start_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_3_2_2_Ea7dMefE   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9500
-                  y   =   7300
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "heavy_attack_left"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_3_2_Ea7dMmaS   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   9500
-                  y   =   7700
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "heavy_attack_right"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
+               __type   =   "BlueprintNodeMeleeComboStrike"
             }
          }
          variables   =   {
@@ -890,8 +602,8 @@ comboDesc   =   {
             "Light Combo"   =   {
                x   =   8400
                y   =   5800
-               width   =   3219
-               height   =   2095.747
+               width   =   3219.406
+               height   =   1150
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"
@@ -905,38 +617,11 @@ comboDesc   =   {
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
-            "Falling Attack"   =   {
-               x   =   6400
-               y   =   6750
-               width   =   1700
-               height   =   350
-               comment   =   ""
-               isCollapsed   =   False
-               __type   =   "NodeGroup"
-            }
             "Dash & Sprint Attack"   =   {
                x   =   6400
                y   =   7150
                width   =   1700
                height   =   350
-               comment   =   ""
-               isCollapsed   =   False
-               __type   =   "NodeGroup"
-            }
-            "Additive Preparing"   =   {
-               x   =   6300
-               y   =   5100
-               width   =   1899.664
-               height   =   498.663
-               comment   =   ""
-               isCollapsed   =   False
-               __type   =   "NodeGroup"
-            }
-            UNUSED   =   {
-               x   =   8428.301
-               y   =   6357.343
-               width   =   1351.562
-               height   =   328.8281
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"
@@ -1011,22 +696,32 @@ comboDesc   =   {
       Light1   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
          maxDamagedActors   =   5
-         strikeDirection   =   "LEFT"
+         useWeaponTypeOverride   =   True
+         weaponType   =   "BODY"
          playerSettingsOverrides   =   {
             StrikeShake   =   {
-               strikeShakeUid   =   "BodyLight1_v2"
+               strikeShakeUid   =   "ChainswordLightHold2"
                __type   =   "MeleePlayerSettingsParamStrikeShake"
             }
+            DamageShake   =   {
+               damageShakeUid   =   "ChainswordLightHoldFor2Hit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "BodyLight1_v2"
+               strikeForceFeedbackUid   =   "ChainswordHeavy2_v2"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "ChainswordHeavyFor123Hit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
             }
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.BodyLightSlash1"
+            link   =   "Primaris.Melee.Heavy2"
             __type   =   "AnimTableLink"
          }
+         meleeDetectors   =   [  ]
          mainDamage   =   {
             sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
             damagerLink   =   {
@@ -1034,37 +729,74 @@ comboDesc   =   {
                damagerDescUid   =   "melee_point_damager"
                __type   =   "DamagerDescriptionLink"
             }
-            impulse   =   500
-            healthDmgPercent   =   100
+            impulse   =   25
+            healthDmgPercent   =   50
             heavyHitDmgPercent   =   100
             canKnockback   =   True
             knockbackAngle   =   13
             __type   =   "MeleeDamageSettings"
+         }
+         extraDamages   =   {
+            melee_extra_damage   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_cone_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   500
+               healthDmgPercent   =   100
+               heavyHitDmgPercent   =   100
+               knockbackAngle   =   13
+               radiusScale   =   3
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  sslModule   =   "math.vector_3d"
+                  y   =   0
+                  z   =   0.5
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
          }
          __type   =   "MeleeComboStrikeSettings"
       }
       Light2   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   5
-         strikeDirection   =   "RIGHT"
+         maxDamagedActors   =   8
+         strikeDirection   =   "CENTRE"
+         useWeaponTypeOverride   =   True
+         weaponType   =   "BODY"
+         constraintSettingsOverrides   =   {
+            ConstraintOffset   =   {
+               constraintOffset   =   0
+               __type   =   "MeleeConstraintSettingsParamConstraintOffset"
+            }
+         }
          playerSettingsOverrides   =   {
             StrikeShake   =   {
-               strikeShakeUid   =   "BodyLight2_v2"
+               strikeShakeUid   =   "ChainswordLightHold3"
                __type   =   "MeleePlayerSettingsParamStrikeShake"
             }
+            DamageShake   =   {
+               damageShakeUid   =   "ChainswordLightHoldFor1And3Hit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "BodyLight2_v2"
+               strikeForceFeedbackUid   =   "ChainswordHeavy3"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "ChainswordHeavyFor123Hit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
             }
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.BodyLightSlash2"
+            link   =   "Primaris.Melee.Heavy3"
             __type   =   "AnimTableLink"
          }
-         meleeDetectors   =   [
-            "LeftHand"
-         ]
+         meleeDetectors   =   [  ]
          mainDamage   =   {
             sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
             damagerLink   =   {
@@ -1072,12 +804,56 @@ comboDesc   =   {
                damagerDescUid   =   "melee_point_damager"
                __type   =   "DamagerDescriptionLink"
             }
-            impulse   =   500
-            healthDmgPercent   =   100
+            impulse   =   25
+            healthDmgPercent   =   50
             heavyHitDmgPercent   =   100
             canKnockback   =   True
             knockbackAngle   =   13
             __type   =   "MeleeDamageSettings"
+         }
+         extraDamages   =   {
+            melee_extra_damage   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_cone_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   500
+               healthDmgPercent   =   100
+               heavyHitDmgPercent   =   100
+               knockbackAngle   =   13
+               radiusScale   =   1.5
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  sslModule   =   "math.vector_3d"
+                  y   =   0
+                  z   =   0.5
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+            melee_extra_damage_2   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_sphere_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   500
+               healthDmgPercent   =   100
+               heavyHitDmgPercent   =   100
+               knockbackAngle   =   13
+               radiusScale   =   4
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  sslModule   =   "math.vector_3d"
+                  y   =   0
+                  z   =   0.5
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
          }
          __type   =   "MeleeComboStrikeSettings"
       }

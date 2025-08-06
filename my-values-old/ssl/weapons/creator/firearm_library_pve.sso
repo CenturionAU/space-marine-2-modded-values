@@ -11,8 +11,8 @@ firearms   =   {
             }
             endEffectsType   =   "bolter_bullet"
             shotCreatorSettings   =   {
-               headshotMult   =   1.15
-               damage   =   019
+               headshotMult   =   1
+               damage   =   017
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   damagerDescUid   =   "arifle_damager"
@@ -296,7 +296,7 @@ firearms   =   {
             endEffectsType   =   "bolter_bullet"
             shotCreatorSettings   =   {
                headshotMult   =   1.5
-               damage   =   027
+               damage   =   024
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   damagerDescUid   =   "arifle_damager"
@@ -578,8 +578,8 @@ firearms   =   {
             }
             endEffectsType   =   "bolter_bullet"
             shotCreatorSettings   =   {
-               headshotMult   =   1.15
-               damage   =   023
+               headshotMult   =   1
+               damage   =   022
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   damagerDescUid   =   "arifle_damager"
@@ -596,6 +596,16 @@ firearms   =   {
                }
                penetrationPreset   =   "four_targets_penetration"
                __type   =   "ShotCreatorSettings"
+            }
+            flyBySettings   =   {
+               soundDescEnemy   =   {
+                  type   =   {
+                     name   =   "wpn_projectile_bolter"
+                     __type   =   "GameSound"
+                  }
+                  __type   =   "GameSoundDesc"
+               }
+               __type   =   "FlyBySettings"
             }
             __type   =   "ShellDescription"
          }
@@ -751,7 +761,7 @@ firearms   =   {
       ammoSettings   =   {
          typeData   =   {
             ammo_arifle   =   {
-               maxAmount   =   225
+               maxAmount   =   180
                __type   =   "AmmoTypeSettings"
             }
          }
@@ -870,7 +880,7 @@ firearms   =   {
             endEffectsType   =   "bolter_bullet"
             shotCreatorSettings   =   {
                headshotMult   =   2
-               damage   =  50
+               damage   =   047
                heavyHitDamage   =   0.5
                headshotHeavyHitMult   =   1
                damagerLink   =   {
@@ -1279,7 +1289,7 @@ firearms   =   {
             shotCreatorSettings   =   {
                sslModule   =   "weapons.controllers.shot_creators.shot_creator_settings"
                headshotMult   =   1.5
-               damage   =   023
+               damage   =  22
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   sslModule   =   "damage.damager.damager_description_link"
@@ -1466,7 +1476,7 @@ firearms   =   {
       ammoSettings   =   {
          typeData   =   {
             ammo_arifle   =   {
-               maxAmount   =   140
+               maxAmount   =   120
                __type   =   "AmmoTypeSettings"
             }
          }
@@ -1586,7 +1596,7 @@ firearms   =   {
             shotCreatorSettings   =   {
                sslModule   =   "weapons.controllers.shot_creators.shot_creator_settings"
                headshotMult   =   1.5
-               damage   =   022
+               damage   =   020
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   sslModule   =   "damage.damager.damager_description_link"
@@ -2103,7 +2113,7 @@ firearms   =   {
             endEffectsType   =   "bolter_bullet"
             shotCreatorSettings   =   {
                headshotMult   =   2.5
-               damage   =  100
+               damage   = 100
                heavyHitDamage   =   0.5
                headshotHeavyHitMult   =   2
                damagerLink   =   {
@@ -2391,7 +2401,7 @@ firearms   =   {
             shotCreatorSettings   =   {
                sslModule   =   "weapons.controllers.shot_creators.shot_creator_settings"
                headshotMult   =   1
-               damage   =   032
+               damage   =   030
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   sslModule   =   "damage.damager.damager_description_link"
@@ -2593,7 +2603,7 @@ firearms   =   {
       ammoSettings   =   {
          typeData   =   {
             ammo_arifle   =   {
-               maxAmount   =   240
+               maxAmount   =   210
                __type   =   "AmmoTypeSettings"
             }
          }
@@ -2716,7 +2726,7 @@ firearms   =   {
             shotCreatorSettings   =   {
                sslModule   =   "weapons.controllers.shot_creators.shot_creator_settings"
                headshotMult   =   1.5
-               damage   =   019
+               damage   =   017
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   sslModule   =   "damage.damager.damager_description_link"
@@ -3995,16 +4005,6 @@ firearms   =   {
       actorName   =   "hgun_bolt_pistol"
       category   =   "PISTOL"
       shellDescriptions   =   {
-         laser_targeting   =   {
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  firearmDescriberLink   =   "laser_targetting_shot_assert"
-                  __type   =   "ShotCreatorLink"
-               }
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
          bolts   =   {
             projectileType   =   {
                projectileType   =   "bolt_pistol_bullet"
@@ -4012,8 +4012,8 @@ firearms   =   {
             }
             endEffectsType   =   "bolt_pistol_bullet"
             shotCreatorSettings   =   {
-               headshotMult   =   1.15
-               damage   =   020
+               headshotMult   =   1
+               damage   =  20
                heavyHitDamage   =   0.5
                coeffDamage   =   {
                   spline   =   [
@@ -4104,13 +4104,13 @@ firearms   =   {
                   recoilPresets   =   {
                      BLIND   =   {
                         baseSettings   =   {
-                           spreadMin   =   7
-                           spreadMax   =   1.25
+                           spreadMin   =   14
+                           spreadMax   =   2.5
                            __type   =   "RecoilPresetSettings"
                         }
                         movementOverrideSettings   =   {
-                           spreadMin   =   7
-                           spreadMax   =   1.25
+                           spreadMin   =   14
+                           spreadMax   =   2.5
                            __type   =   "RecoilPresetSettings"
                         }
                         __type   =   "RecoilPreset"
@@ -4188,7 +4188,7 @@ firearms   =   {
       ammoSettings   =   {
          typeData   =   {
             ammo_pistol   =   {
-               maxAmount   =   144
+               maxAmount   =   120
                __type   =   "AmmoTypeSettings"
             }
          }
@@ -4300,16 +4300,6 @@ firearms   =   {
       actorName   =   "hgun_heavy_bolt_pistol"
       category   =   "PISTOL"
       shellDescriptions   =   {
-         laser_targeting   =   {
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  firearmDescriberLink   =   "laser_targetting_shot_assert"
-                  __type   =   "ShotCreatorLink"
-               }
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
          bolts   =   {
             sslModule   =   "weapons.creator.description.shell_description"
             projectileType   =   {
@@ -4641,16 +4631,6 @@ firearms   =   {
       category   =   "PLASMA"
       sightPreset   =   "PLASMA"
       shellDescriptions   =   {
-         laser_targeting   =   {
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  firearmDescriberLink   =   "laser_targetting_shot_assert"
-                  __type   =   "ShotCreatorLink"
-               }
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
          simple_plasma_shot   =   {
             projectileType   =   {
                projectileType   =   "pjl_plasma_pistol"
@@ -5602,7 +5582,7 @@ firearms   =   {
             endEffectsType   =   "heavy_bolter_bullet"
             shotCreatorSettings   =   {
                headshotMult   =   1.3
-               damage   =   022
+               damage   =   021
                heavyHitDamage   =   0.5
                damagerLink   =   {
                   damagerDescUid   =   "arifle_damager"
@@ -9242,16 +9222,12 @@ firearms   =   {
                coeffDamage   =   {
                   spline   =   [
                      0,
-                     1,
-                     8,
-                     1,
-                     15,
-                     0.1
+                     1
                   ]
                   __type   =   "SplineLinear1d"
                }
-               bulletSpeed   =   17
-               gravity   =   10
+               bulletSpeed   =   25
+               gravity   =   9
                sideEffects   =   [
                   {
                      type   =   "CORRUPTION"
@@ -9352,7 +9328,7 @@ firearms   =   {
             }
             spreadSettings   =   {
                maxSpreadAngle   =   1
-               maxBulletSpread   =   0.1
+               maxBulletSpread   =   1
                spreadEnergyDesc   =   {
                   type   =   {
                      energyRegenerationRules   =   {
@@ -9601,7 +9577,7 @@ firearms   =   {
                   shotsPerMin   =   100
                   __type   =   "FixedFireRate"
                }
-               shootLogicUid   =   "single_fire"
+               shootLogicUid   =   "autofire"
                denseCompensation   =   0.5
                __type   =   "ShootSettings"
             }
@@ -10684,7 +10660,7 @@ firearms   =   {
       shellDescriptions   =   {
          auto_shot   =   {
             projectileType   =   {
-               projectileType   =   "plasma_npc_auto_helbrute"
+               projectileType   =   "plasma_auto_helbrute"
                __type   =   "ServerProjectileType"
             }
             endEffectsType   =   "plasma_helbrute_bullet"
@@ -10720,7 +10696,7 @@ firearms   =   {
          }
          heavy_shot   =   {
             projectileType   =   {
-               projectileType   =   "plasma_npc_helbrute"
+               projectileType   =   "plasma_helbrute"
                __type   =   "ServerProjectileType"
             }
             endEffectsType   =   "plasma_helbrute_heavy_bullet"
@@ -15231,21 +15207,11 @@ firearms   =   {
       pickupVisualUid   =   "hgun_heavy_bolt_pistol"
       actorName   =   "hgun_inferno_pistol"
       category   =   "PISTOL"
-      sightPreset   =   "UNIQUE"
+      sightPreset   =   "SHOTGUN"
       shellDescriptions   =   {
-         laser_targeting   =   {
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  firearmDescriberLink   =   "laser_targetting_shot_assert"
-                  __type   =   "ShotCreatorLink"
-               }
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
          bolts   =   {
             projectileType   =   {
-               projectileType   =   "inferno_bullet"
+               projectileType   =   "meltagun_bullet"
                __type   =   "ClientProjectileType"
             }
             endEffectsType   =   "meltagun_bullet"
@@ -15263,7 +15229,7 @@ firearms   =   {
                   }
                   __type   =   "ShotPenetrationPresetsLibrary"
                }
-               damage   =   0173
+               damage   =  300
                heavyHitDamage   =   2
                damagerLink   =   {
                   damagerDescUid   =   "melta_damager"
@@ -15273,19 +15239,19 @@ firearms   =   {
                   spline   =   [
                      0,
                      1,
-                     3,
+                     5,
                      1,
-                     6.5,
-                     0.45,
-                     12,
-                     0.45
+                     10.1,
+                     0.3,
+                     20,
+                     0.3
                   ]
                   __type   =   "SplineLinear1d"
                }
                penetrationPreset   =   "melta_penetration"
                coneSettings   =   {
-                  coneAngle   =   10
-                  distance   =   14
+                  coneAngle   =   13
+                  distance   =   22
                   startRadius   =   1
                   checkAbleToReach   =   True
                   bonesMaxCount   =   200
@@ -15314,7 +15280,7 @@ firearms   =   {
             clipName   =   "default_clip"
             shootSettings   =   {
                fireRate   =   {
-                  shotsPerMin   =   60
+                  shotsPerMin   =   50
                   __type   =   "FixedFireRate"
                }
                shootLogicUid   =   "single_fire"
@@ -15337,14 +15303,14 @@ firearms   =   {
                         0,
                         0,
                         5,
-                        65
+                        80
                      ]
                      __type   =   "SplineCurve1d"
                   }
                   riseTimeSpeed   =   1
                   recoveryDelay   =   0.2
-                  recoverSpeedVertical   =   20
-                  recoverSpeedHorizontal   =   20
+                  recoverSpeedVertical   =   15
+                  recoverSpeedHorizontal   =   15
                   __type   =   "CameraRecoilSettings"
                }
                weaponRecoilSettings   =   {
@@ -15431,7 +15397,7 @@ firearms   =   {
       ammoSettings   =   {
          typeData   =   {
             ammo_pistol   =   {
-               maxAmount   =   15
+               maxAmount   =   20
                __type   =   "AmmoTypeSettings"
             }
          }
@@ -15439,26 +15405,28 @@ firearms   =   {
       }
       reloadSettings   =   {
          sslModule   =   "weapons.creator.description.reload_settings"
+         reloadTimeLength   =   1
          __type   =   "ReloadSettings"
       }
       clipsSettings   =   {
          default_clip   =   {
             sslModule   =   "weapons.creator.description.clip_settings"
             ammoType   =   "ammo_pistol"
-            maxAmmo   =   3
+            maxAmmo   =   4
             isInfiniteAmmo   =   True
             isInfiniteClip   =   True
             magazine   =   {
                type   =   {
                   properties   =   {
                      geom   =   {
-                        nameTpl   =   "wpn_inferno_pistol_01_mag"
+                        nameTpl   =   "wpn_bolt_pistol_01_heavy_mag"
                      }
                   }
                   __type   =   "clip_drop"
                }
                __type   =   "IactorDesc"
             }
+            magazineDropImpulseMultiplier   =   0.1
             __type   =   "ClipSettings"
          }
          laser_targeting   =   {
@@ -15467,20 +15435,29 @@ firearms   =   {
          }
       }
       aimSettings   =   {
+         sslModule   =   "weapons.creator.description.aim_settings"
          autoAimSettingsDefault   =   {
-            deviationAngle   =   0
-            autoaimAngle   =   0
-            autoaimDistance   =   0
-            autoaimFalloffDistance   =   0
+            deviationAngle   =   2
+            autoaimAngle   =   2
+            autoaimDistance   =   15
+            autoaimFalloffDistance   =   10
             autoaimNearFalloffDistance   =   0
             __type   =   "AutoAimSettings"
          }
          autoAimSettingsOverrides   =   {
             ZOOM   =   {
-               deviationAngle   =   0
-               autoaimAngle   =   0
-               autoaimDistance   =   0
-               autoaimFalloffDistance   =   0
+               deviationAngle   =   2
+               autoaimAngle   =   2
+               autoaimDistance   =   45
+               autoaimFalloffDistance   =   35
+               autoaimNearFalloffDistance   =   0
+               __type   =   "AutoAimSettings"
+            }
+            AUGMENTED_ZOOM   =   {
+               deviationAngle   =   2
+               autoaimAngle   =   2
+               autoaimDistance   =   45
+               autoaimFalloffDistance   =   35
                autoaimNearFalloffDistance   =   0
                __type   =   "AutoAimSettings"
             }
@@ -15492,10 +15469,15 @@ firearms   =   {
          }
          magnetismSettingsOverrides   =   {
             ZOOM   =   {
-               magnetismAngle   =   3
-               magnetismDistance   =   15
-               magnetismFalloffDistance   =   10
-               magnetismNearFalloffDistance   =   5
+               magnetismAngle   =   4
+               magnetismDistance   =   55
+               magnetismFalloffDistance   =   45
+               __type   =   "MagnetismSettings"
+            }
+            AUGMENTED_ZOOM   =   {
+               magnetismAngle   =   4
+               magnetismDistance   =   55
+               magnetismFalloffDistance   =   45
                __type   =   "MagnetismSettings"
             }
          }
@@ -15529,16 +15511,6 @@ firearms   =   {
       category   =   "PISTOL"
       sightPreset   =   "UNIQUE"
       shellDescriptions   =   {
-         laser_targeting   =   {
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  firearmDescriberLink   =   "laser_targetting_shot_assert"
-                  __type   =   "ShotCreatorLink"
-               }
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
          thermal_ray   =   {
             projectileType   =   {
                projectileType   =   "volkite_pistol"
@@ -15547,7 +15519,7 @@ firearms   =   {
             endEffectsType   =   "volkite_shot"
             shotCreatorSettings   =   {
                headshotMult   =   1
-               damage   =   066
+               damage   =   006
                heavyHitDamage   =   0
                damagerLink   =   {
                   damagerDescUid   =   "volkite_damager"
@@ -15817,1482 +15789,6 @@ firearms   =   {
          __type   =   "OverheatSettingsFirearm"
       }
       __type   =   "FirearmLaserTargetingPistolDescription"
-   }
-   pc_helbrute_plasma_cannon   =   {
-      pickupVisualUid   =   "hwpn_plasma_incinerator"
-      actorName   =   "pc_helbrute_plasma_cannon"
-      category   =   "PLASMA"
-      debugCategory   =   "PC"
-      sightPreset   =   "PLASMA"
-      shellDescriptions   =   {
-         simple_plasma_shot   =   {
-            projectileType   =   {
-               projectileType   =   "plasma_pc_auto_helbrute"
-               __type   =   "ServerProjectileType"
-            }
-            endEffectsType   =   "plasma_helbrute_bullet"
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  linkType   =   "firearm_creator_server.sso"
-                  __type   =   "ShotCreatorLink"
-               }
-               damage   =   110
-               heavyHitDamage   =   0
-               damagerLink   =   {
-                  damagerDescUid   =   "pc_helbrute_auto_plasma"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               coeffDamage   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     100,
-                     1
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               penetrationPreset   =   "no_penetration"
-               bulletSpeed   =   80
-               canDamageSelf   =   False
-               canKnockback   =   False
-               isGuardbreak   =   False
-               isPervasive   =   False
-               shotCreatorUid   =   "rocket_shot"
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
-         plasma_bomb_of_doom   =   {
-            projectileType   =   {
-               projectileType   =   "plasma_pc_helbrute"
-               __type   =   "ServerProjectileType"
-            }
-            endEffectsType   =   "plasma_helbrute_heavy_bullet"
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  linkType   =   "firearm_creator_server.sso"
-                  __type   =   "ShotCreatorLink"
-               }
-               damage   =   250
-               heavyHitDamage   =   0
-               damagerLink   =   {
-                  damagerDescUid   =   "pc_helbrute_charged_plasma"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               coeffDamage   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     100,
-                     1
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               penetrationPreset   =   "no_penetration"
-               bulletSpeed   =   50
-               gravity   =   0
-               canDamageSelf   =   False
-               canKnockback   =   False
-               isGuardbreak   =   False
-               isPervasive   =   False
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
-      }
-      barrelDescriptions   =   {
-         pew_pew   =   {
-            shellName   =   "simple_plasma_shot"
-            clipName   =   "default_clip"
-            shootSettings   =   {
-               fireRate   =   {
-                  shotsPerMin   =   100
-                  __type   =   "FixedFireRate"
-               }
-               shootLogicUid   =   "single_fire"
-               denseCompensation   =   1
-               triggerType   =   "RELEASE"
-               __type   =   "ShootSettings"
-            }
-            recoilSettings   =   {
-               cameraRecoilSettings   =   {
-                  recoilByTimeHorizontal   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        0.4,
-                        -0.01,
-                        0.85,
-                        0.01,
-                        1.4,
-                        -0.01,
-                        2.4,
-                        0
-                     ]
-                     __type   =   "SplineCurve1d"
-                  }
-                  recoilByTimeVertical   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        10,
-                        60
-                     ]
-                     __type   =   "SplineCurve1d"
-                  }
-                  riseTimeSpeed   =   1
-                  recoveryDelay   =   0.3
-                  recoverSpeedVertical   =   22
-                  recoverSpeedHorizontal   =   22
-                  __type   =   "CameraRecoilSettings"
-               }
-               weaponRecoilSettings   =   {
-                  recoilPresets   =   {
-                     BLIND   =   {
-                        baseSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        movementOverrideSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                     MINI_ZOOM   =   {
-                        movementOverrideSettings   =   {
-                           recoil   =   1
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                     AUGMENTED_ZOOM   =   {
-                        baseSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        movementOverrideSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                  }
-                  weaponOffSetIronSight   =   {
-                     y   =   -0.063
-                     z   =   0.25
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "WeaponRecoilSettings"
-               }
-               targetRecoilSettings   =   {
-                  minDistToWeapon   =   3
-                  recoilByTime   =   {
-                     spline   =   [
-                        0,
-                        0.1
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilRecoverSpeed   =   2
-                  recoilSectorsCount   =   4
-                  recoilSectorAngle1   =   1
-                  recoilSectorAngle2   =   1.2
-                  recoilSectorAngle3   =   1.5
-                  recoilSectorsOrder   =   "abcdefghijkl"
-                  swingSpeed   =   1
-                  weaponTurnSpeed   =   60
-                  weaponTurnSlowDown   =   7
-                  isRotatingToCamera   =   True
-                  __type   =   "TargetRecoilSettings"
-               }
-               dynamicCameraDistanceSettings   =   {
-                  blindPresetUid   =   "hwpn_plasma_incinerator_common_blind"
-                  miniZoomPresetUid   =   "hwpn_plasma_incinerator_common_minizoom"
-                  __type   =   "DynamicCameraDistanceSettings"
-               }
-               __type   =   "RecoilSettings"
-            }
-            spreadSettings   =   {
-               minBulletSpread   =   0
-               maxBulletSpread   =   1.6
-               spreadEnergyDesc   =   {
-                  type   =   {
-                     energyRegenerationRules   =   {
-                        SpreadRegen   =   {
-                           pushPercent   =   900
-                           __type   =   "EnergySpreadRegen"
-                        }
-                     }
-                     __type   =   "Energy"
-                  }
-                  __type   =   "EnergyDesc"
-               }
-               spreadSpline   =   {
-                  spline   =   [
-                     0,
-                     100,
-                     55,
-                     100,
-                     100,
-                     100
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               __type   =   "SpreadControllerSettings"
-            }
-            isIsolated   =   False
-            __type   =   "BarrelDescription"
-         }
-         big_pew_pew   =   {
-            shellName   =   "plasma_bomb_of_doom"
-            clipName   =   "default_clip"
-            shootSettings   =   {
-               fireRate   =   {
-                  shotsPerMin   =   90
-                  __type   =   "FixedFireRate"
-               }
-               shootLogicUid   =   "single_fire"
-               denseCompensation   =   0.85
-               triggerType   =   "CHARGE"
-               chargeDuration   =   2
-               __type   =   "ShootSettings"
-            }
-            recoilSettings   =   {
-               cameraRecoilSettings   =   {
-                  recoilByTimeHorizontal   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        1.4,
-                        -0.01,
-                        2.4,
-                        0
-                     ]
-                     __type   =   "SplineCurve1d"
-                  }
-                  recoilByTimeVertical   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        3,
-                        30
-                     ]
-                     __type   =   "SplineCurve1d"
-                  }
-                  riseTimeSpeed   =   1
-                  recoveryDelay   =   0.3
-                  recoverSpeedVertical   =   22
-                  recoverSpeedHorizontal   =   22
-                  __type   =   "CameraRecoilSettings"
-               }
-               weaponRecoilSettings   =   {
-                  recoilPresets   =   {
-                     BLIND   =   {
-                        baseSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        movementOverrideSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                     MINI_ZOOM   =   {
-                        movementOverrideSettings   =   {
-                           recoil   =   1
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                     AUGMENTED_ZOOM   =   {
-                        baseSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        movementOverrideSettings   =   {
-                           spreadMin   =   1
-                           spreadMax   =   1
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                  }
-                  weaponOffSetIronSight   =   {
-                     y   =   -0.063
-                     z   =   0.25
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "WeaponRecoilSettings"
-               }
-               targetRecoilSettings   =   {
-                  minDistToWeapon   =   3
-                  recoilByTime   =   {
-                     spline   =   [
-                        0,
-                        0.1
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilRecoverSpeed   =   2
-                  recoilSectorsCount   =   4
-                  recoilSectorAngle1   =   1
-                  recoilSectorAngle2   =   1.2
-                  recoilSectorAngle3   =   1.5
-                  recoilSectorsOrder   =   "abcdefghijkl"
-                  swingSpeed   =   1
-                  weaponTurnSpeed   =   60
-                  weaponTurnSlowDown   =   7
-                  isRotatingToCamera   =   True
-                  __type   =   "TargetRecoilSettings"
-               }
-               dynamicCameraDistanceSettings   =   {
-                  blindPresetUid   =   "hwpn_plasma_incinerator_charged_blind"
-                  miniZoomPresetUid   =   "hwpn_plasma_incinerator_charged_minizoom"
-                  __type   =   "DynamicCameraDistanceSettings"
-               }
-               __type   =   "RecoilSettings"
-            }
-            spreadSettings   =   {
-               minBulletSpread   =   0
-               maxBulletSpread   =   2
-               spreadEnergyDesc   =   {
-                  type   =   {
-                     energyRegenerationRules   =   {
-                        SpreadRegen   =   {
-                           pushPercent   =   900
-                           __type   =   "EnergySpreadRegen"
-                        }
-                     }
-                     __type   =   "Energy"
-                  }
-                  __type   =   "EnergyDesc"
-               }
-               spreadSpline   =   {
-                  spline   =   [
-                     0,
-                     100,
-                     55,
-                     100,
-                     100,
-                     100
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               __type   =   "SpreadControllerSettings"
-            }
-            isIsolated   =   False
-            __type   =   "BarrelDescription"
-         }
-      }
-      barrelSwitcherSettings   =   {
-         barrelForTap   =   "pew_pew"
-         barrelForCharge   =   "big_pew_pew"
-         barrelForChargeThreshold   =   0.15
-         __type   =   "BarrelSwitcherSettingsPlasma"
-      }
-      ammoSettings   =   {
-         typeData   =   {
-            ammo_universal_heavy   =   {
-               maxAmount   =   0
-               __type   =   "AmmoTypeSettings"
-            }
-         }
-         __type   =   "AmmoSettings"
-      }
-      reloadSettings   =   {
-         reloadAnimControllerUid   =   "<Empty>"
-         __type   =   "ReloadSettings"
-      }
-      clipsSettings   =   {
-         default_clip   =   {
-            ammoType   =   "ammo_universal_heavy"
-            isInfiniteAmmo   =   True
-            isInfiniteClip   =   True
-            __type   =   "ClipSettings"
-         }
-      }
-      sequenceSettings   =   {
-         sequenceType   =   "overheat_reload"
-         __type   =   "SequenceSettings"
-      }
-      isOverheatAffectingShooting   =   True
-      overheatSettings   =   {
-         continuousHeatingSpeed   =   15
-         barrelsHeatPerShot   =   {
-            pew_pew   =   {
-               value   =   12.5
-               __type   =   "HeatPercentPerShot"
-            }
-            big_pew_pew   =   {
-               value   =   100
-               __type   =   "HeatPercentPerShot"
-            }
-         }
-         heatingStartDelaySec   =   0
-         venting   =   {
-            canUseManualVenting   =   True
-            ticksPerSec   =   24
-            overheatedRegenDelaySec   =   0.8
-            normalRegenDelaySec   =   1.2
-            normalRegenRate   =   10
-            improvedRegenDurationSec   =   4
-            improvedRegenRateMultiplier   =   2.5
-            __type   =   "VentingSettingsFirearm"
-         }
-         isShootingForbiddenWhileOverheated   =   True
-         coolOffThreshold   =   0
-         __type   =   "OverheatSettingsFirearm"
-      }
-      __type   =   "FirearmDefaultDescription"
-   }
-   mounted_forge_bolter   =   {
-      pickupVisualUid   =   "arifle_heavy_bolt_rifle"
-      actorName   =   "mounted_forge_bolter"
-      category   =   "RIFLE_FA"
-      shellDescriptions   =   {
-         bolts   =   {
-            projectileType   =   {
-               projectileType   =   "bolter_bullet"
-               __type   =   "ClientProjectileType"
-            }
-            endEffectsType   =   "bolter_bullet"
-            shotCreatorSettings   =   {
-               headshotMult   =   1
-               damage   =   4
-               heavyHitDamage   =   0.125
-               damagerLink   =   {
-                  damagerDescUid   =   "arifle_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               coeffDamage   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     100,
-                     1
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               penetrationPreset   =   "four_targets_penetration"
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
-      }
-      barrelDescriptions   =   {
-         auto   =   {
-            shellName   =   "bolts"
-            clipName   =   "default_clip"
-            shootSettings   =   {
-               fireRate   =   {
-                  shotsPerMin   =   350
-                  __type   =   "FixedFireRate"
-               }
-               shootLogicUid   =   "autofire"
-               __type   =   "ShootSettings"
-            }
-            recoilSettings   =   {
-               cameraRecoilSettings   =   {
-                  recoilByTimeHorizontal   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        0.85,
-                        0,
-                        4,
-                        -2,
-                        13,
-                        2
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilByTimeVertical   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        0.85,
-                        0.8,
-                        6,
-                        5.8,
-                        13,
-                        9
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  riseTimeSpeed   =   2.1
-                  recoveryDelay   =   0.21
-                  recoverSpeedVertical   =   19
-                  recoverSpeedHorizontal   =   19
-                  modifiers   =   {
-                     CameraRecoilDeviceModifier   =   {
-                        deviceType   =   "GAMEPAD"
-                        modificatorHorizontal   =   -30
-                        modificatorVertical   =   -30
-                     }
-                  }
-                  __type   =   "CameraRecoilSettings"
-               }
-               weaponRecoilSettings   =   {
-                  recoilPresets   =   {
-                     BLIND   =   {
-                        baseSettings   =   {
-                           spreadMin   =   17.5
-                           spreadMax   =   3.4
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        movementOverrideSettings   =   {
-                           spreadMin   =   17.5
-                           spreadMax   =   3.4
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                     MINI_ZOOM   =   {
-                        movementOverrideSettings   =   {
-                           spreadMin   =   2.5
-                           spreadMax   =   2.5
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                  }
-                  weaponOffSetIronSight   =   {
-                     y   =   -0.063
-                     z   =   0.25
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "WeaponRecoilSettings"
-               }
-               targetRecoilSettings   =   {
-                  minDistToWeapon   =   3
-                  minDistToCamera   =   2.5
-                  recoilByTime   =   {
-                     spline   =   [
-                        0,
-                        0.1
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilRecoverSpeed   =   2
-                  recoilSectorsCount   =   4
-                  recoilSectorAngle1   =   1
-                  recoilSectorAngle2   =   1.2
-                  recoilSectorAngle3   =   1.5
-                  recoilSectorsOrder   =   "abcdefghijkl"
-                  swingSpeed   =   1
-                  weaponTurnSpeed   =   60
-                  weaponTurnSlowDown   =   7
-                  isRotatingToCamera   =   True
-                  __type   =   "TargetRecoilSettings"
-               }
-               dynamicCameraDistanceSettings   =   {
-                  blindPresetUid   =   "arifle_heavy_bolt_rifle_blind"
-                  miniZoomPresetUid   =   "arifle_heavy_bolt_rifle_minizoom"
-                  __type   =   "DynamicCameraDistanceSettings"
-               }
-               __type   =   "RecoilSettings"
-            }
-            spreadSettings   =   {
-               minBulletSpread   =   0.2
-               maxBulletSpread   =   1.7
-               spreadEnergyDesc   =   {
-                  type   =   {
-                     energyRegenerationRules   =   {
-                        SpreadRegen   =   {
-                           pushPercent   =   140
-                           __type   =   "EnergySpreadRegen"
-                        }
-                     }
-                     __type   =   "Energy"
-                  }
-                  __type   =   "EnergyDesc"
-               }
-               spreadSpline   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     10,
-                     25,
-                     40,
-                     45,
-                     50,
-                     25,
-                     100,
-                     22
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               __type   =   "SpreadControllerSettings"
-            }
-            __type   =   "BarrelDescription"
-         }
-      }
-      ammoSettings   =   {
-         typeData   =   {
-            ammo_arifle   =   {
-               maxAmount   =   180
-               __type   =   "AmmoTypeSettings"
-            }
-         }
-         __type   =   "AmmoSettings"
-      }
-      reloadSettings   =   {
-         reloadAnimSpeedScale   =   0.9
-         __type   =   "ReloadSettings"
-      }
-      clipsSettings   =   {
-         default_clip   =   {
-            sslModule   =   "weapons.creator.description.clip_settings"
-            ammoType   =   "ammo_arifle"
-            maxAmmo   =   45
-            magazine   =   {
-               type   =   {
-                  properties   =   {
-                     geom   =   {
-                        nameTpl   =   "wpn_bolt_rifle_heavy_01_mag"
-                     }
-                  }
-                  __type   =   "clip_drop"
-               }
-               __type   =   "IactorDesc"
-            }
-            isInfiniteClip   =   True
-            magazineMeshes   =   [
-               "magazine_01"
-            ]
-            magazineMeshesDropped   =   [
-               "magazine_01_dropped"
-            ]
-            __type   =   "ClipSettings"
-         }
-      }
-      aimSettings   =   {
-         sslModule   =   "weapons.creator.description.aim_settings"
-         autoAimSettingsDefault   =   {
-            autoaimAngle   =   2
-            autoaimDistance   =   15
-            autoaimFalloffDistance   =   10
-            autoaimNearFalloffDistance   =   0
-            __type   =   "AutoAimSettings"
-         }
-         autoAimSettingsOverrides   =   {
-            ZOOM   =   {
-               deviationAngle   =   1.7
-               autoaimAngle   =   1.7
-               autoaimDistance   =   65
-               autoaimFalloffDistance   =   55
-               autoaimNearFalloffDistance   =   0
-               __type   =   "AutoAimSettings"
-            }
-            AUGMENTED_ZOOM   =   {
-               deviationAngle   =   1.7
-               autoaimAngle   =   1.7
-               autoaimDistance   =   65
-               autoaimFalloffDistance   =   55
-               autoaimNearFalloffDistance   =   0
-               __type   =   "AutoAimSettings"
-            }
-         }
-         magnetismSettingsDefault   =   {
-            magnetismDistance   =   15
-            magnetismFalloffDistance   =   10
-            __type   =   "MagnetismSettings"
-         }
-         magnetismSettingsOverrides   =   {
-            ZOOM   =   {
-               magnetismAngle   =   3
-               magnetismDistance   =   85
-               magnetismFalloffDistance   =   75
-               magnetismNearFalloffDistance   =   5
-               __type   =   "MagnetismSettings"
-            }
-            AUGMENTED_ZOOM   =   {
-               magnetismAngle   =   3
-               magnetismDistance   =   85
-               magnetismFalloffDistance   =   75
-               magnetismNearFalloffDistance   =   5
-               __type   =   "MagnetismSettings"
-            }
-         }
-         __type   =   "AimSettings"
-      }
-      isOverheatAffectingShooting   =   False
-      overheatSettings   =   {
-         barrelsHeatPerShot   =   {
-            auto   =   {
-               value   =   3.4
-               __type   =   "HeatPercentPerShot"
-            }
-         }
-         venting   =   {
-            ticksPerSec   =   24
-            normalRegenDelaySec   =   0.3
-            normalRegenRate   =   40
-            __type   =   "VentingSettingsFirearm"
-         }
-         __type   =   "OverheatSettingsFirearm"
-      }
-      abilityUid   =   "ability_shoulder_gun_bolter"
-      __type   =   "FirearmDefaultDescription"
-   }
-   mounted_rocket_pod   =   {
-      pickupVisualUid   =   "arifle_heavy_bolt_rifle"
-      actorName   =   "mounted_rocket_pod"
-      category   =   "RIFLE_FA"
-      shellDescriptions   =   {
-         simple_shot   =   {
-            projectileType   =   {
-               projectileType   =   "pjl_plasma_incinerator"
-               __type   =   "ClientProjectileType"
-            }
-            endEffectsType   =   "plasma_incinerator_bullet"
-            shotCreatorSettings   =   {
-               shotCreator   =   {
-                  firearmDescriberLink   =   "client_local_pjl_shot"
-                  __type   =   "ShotCreatorLink"
-               }
-               headshotMult   =   1
-               damage   =   10
-               heavyHitDamage   =   1
-               damagerLink   =   {
-                  damagerDescUid   =   "rocket_pod_rocket"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               coeffDamage   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     100,
-                     1
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               penetrationPreset   =   "no_penetration"
-               bulletSpeed   =   60
-               gravity   =   7
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
-         gun_strike_shot   =   {
-            projectileType   =   {
-               projectileType   =   "gun_strike_shot_plasma_pistol"
-               __type   =   "ClientProjectileType"
-            }
-            endEffectsType   =   "gun_strike_shot_plasma_pistol"
-            shotCreatorSettings   =   {
-               bulletSpeed   =   160
-               shouldOverridePjlCollisionRadius   =   True
-               nonStaticCdtRadius   =   0.01
-               staticCdtRadius   =   0.01
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
-      }
-      barrelDescriptions   =   {
-         auto   =   {
-            shellName   =   "simple_shot"
-            clipName   =   "default_clip"
-            shootSettings   =   {
-               fireRate   =   {
-                  shotsPerMin   =   100
-                  __type   =   "FixedFireRate"
-               }
-               shootLogicUid   =   "autofire"
-               __type   =   "ShootSettings"
-            }
-            recoilSettings   =   {
-               cameraRecoilSettings   =   {
-                  recoilByTimeHorizontal   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        0.85,
-                        0,
-                        4,
-                        -2,
-                        13,
-                        2
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilByTimeVertical   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        0.85,
-                        0.8,
-                        6,
-                        5.8,
-                        13,
-                        9
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  riseTimeSpeed   =   2.1
-                  recoveryDelay   =   0.21
-                  recoverSpeedVertical   =   19
-                  recoverSpeedHorizontal   =   19
-                  modifiers   =   {
-                     CameraRecoilDeviceModifier   =   {
-                        deviceType   =   "GAMEPAD"
-                        modificatorHorizontal   =   -30
-                        modificatorVertical   =   -30
-                     }
-                  }
-                  __type   =   "CameraRecoilSettings"
-               }
-               weaponRecoilSettings   =   {
-                  recoilPresets   =   {
-                     BLIND   =   {
-                        baseSettings   =   {
-                           spreadMin   =   17.5
-                           spreadMax   =   3.4
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        movementOverrideSettings   =   {
-                           spreadMin   =   17.5
-                           spreadMax   =   3.4
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                     MINI_ZOOM   =   {
-                        movementOverrideSettings   =   {
-                           spreadMin   =   2.5
-                           spreadMax   =   2.5
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                  }
-                  weaponOffSetIronSight   =   {
-                     y   =   -0.063
-                     z   =   0.25
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "WeaponRecoilSettings"
-               }
-               targetRecoilSettings   =   {
-                  minDistToWeapon   =   3
-                  minDistToCamera   =   2.5
-                  recoilByTime   =   {
-                     spline   =   [
-                        0,
-                        0.1
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilRecoverSpeed   =   2
-                  recoilSectorsCount   =   4
-                  recoilSectorAngle1   =   1
-                  recoilSectorAngle2   =   1.2
-                  recoilSectorAngle3   =   1.5
-                  recoilSectorsOrder   =   "abcdefghijkl"
-                  swingSpeed   =   1
-                  weaponTurnSpeed   =   60
-                  weaponTurnSlowDown   =   7
-                  isRotatingToCamera   =   True
-                  __type   =   "TargetRecoilSettings"
-               }
-               dynamicCameraDistanceSettings   =   {
-                  blindPresetUid   =   "arifle_heavy_bolt_rifle_blind"
-                  miniZoomPresetUid   =   "arifle_heavy_bolt_rifle_minizoom"
-                  __type   =   "DynamicCameraDistanceSettings"
-               }
-               __type   =   "RecoilSettings"
-            }
-            spreadSettings   =   {
-               minBulletSpread   =   0.2
-               maxBulletSpread   =   1.7
-               spreadEnergyDesc   =   {
-                  type   =   {
-                     energyRegenerationRules   =   {
-                        SpreadRegen   =   {
-                           pushPercent   =   140
-                           __type   =   "EnergySpreadRegen"
-                        }
-                     }
-                     __type   =   "Energy"
-                  }
-                  __type   =   "EnergyDesc"
-               }
-               spreadSpline   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     10,
-                     25,
-                     40,
-                     45,
-                     50,
-                     25,
-                     100,
-                     22
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               __type   =   "SpreadControllerSettings"
-            }
-            __type   =   "BarrelDescription"
-         }
-         gun_strike   =   {
-            shellName   =   "gun_strike_shot"
-            clipName   =   "default_clip"
-            shootSettings   =   {
-               fireRate   =   {
-                  shotsPerMin   =   300
-                  __type   =   "FixedFireRate"
-               }
-               shootLogicUid   =   "single_fire"
-               __type   =   "ShootSettings"
-            }
-            recoilSettings   =   {
-               cameraRecoilSettings   =   {
-                  recoilByTimeHorizontal   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        0.394743,
-                        -0.05,
-                        0.83538,
-                        0.04,
-                        1.387643,
-                        -0.002998,
-                        2.385395,
-                        0
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilByTimeVertical   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        2.8,
-                        5.5
-                     ]
-                     argumentScale   =   1
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoveryDelay   =   0.27
-                  recoverSpeedVertical   =   14
-                  recoverSpeedHorizontal   =   14
-                  __type   =   "CameraRecoilSettings"
-               }
-               weaponRecoilSettings   =   {
-                  recoilPresets   =   {
-                     BLIND   =   {
-                        movementOverrideSettings   =   {
-                           spreadMin   =   2
-                           spreadMax   =   2
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                     MINI_ZOOM   =   {
-                        movementOverrideSettings   =   {
-                           spreadMin   =   2
-                           spreadMax   =   2
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                  }
-                  weaponOffSetIronSight   =   {
-                     y   =   -0.063
-                     z   =   0.25
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "WeaponRecoilSettings"
-               }
-               targetRecoilSettings   =   {
-                  minDistToWeapon   =   3
-                  minDistToCamera   =   2.5
-                  recoilByTime   =   {
-                     spline   =   [
-                        0,
-                        0.1
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilRecoverSpeed   =   1
-                  recoilSectorsCount   =   4
-                  recoilSectorAngle1   =   1
-                  recoilSectorAngle2   =   1.5
-                  recoilSectorAngle3   =   2
-                  recoilSectorsOrder   =   "abcdefghijkl"
-                  swingSpeed   =   1
-                  weaponTurnSpeed   =   60
-                  weaponTurnSlowDown   =   7
-                  isRotatingToCamera   =   True
-                  __type   =   "TargetRecoilSettings"
-               }
-               dynamicCameraDistanceSettings   =   {
-                  blindPresetUid   =   "hgun_bolt_pistol_blind"
-                  miniZoomPresetUid   =   "hgun_bolt_pistol_minizoom"
-                  __type   =   "DynamicCameraDistanceSettings"
-               }
-               __type   =   "RecoilSettings"
-            }
-            spreadSettings   =   {
-               minBulletSpread   =   0.15
-               maxBulletSpread   =   1.6
-               spreadEnergyDesc   =   {
-                  type   =   {
-                     energyRegenerationRules   =   {
-                        SpreadRegen   =   {
-                           pushPercent   =   170
-                           __type   =   "EnergySpreadRegen"
-                        }
-                     }
-                     __type   =   "Energy"
-                  }
-                  __type   =   "EnergyDesc"
-               }
-               spreadSpline   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     30,
-                     37.5,
-                     60,
-                     45,
-                     100,
-                     40
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               __type   =   "SpreadControllerSettings"
-            }
-            __type   =   "BarrelDescription"
-         }
-      }
-      ammoSettings   =   {
-         typeData   =   {
-            ammo_arifle   =   {
-               maxAmount   =   180
-               __type   =   "AmmoTypeSettings"
-            }
-         }
-         __type   =   "AmmoSettings"
-      }
-      reloadSettings   =   {
-         reloadAnimSpeedScale   =   0.9
-         __type   =   "ReloadSettings"
-      }
-      clipsSettings   =   {
-         default_clip   =   {
-            sslModule   =   "weapons.creator.description.clip_settings"
-            ammoType   =   "ammo_arifle"
-            maxAmmo   =   45
-            magazine   =   {
-               type   =   {
-                  properties   =   {
-                     geom   =   {
-                        nameTpl   =   "wpn_bolt_rifle_heavy_01_mag"
-                     }
-                  }
-                  __type   =   "clip_drop"
-               }
-               __type   =   "IactorDesc"
-            }
-            isInfiniteClip   =   True
-            magazineMeshes   =   [
-               "magazine_01"
-            ]
-            magazineMeshesDropped   =   [
-               "magazine_01_dropped"
-            ]
-            __type   =   "ClipSettings"
-         }
-      }
-      aimSettings   =   {
-         sslModule   =   "weapons.creator.description.aim_settings"
-         autoAimSettingsDefault   =   {
-            autoaimAngle   =   2
-            autoaimDistance   =   15
-            autoaimFalloffDistance   =   10
-            autoaimNearFalloffDistance   =   0
-            __type   =   "AutoAimSettings"
-         }
-         autoAimSettingsOverrides   =   {
-            ZOOM   =   {
-               deviationAngle   =   1.7
-               autoaimAngle   =   1.7
-               autoaimDistance   =   65
-               autoaimFalloffDistance   =   55
-               autoaimNearFalloffDistance   =   0
-               __type   =   "AutoAimSettings"
-            }
-            AUGMENTED_ZOOM   =   {
-               deviationAngle   =   1.7
-               autoaimAngle   =   1.7
-               autoaimDistance   =   65
-               autoaimFalloffDistance   =   55
-               autoaimNearFalloffDistance   =   0
-               __type   =   "AutoAimSettings"
-            }
-         }
-         magnetismSettingsDefault   =   {
-            magnetismDistance   =   15
-            magnetismFalloffDistance   =   10
-            __type   =   "MagnetismSettings"
-         }
-         magnetismSettingsOverrides   =   {
-            ZOOM   =   {
-               magnetismAngle   =   3
-               magnetismDistance   =   85
-               magnetismFalloffDistance   =   75
-               magnetismNearFalloffDistance   =   5
-               __type   =   "MagnetismSettings"
-            }
-            AUGMENTED_ZOOM   =   {
-               magnetismAngle   =   3
-               magnetismDistance   =   85
-               magnetismFalloffDistance   =   75
-               magnetismNearFalloffDistance   =   5
-               __type   =   "MagnetismSettings"
-            }
-         }
-         __type   =   "AimSettings"
-      }
-      isOverheatAffectingShooting   =   False
-      overheatSettings   =   {
-         barrelsHeatPerShot   =   {
-            auto   =   {
-               value   =   3.4
-               __type   =   "HeatPercentPerShot"
-            }
-            gun_strike   =   {
-               value   =   0
-               __type   =   "HeatPercentPerShot"
-            }
-         }
-         venting   =   {
-            ticksPerSec   =   24
-            normalRegenDelaySec   =   0.3
-            normalRegenRate   =   40
-            __type   =   "VentingSettingsFirearm"
-         }
-         __type   =   "OverheatSettingsFirearm"
-      }
-      abilityUid   =   "ability_shoulder_gun_rocket_pod"
-      __type   =   "FirearmDefaultDescription"
-   }
-   tyr_biovore_cannon   =   {
-      actorName   =   "tyr_biovore_cannon"
-      category   =   "SPECIAL"
-      debugCategory   =   "NPC"
-      shellDescriptions   =   {
-         shot   =   {
-            shotCreatorSettings   =   {
-               shotCreatorUid   =   "rocket_shot"
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
-      }
-      barrelDescriptions   =   {
-         autofire   =   {
-            shellName   =   "shot"
-            clipName   =   "default_clip"
-            __type   =   "BarrelDescription"
-         }
-      }
-      ammoSettings   =   {
-         typeData   =   {
-            ammo_pistol   =   {
-               __type   =   "AmmoTypeSettings"
-            }
-         }
-         __type   =   "AmmoSettings"
-      }
-      clipsSettings   =   {
-         default_clip   =   {
-            ammoType   =   "ammo_pistol"
-            __type   =   "ClipSettings"
-         }
-      }
-      __type   =   "FirearmDefaultDescription"
-   }
-   mounted_lascannon   =   {
-      pickupVisualUid   =   "brifle_stalker_bolt_rifle"
-      actorName   =   "mounted_lascannon"
-      category   =   "RIFLE_FA"
-      shellDescriptions   =   {
-         lascannon   =   {
-            projectileType   =   {
-               projectileType   =   "lascannon_bullet"
-               __type   =   "ClientProjectileType"
-            }
-            endEffectsType   =   "lascannon_bullet"
-            shotCreatorSettings   =   {
-               headshotMult   =   1
-               damage   =   5
-               heavyHitDamage   =   0.5
-               damagerLink   =   {
-                  damagerDescUid   =   "heavybolt_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               penetrationPreset   =   "four_targets_penetration"
-               __type   =   "ShotCreatorSettings"
-            }
-            __type   =   "ShellDescription"
-         }
-      }
-      barrelDescriptions   =   {
-         auto   =   {
-            shellName   =   "lascannon"
-            clipName   =   "default_clip"
-            shootSettings   =   {
-               fireRate   =   {
-                  shotsPerMin   =   150
-                  __type   =   "FixedFireRate"
-               }
-               shootLogicUid   =   "autofire"
-               denseCompensation   =   0.6
-               __type   =   "ShootSettings"
-            }
-            recoilSettings   =   {
-               cameraRecoilSettings   =   {
-                  recoilByTimeHorizontal   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        5,
-                        -1
-                     ]
-                     __type   =   "SplineCurve1d"
-                  }
-                  recoilByTimeVertical   =   {
-                     spline   =   [
-                        0,
-                        0,
-                        10,
-                        20
-                     ]
-                     __type   =   "SplineCurve1d"
-                  }
-                  riseTimeSpeed   =   2.1
-                  riseRateHorizontal   =   7
-                  riseRateVertical   =   7
-                  recoveryDelay   =   0.44
-                  recoverSpeedVertical   =   0
-                  recoverSpeedHorizontal   =   0
-                  modifiers   =   {
-                     CameraRecoilDeviceModifier   =   {
-                        deviceType   =   "GAMEPAD"
-                        modificatorHorizontal   =   -30
-                        modificatorVertical   =   -30
-                     }
-                  }
-                  __type   =   "CameraRecoilSettings"
-               }
-               weaponRecoilSettings   =   {
-                  recoilPresets   =   {
-                     BLIND   =   {
-                        baseSettings   =   {
-                           spreadMin   =   140
-                           spreadMax   =   16
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        movementOverrideSettings   =   {
-                           spreadMin   =   140
-                           spreadMax   =   16
-                           __type   =   "RecoilPresetSettings"
-                        }
-                        __type   =   "RecoilPreset"
-                     }
-                  }
-                  weaponOffSetIronSight   =   {
-                     y   =   -0.063
-                     z   =   0.25
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "WeaponRecoilSettings"
-               }
-               targetRecoilSettings   =   {
-                  minDistToWeapon   =   3
-                  minDistToCamera   =   2.5
-                  recoilByTime   =   {
-                     spline   =   [
-                        0,
-                        0.1
-                     ]
-                     __type   =   "SplineLinear1d"
-                  }
-                  recoilRecoverSpeed   =   2
-                  recoilSectorsCount   =   4
-                  recoilSectorAngle1   =   1
-                  recoilSectorAngle2   =   1.2
-                  recoilSectorAngle3   =   1.5
-                  recoilSectorsOrder   =   "abcdefghijkl"
-                  swingSpeed   =   1
-                  weaponTurnSpeed   =   60
-                  weaponTurnSlowDown   =   7
-                  isRotatingToCamera   =   True
-                  __type   =   "TargetRecoilSettings"
-               }
-               dynamicCameraDistanceSettings   =   {
-                  blindPresetUid   =   "brifle_stalker_bolt_rifle_blind"
-                  miniZoomPresetUid   =   "brifle_stalker_bolt_rifle_minizoom"
-                  __type   =   "DynamicCameraDistanceSettings"
-               }
-               __type   =   "RecoilSettings"
-            }
-            spreadSettings   =   {
-               minBulletSpread   =   0.05
-               maxBulletSpread   =   0.5
-               spreadEnergyDesc   =   {
-                  type   =   {
-                     energyRegenerationRules   =   {
-                        SpreadRegen   =   {
-                           pushPercent   =   450
-                           __type   =   "EnergySpreadRegen"
-                        }
-                     }
-                     __type   =   "Energy"
-                  }
-                  __type   =   "EnergyDesc"
-               }
-               spreadSpline   =   {
-                  spline   =   [
-                     0,
-                     1,
-                     20,
-                     80,
-                     80,
-                     90,
-                     100,
-                     85
-                  ]
-                  __type   =   "SplineLinear1d"
-               }
-               __type   =   "SpreadControllerSettings"
-            }
-            __type   =   "BarrelDescription"
-         }
-      }
-      ammoSettings   =   {
-         typeData   =   {
-            ammo_arifle   =   {
-               maxAmount   =   180
-               __type   =   "AmmoTypeSettings"
-            }
-         }
-         __type   =   "AmmoSettings"
-      }
-      reloadSettings   =   {
-         reloadAnimSpeedScale   =   0.9
-         __type   =   "ReloadSettings"
-      }
-      clipsSettings   =   {
-         default_clip   =   {
-            ammoType   =   "ammo_arifle"
-            maxAmmo   =   45
-            magazine   =   {
-               type   =   {
-                  properties   =   {
-                     geom   =   {
-                        nameTpl   =   "wpn_bolt_rifle_heavy_01_mag"
-                     }
-                  }
-                  __type   =   "clip_drop"
-               }
-               __type   =   "IactorDesc"
-            }
-            isInfiniteClip   =   True
-            magazineMeshes   =   [
-               "magazine_01"
-            ]
-            magazineMeshesDropped   =   [
-               "magazine_01_dropped"
-            ]
-            __type   =   "ClipSettings"
-         }
-      }
-      aimSettings   =   {
-         sslModule   =   "weapons.creator.description.aim_settings"
-         autoAimSettingsDefault   =   {
-            autoaimAngle   =   2
-            autoaimDistance   =   15
-            autoaimFalloffDistance   =   10
-            autoaimNearFalloffDistance   =   0
-            __type   =   "AutoAimSettings"
-         }
-         autoAimSettingsOverrides   =   {
-            ZOOM   =   {
-               deviationAngle   =   1.7
-               autoaimAngle   =   1.7
-               autoaimDistance   =   65
-               autoaimFalloffDistance   =   55
-               autoaimNearFalloffDistance   =   0
-               __type   =   "AutoAimSettings"
-            }
-            AUGMENTED_ZOOM   =   {
-               deviationAngle   =   1.7
-               autoaimAngle   =   1.7
-               autoaimDistance   =   65
-               autoaimFalloffDistance   =   55
-               autoaimNearFalloffDistance   =   0
-               __type   =   "AutoAimSettings"
-            }
-         }
-         magnetismSettingsDefault   =   {
-            magnetismDistance   =   15
-            magnetismFalloffDistance   =   10
-            __type   =   "MagnetismSettings"
-         }
-         magnetismSettingsOverrides   =   {
-            ZOOM   =   {
-               magnetismAngle   =   3
-               magnetismDistance   =   85
-               magnetismFalloffDistance   =   75
-               magnetismNearFalloffDistance   =   5
-               __type   =   "MagnetismSettings"
-            }
-            AUGMENTED_ZOOM   =   {
-               magnetismAngle   =   3
-               magnetismDistance   =   85
-               magnetismFalloffDistance   =   75
-               magnetismNearFalloffDistance   =   5
-               __type   =   "MagnetismSettings"
-            }
-         }
-         __type   =   "AimSettings"
-      }
-      isOverheatAffectingShooting   =   False
-      overheatSettings   =   {
-         barrelsHeatPerShot   =   {
-            auto   =   {
-               value   =   3.4
-               __type   =   "HeatPercentPerShot"
-            }
-         }
-         venting   =   {
-            ticksPerSec   =   24
-            normalRegenDelaySec   =   0.3
-            normalRegenRate   =   40
-            __type   =   "VentingSettingsFirearm"
-         }
-         __type   =   "OverheatSettingsFirearm"
-      }
-      abilityUid   =   "ability_shoulder_gun_lascannon"
-      __type   =   "FirearmDefaultDescription"
    }
 }
 __type   =   "FirearmLibrary"

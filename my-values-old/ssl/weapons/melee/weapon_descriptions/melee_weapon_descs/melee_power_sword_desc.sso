@@ -2,7 +2,7 @@ sslModule   =   "weapons.melee.weapon_descriptions.melee_weapon_desc"
 ownerTplName   =   "cc_titus"
 weaponType   =   "POWERSWORD"
 weaponActorUid   =   "power_sword"
-healthDamage   =   0105
+healthDamage   =  100
 morphemeWeaponType   =   4
 meleeDetectorSettings   =   {
    RightHand   =   {
@@ -138,14 +138,20 @@ comboDesc   =   {
       riposteEnabledDuration   =   0.495
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
             healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
+            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
                __type   =   "Vector3d"
             }
-            __type   =   "MeleeExtraDamageSettingsMarineRiposte"
+            __type   =   "MeleeExtraDamageSettings"
          }
       }
       parryStanceAnim   =   {
@@ -843,10 +849,10 @@ comboDesc   =   {
                   y   =   8520
                }
                OnHandle   =   [
-                  "BlueprintLibraryFunction_1/logic/nodes/If_2/Input"
+                  "PipeWithCondition_1/Input"
                ]
                eventUidRefParam   =   {
-                  def   =   "melee_change_mode"
+                  def   =   "melee_action_holded"
                   __type   =   "StringRefParam"
                }
                __type   =   "BlueprintNodeHandleEvent"
@@ -878,6 +884,62 @@ comboDesc   =   {
                   __type   =   "AnimTableLinkRefParam"
                }
                __type   =   "BlueprintNodeOrderMorphemeAnimation"
+            }
+            CheckBodyStateCondition_2   =   {
+               viewData   =   {
+                  x   =   8450
+                  y   =   8700
+               }
+               bodyStateCondition   =   {
+                  bodyStateArray   =   [
+                     "FALLING",
+                     "FINISHER_EXECUTOR",
+                     "FINISHER_TARGET",
+                     "GUN_STRIKE_EXECUTOR",
+                     "GRAB_EXECUTOR",
+                     "GRAB_TARGET",
+                     "AIM_AUGMENTED_ZOOM",
+                     "ABILITY_CAST",
+                     "ABILITY_AIMING",
+                     "HEAVY_HIT",
+                     "STAGGER",
+                     "RIPOSTE_HIT",
+                     "KNOCKBACK",
+                     "STUN",
+                     "INCAP",
+                     "DEAD",
+                     "MELEE_STRIKE",
+                     "AIM_ZOOM",
+                     "AIM_SCOPE",
+                     "BLOCK"
+                  ]
+                  type   =   "ANY"
+                  __type   =   "BodyStateCondition"
+               }
+               Check   =   [
+                  "BoolNot_1/bool/cb"
+               ]
+               __type   =   "BlueprintNodeCheckBodyStateCondition"
+            }
+            BoolNot_1   =   {
+               viewData   =   {
+                  x   =   8790
+                  y   =   8670
+               }
+               Bool   =   [
+                  "PipeWithCondition_1/bool/cb"
+               ]
+               __type   =   "BlueprintMathLibraryBoolreverse"
+            }
+            PipeWithCondition_1   =   {
+               viewData   =   {
+                  x   =   8740
+                  y   =   8520
+               }
+               OnExit   =   [
+                  "BlueprintLibraryFunction_1/logic/nodes/If_2/Input"
+               ]
+               __type   =   "BlueprintMathLibraryBoolpipe"
             }
             BlueprintLibraryFunction_4_1   =   {
                captionVar   =   "CheckWeaponMode"
@@ -3719,188 +3781,6 @@ comboDesc   =   {
                ]
                __type   =   "BlueprintNodeIf"
             }
-            MeleeComboStrike_3_1_1_1_F2c8Xhao   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   7446.747
-                  y   =   8050
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "JetpackLand1"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               OnLightTap   =   [
-                  "TriggerEvent_1_3_1_3_F2c8Xhao4/TriggerBlueprintEvent"
-               ]
-               OnLightHold   =   [
-                  "TriggerEvent_1_3_1_2_2_F2c8Xhao6/TriggerBlueprintEvent"
-               ]
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            If_F2c8Xhao1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_if"
-               viewData   =   {
-                  x   =   7150
-                  y   =   7900
-               }
-               OnTrue   =   [
-                  "MeleeComboStrike_4_1_3_1_1_F2c8Xhao2/AddStrikeToCombo"
-               ]
-               OnFalse   =   [
-                  "MeleeComboStrike_3_1_1_1_F2c8Xhao/AddStrikeToCombo"
-               ]
-               __type   =   "BlueprintNodeIf"
-            }
-            MeleeComboStrike_4_1_3_1_1_F2c8Xhao2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   7446.747
-                  y   =   7899.666
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "JetpackAir1"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            MeleeComboStart_1_1_F2c8Xhao3   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_start"
-               viewData   =   {
-                  x   =   6450
-                  y   =   7900
-               }
-               OnLightTap   =   [
-                  "If_F2c8Xhao1/Input"
-               ]
-               OnLightHold   =   [
-                  "If_F2c8Xhao1/Input"
-               ]
-               priorityRef   =   {
-                  def   =   3
-                  __type   =   "IntRefParam"
-               }
-               __type   =   "BlueprintNodeMeleeComboStart"
-            }
-            TriggerEvent_1_3_1_3_F2c8Xhao4   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   7796.747
-                  y   =   8050
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "start_light_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            CheckGroundPoundType_F2c8Xhao5   =   {
-               viewData   =   {
-                  x   =   6950
-                  y   =   8050
-               }
-               IsWallGroundPound   =   [
-                  "If_F2c8Xhao1/condition/cb"
-               ]
-               __type   =   "BlueprintNodeCheckGroundPoundType"
-            }
-            TriggerEvent_1_3_1_2_2_F2c8Xhao6   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   7796.747
-                  y   =   8150
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_light_hold_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            SubscribeOnAbility_F2c8Xhao7   =   {
-               viewData   =   {
-                  x   =   6600
-                  y   =   8200
-               }
-               subscribeOnInitRef   =   {
-                  def   =   True
-                  __type   =   "BoolRefParam"
-               }
-               subscribeType   =   "MULTIPLE"
-               abilitiesUidsRef   =   {
-                  def   =   [
-                     "ability_jetpack",
-                     "ability_jetpack_pve"
-                  ]
-                  __type   =   "AbilityUidArrayRefParam"
-               }
-               OnTagAdded   =   [
-                  "UpdateBPVariable_F2c8Xhao8/Set"
-               ]
-               OnTagRemoved   =   [
-                  "UpdateBPVariable_F2c8Xhao9/Set"
-               ]
-               subscribeOnTagEvents   =   True
-               tagToCheckRef   =   {
-                  def   =   "FLYING"
-                  __type   =   "AbilityStatusTagRefParam"
-               }
-               __type   =   "BlueprintNodeSubscribeOnAbility"
-            }
-            UpdateBPVariable_F2c8Xhao8   =   {
-               viewData   =   {
-                  x   =   7100
-                  y   =   8200
-               }
-               variableUidRef   =   {
-                  def   =   "is_ground_pound"
-                  __type   =   "BlueprintVariableUidRefParam"
-               }
-               boolRef   =   {
-                  def   =   True
-                  __type   =   "BoolRefParam"
-               }
-               vector3dRef   =   {
-                  def   =   {
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "Vector3dRefParam"
-               }
-               __type   =   "BlueprintNodeUpdateVariable"
-            }
-            UpdateBPVariable_F2c8Xhao9   =   {
-               viewData   =   {
-                  x   =   7100
-                  y   =   8300
-               }
-               variableUidRef   =   {
-                  def   =   "is_ground_pound"
-                  __type   =   "BlueprintVariableUidRefParam"
-               }
-               vector3dRef   =   {
-                  def   =   {
-                     __type   =   "Vector3d"
-                  }
-                  __type   =   "Vector3dRefParam"
-               }
-               __type   =   "BlueprintNodeUpdateVariable"
-            }
-            GetBPVariable_F2c8Xhaoa   =   {
-               viewData   =   {
-                  x   =   6550
-                  y   =   8050
-               }
-               variableUidRef   =   {
-                  def   =   "is_ground_pound"
-                  __type   =   "BlueprintVariableUidRefParam"
-               }
-               GetVariableBool   =   [
-                  "MeleeComboStart_1_1_F2c8Xhao3/conditionRef/cb"
-               ]
-               __type   =   "BlueprintNodeGetVariable"
-            }
          }
          variables   =   {
             speedMode   =   {
@@ -4030,15 +3910,6 @@ comboDesc   =   {
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
-            "Jetpack Attack"   =   {
-               x   =   6400
-               y   =   7800
-               width   =   1700
-               height   =   650
-               comment   =   ""
-               isCollapsed   =   False
-               __type   =   "NodeGroup"
-            }
          }
          sharedVariablesKeys   =   [
             "speedMode",
@@ -4094,7 +3965,7 @@ comboDesc   =   {
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   500
-            healthDmgPercent   =   250
+            healthDmgPercent   =   180
             heavyHitDmgPercent   =   200
             canKnockback   =   True
             isGuardbreak   =   False
@@ -4111,7 +3982,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   500
-               healthDmgPercent   =   250
+               healthDmgPercent   =   180
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -4172,7 +4043,7 @@ comboDesc   =   {
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   500
-            healthDmgPercent   =   250
+            healthDmgPercent   =   180
             heavyHitDmgPercent   =   200
             canKnockback   =   True
             isGuardbreak   =   False
@@ -4189,7 +4060,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   500
-               healthDmgPercent   =   250
+               healthDmgPercent   =   180
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -4369,7 +4240,7 @@ comboDesc   =   {
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   500
-            healthDmgPercent   =   110
+            healthDmgPercent   =   100
             heavyHitDmgPercent   =   100
             canKnockback   =   True
             knockbackAngle   =   13
@@ -4411,7 +4282,7 @@ comboDesc   =   {
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   500
-            healthDmgPercent   =   120
+            healthDmgPercent   =   100
             heavyHitDmgPercent   =   100
             canKnockback   =   True
             knockbackAngle   =   13
@@ -4453,7 +4324,7 @@ comboDesc   =   {
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   500
-            healthDmgPercent   =   130
+            healthDmgPercent   =   100
             heavyHitDmgPercent   =   100
             canKnockback   =   True
             knockbackAngle   =   13
@@ -4922,7 +4793,7 @@ comboDesc   =   {
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   300
-            healthDmgPercent   =   400
+            healthDmgPercent   =   200
             heavyHitDmgPercent   =   200
             canKnockback   =   False
             isGuardbreak   =   False
@@ -4939,7 +4810,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   900
-               healthDmgPercent   =   400
+               healthDmgPercent   =   200
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -5000,7 +4871,7 @@ comboDesc   =   {
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   300
-            healthDmgPercent   =   400
+            healthDmgPercent   =   200
             heavyHitDmgPercent   =   200
             canKnockback   =   False
             isGuardbreak   =   False
@@ -5017,7 +4888,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   900
-               healthDmgPercent   =   400
+               healthDmgPercent   =   200
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -5027,178 +4898,6 @@ comboDesc   =   {
                damageOffset   =   {
                   y   =   1.5
                   z   =   0
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      JetpackAir1   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         isLockParryStance   =   True
-         maxDamagedActors   =   15
-         strikeDirection   =   "UP"
-         constraintSettingsOverrides   =   {
-            IgnoreInputsAndTargets   =   {
-               needIgnoreInputsAndTargets   =   True
-               __type   =   "MeleeConstraintSettingsParamIgnoreInputsAndTargets"
-            }
-         }
-         playerSettingsOverrides   =   {
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "PowerswordJumpPackAir"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.JetpackAir1"
-            __type   =   "AnimTableLink"
-         }
-         meleeDetectors   =   [  ]
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   30
-            healthDmgPercent   =   200
-            heavyHitDmgPercent   =   100
-            canKnockback   =   True
-            knockbackAngle   =   10
-            __type   =   "MeleeDamageSettings"
-         }
-         extraDamages   =   {
-            melee_extra_damage   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   500
-               healthDmgPercent   =   580
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               isPervasive   =   True
-               shouldForceHeavyHit   =   True
-               knockbackAngle   =   15
-               radiusScale   =   4
-               damageLocator   =   "Trajectory"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-            melee_extra_damage_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   50
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               isPervasive   =   True
-               knockbackAngle   =   15
-               radiusScale   =   6.5
-               damageLocator   =   "Trajectory"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      JetpackLand1   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         isLockParryStance   =   True
-         maxDamagedActors   =   15
-         strikeDirection   =   "UP"
-         constraintSettingsOverrides   =   {
-            IgnoreInputsAndTargets   =   {
-               needIgnoreInputsAndTargets   =   True
-               __type   =   "MeleeConstraintSettingsParamIgnoreInputsAndTargets"
-            }
-         }
-         playerSettingsOverrides   =   {
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "PowerswordJumpPackLand"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-            DamageShake   =   {
-               damageShakeUid   =   "EmptyShake"
-               __type   =   "MeleePlayerSettingsParamDamageShake"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.JetpackLand1"
-            __type   =   "AnimTableLink"
-         }
-         meleeDetectors   =   [  ]
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   25
-            healthDmgPercent   =   200
-            heavyHitDmgPercent   =   100
-            canKnockback   =   True
-            knockbackAngle   =   1
-            __type   =   "MeleeDamageSettings"
-         }
-         extraDamages   =   {
-            melee_extra_damage   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   500
-               healthDmgPercent   =   580
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               isPervasive   =   True
-               shouldForceHeavyHit   =   True
-               knockbackAngle   =   15
-               radiusScale   =   4
-               damageLocator   =   "Trajectory"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-            melee_extra_damage_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   50
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               isPervasive   =   True
-               knockbackAngle   =   15
-               radiusScale   =   6.5
-               damageLocator   =   "Trajectory"
-               damageOffset   =   {
-                  z   =   2.5
                   __type   =   "Vector3d"
                }
                __type   =   "MeleeExtraDamageSettings"

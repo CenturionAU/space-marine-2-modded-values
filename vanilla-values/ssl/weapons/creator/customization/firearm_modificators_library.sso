@@ -96,14 +96,20 @@ modificatorsGroups   =   [
                ModificatorBulletSpread   =   {
                   barrelName   =   "auto"
                   applyType   =   "PERCENT"
-                  modificator   =   -15
+                  modificator   =   -30
                   __type   =   "FirearmDescriptionModificatorBulletSpread"
                }
                ModificatorRecoilRiseTimeSpeed   =   {
                   barrelName   =   "auto"
                   applyType   =   "PERCENT"
-                  modificator   =   -20
+                  modificator   =   -40
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
                }
                ModificatorMagazine   =   {
                   magazine   =   {
@@ -174,14 +180,20 @@ modificatorsGroups   =   [
                ModificatorBulletSpread   =   {
                   barrelName   =   "auto"
                   applyType   =   "PERCENT"
-                  modificator   =   -30
+                  modificator   =   -45
                   __type   =   "FirearmDescriptionModificatorBulletSpread"
                }
                ModificatorRecoilRiseTimeSpeed   =   {
                   barrelName   =   "auto"
                   applyType   =   "PERCENT"
-                  modificator   =   -40
+                  modificator   =   -60
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
                }
                ModificatorMagazine   =   {
                   magazine   =   {
@@ -269,12 +281,12 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   5
+                  modificator   =   15
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   25
+                  modificator   =   155
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorReloadRate   =   {
@@ -288,7 +300,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   40
+                  modificator   =   50
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -324,14 +336,20 @@ modificatorsGroups   =   [
                ModificatorBulletSpread   =   {
                   barrelName   =   "auto"
                   applyType   =   "PERCENT"
-                  modificator   =   -45
+                  modificator   =   -70
                   __type   =   "FirearmDescriptionModificatorBulletSpread"
                }
                ModificatorRecoilRiseTimeSpeed   =   {
                   barrelName   =   "auto"
                   applyType   =   "PERCENT"
-                  modificator   =   -60
+                  modificator   =   -80
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
                }
                ModificatorMagazine   =   {
                   magazine   =   {
@@ -403,12 +421,12 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   7
+                  modificator   =   20
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   35
+                  modificator   =   190
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
@@ -438,7 +456,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   80
+                  modificator   =   90
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -447,6 +465,60 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_bolt_rifle_01_relic_02_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         arifle_bolt_rifle_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_01_artificer_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         arifle_bolt_rifle_white_blue_red_gl   =   {
+            modificators   =   {
+               AUX_01   =   {
+                  godlikeModificatorPresetName   =   "aux_grenade_launcher_01"
+                  __type   =   "FirearmDescriptionModificatorUsingGodlikePresetModificator"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_01_artificer_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -561,6 +633,12 @@ modificatorsGroups   =   [
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.2
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -631,6 +709,12 @@ modificatorsGroups   =   [
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.2
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -663,7 +747,7 @@ modificatorsGroups   =   [
                }
                ModificatorFireRate   =   {
                   barrelName   =   "common"
-                  fireRate   =   60
+                  fireRate   =   80
                   __type   =   "FirearmDescriptionModificatorFireRate"
                }
             }
@@ -736,6 +820,12 @@ modificatorsGroups   =   [
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.2
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -768,7 +858,7 @@ modificatorsGroups   =   [
                }
                ModificatorFireRate   =   {
                   barrelName   =   "common"
-                  fireRate   =   70
+                  fireRate   =   100
                   __type   =   "FirearmDescriptionModificatorFireRate"
                }
             }
@@ -782,6 +872,31 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_bolt_sniper_rifle_01_salamander_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_empty"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         brifle_bolt_sniper_rifle_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_sniper_rifle_01_artificer_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -835,7 +950,7 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   25
+                  modificator   =   75
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
             }
@@ -850,11 +965,11 @@ modificatorsGroups   =   [
                }
                ModificatorHeatPercentPerShot   =   {
                   barrelName   =   "good_in_zoom"
-                  modificator   =   -10
+                  modificator   =   -30
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   10
+                  modificator   =   30
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -891,7 +1006,7 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   50
+                  modificator   =   100
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
             }
@@ -906,11 +1021,11 @@ modificatorsGroups   =   [
                }
                ModificatorHeatPercentPerShot   =   {
                   barrelName   =   "good_in_zoom"
-                  modificator   =   -20
+                  modificator   =   -40
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   20
+                  modificator   =   40
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -947,7 +1062,7 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   75
+                  modificator   =   125
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
             }
@@ -962,11 +1077,11 @@ modificatorsGroups   =   [
                }
                ModificatorHeatPercentPerShot   =   {
                   barrelName   =   "good_in_zoom"
-                  modificator   =   -30
+                  modificator   =   -50
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   30
+                  modificator   =   50
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -976,7 +1091,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "heavy_bolts"
-                  modificator   =   80
+                  modificator   =   90
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
             }
@@ -1022,13 +1137,13 @@ modificatorsGroups   =   [
                ModificatorBulletSpreadCOMMON   =   {
                   barrelName   =   "auto"
                   applyType   =   "PERCENT"
-                  modificator   =   15
+                  modificator   =   -15
                   __type   =   "FirearmDescriptionModificatorBulletSpread"
                }
                ModificatorBulletSpreadSCOPE   =   {
                   barrelName   =   "score"
                   applyType   =   "PERCENT"
-                  modificator   =   15
+                  modificator   =   -15
                   __type   =   "FirearmDescriptionModificatorBulletSpread"
                }
                ModificatorRecoilRiseTimeSpeedCOMMON   =   {
@@ -1042,6 +1157,12 @@ modificatorsGroups   =   [
                   applyType   =   "PERCENT"
                   modificator   =   -20
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
                }
                ModificatorMagazine   =   {
                   magazine   =   {
@@ -1137,6 +1258,12 @@ modificatorsGroups   =   [
                   modificator   =   -40
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
                ModificatorMagazine   =   {
                   magazine   =   {
                      type   =   {
@@ -1204,7 +1331,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   40
+                  modificator   =   50
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -1260,6 +1387,12 @@ modificatorsGroups   =   [
                   applyType   =   "PERCENT"
                   modificator   =   -60
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
                }
                ModificatorMagazine   =   {
                   magazine   =   {
@@ -1328,7 +1461,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   80
+                  modificator   =   90
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -1401,6 +1534,56 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_bolt_carbine_01_relic_02_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         smg_occulus_bolt_carbine_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_01_artr_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         "01_white_scars"   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_oculus_white_scars_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -1504,7 +1687,7 @@ modificatorsGroups   =   [
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   20
+                  modificator   =   24
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
@@ -1586,7 +1769,7 @@ modificatorsGroups   =   [
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   40
+                  modificator   =   48
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
@@ -1668,7 +1851,7 @@ modificatorsGroups   =   [
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   60
+                  modificator   =   72
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
@@ -1698,7 +1881,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   80
+                  modificator   =   90
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -1732,6 +1915,31 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_bolt_pistol_01_relic_02_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_bolt_pistol_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_pistol_01_artificer_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -1832,6 +2040,18 @@ modificatorsGroups   =   [
                   modificator   =   10
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
+               ModificatorBulletSpread   =   {
+                  barrelName   =   "common"
+                  applyType   =   "PERCENT"
+                  modificator   =   -30
+                  __type   =   "FirearmDescriptionModificatorBulletSpread"
+               }
+               ModificatorRecoilRiseTimeSpeed   =   {
+                  barrelName   =   "common"
+                  applyType   =   "PERCENT"
+                  modificator   =   -40
+                  __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
+               }
                ModificatorMagazine   =   {
                   magazine   =   {
                      type   =   {
@@ -1851,6 +2071,12 @@ modificatorsGroups   =   [
                      "magazine_02_dropped"
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
                }
             }
             __type   =   "FirearmModificatorsGroup"
@@ -1911,13 +2137,13 @@ modificatorsGroups   =   [
                ModificatorBulletSpread   =   {
                   barrelName   =   "common"
                   applyType   =   "PERCENT"
-                  modificator   =   -30
+                  modificator   =   -45
                   __type   =   "FirearmDescriptionModificatorBulletSpread"
                }
                ModificatorRecoilRiseTimeSpeed   =   {
                   barrelName   =   "common"
                   applyType   =   "PERCENT"
-                  modificator   =   -40
+                  modificator   =   -60
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
                }
                ModificatorMagazine   =   {
@@ -1940,6 +2166,12 @@ modificatorsGroups   =   [
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -1957,7 +2189,7 @@ modificatorsGroups   =   [
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   42
+                  modificator   =   48
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
@@ -2013,6 +2245,16 @@ modificatorsGroups   =   [
                      "magazine_02_dropped"
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorClipAmmo   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   10
+                  __type   =   "FirearmDescriptionModificatorClipAmmo"
+               }
+               ModificatorAmmoPool   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   130
+                  __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
             }
             __type   =   "FirearmModificatorsGroup"
@@ -2073,13 +2315,13 @@ modificatorsGroups   =   [
                ModificatorBulletSpread   =   {
                   barrelName   =   "common"
                   applyType   =   "PERCENT"
-                  modificator   =   -45
+                  modificator   =   -60
                   __type   =   "FirearmDescriptionModificatorBulletSpread"
                }
                ModificatorRecoilRiseTimeSpeed   =   {
                   barrelName   =   "common"
                   applyType   =   "PERCENT"
-                  modificator   =   -60
+                  modificator   =   -80
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
                }
                ModificatorMagazine   =   {
@@ -2102,6 +2344,12 @@ modificatorsGroups   =   [
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.5
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -2119,7 +2367,7 @@ modificatorsGroups   =   [
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   70
+                  modificator   =   80
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
@@ -2173,6 +2421,66 @@ modificatorsGroups   =   [
                   ]
                   magazineMeshesDropped   =   [
                      "magazine_02_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorClipAmmo   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   15
+                  __type   =   "FirearmDescriptionModificatorClipAmmo"
+               }
+               ModificatorAmmoPool   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   175
+                  __type   =   "FirearmDescriptionModificatorAmmoPool"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         smg_bolt_carbine_01_sw   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_01_space_wolves_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         smg_bolt_carbine_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_01_artr_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
@@ -2407,7 +2715,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   40
+                  modificator   =   50
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -2519,7 +2827,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   80
+                  modificator   =   90
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -2528,6 +2836,31 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_bolt_pistol_heavy_01_relic_02_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_heavy_bolt_pistol_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_pistol_heavy_01_art_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -2606,6 +2939,12 @@ modificatorsGroups   =   [
                   modificator   =   -20
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.3
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
                ModificatorMagazine   =   {
                   magazine   =   {
                      type   =   {
@@ -2658,12 +2997,12 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   3
+                  modificator   =   6
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   18
+                  modificator   =   66
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
             }
@@ -2675,26 +3014,6 @@ modificatorsGroups   =   [
                   shellName   =   "bolts"
                   modificator   =   30
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
-               }
-               ModificatorMagazine   =   {
-                  magazine   =   {
-                     type   =   {
-                        properties   =   {
-                           geom   =   {
-                              nameTpl   =   "wpn_bolt_carbine_01_artr_mag"
-                           }
-                        }
-                        __type   =   "clip_drop"
-                     }
-                     __type   =   "IactorDesc"
-                  }
-                  magazineMeshes   =   [
-                     "magazine_01"
-                  ]
-                  magazineMeshesDropped   =   [
-                     "magazine_01_dropped"
-                  ]
-                  __type   =   "FirearmDescriptionModificatorMagazine"
                }
                ModificatorBulletSpreadCOMMON   =   {
                   barrelName   =   "common"
@@ -2719,6 +3038,32 @@ modificatorsGroups   =   [
                   applyType   =   "PERCENT"
                   modificator   =   -40
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.3
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_01_artr_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
                }
             }
             __type   =   "FirearmModificatorsGroup"
@@ -2752,12 +3097,12 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   6
+                  modificator   =   12
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   36
+                  modificator   =   108
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
             }
@@ -2767,7 +3112,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   40
+                  modificator   =   50
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -2800,26 +3145,6 @@ modificatorsGroups   =   [
                   modificator   =   60
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
-               ModificatorMagazine   =   {
-                  magazine   =   {
-                     type   =   {
-                        properties   =   {
-                           geom   =   {
-                              nameTpl   =   "wpn_bolt_carbine_01_relic_01_mag"
-                           }
-                        }
-                        __type   =   "clip_drop"
-                     }
-                     __type   =   "IactorDesc"
-                  }
-                  magazineMeshes   =   [
-                     "magazine_01"
-                  ]
-                  magazineMeshesDropped   =   [
-                     "magazine_01_dropped"
-                  ]
-                  __type   =   "FirearmDescriptionModificatorMagazine"
-               }
                ModificatorBulletSpreadCOMMON   =   {
                   barrelName   =   "common"
                   applyType   =   "PERCENT"
@@ -2844,6 +3169,32 @@ modificatorsGroups   =   [
                   modificator   =   -60
                   __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.3
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_01_relic_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -2856,12 +3207,12 @@ modificatorsGroups   =   [
                }
                ModificatorClipAmmo   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   8
+                  modificator   =   18
                   __type   =   "FirearmDescriptionModificatorClipAmmo"
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   48
+                  modificator   =   150
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
@@ -2891,7 +3242,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   80
+                  modificator   =   90
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -2900,6 +3251,31 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_bolt_carbine_01_relic_02_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         brifle_instigator_bolt_carbine_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_01_artr_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -2937,13 +3313,13 @@ modificatorsGroups   =   [
                ModificatorHeatPercentPerShotCommon   =   {
                   barrelName   =   "pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.7
+                  modificator   =   -1.81
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCharged   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -5
+                  modificator   =   -9
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorContinousHeatingSpeed   =   {
@@ -2951,7 +3327,7 @@ modificatorsGroups   =   [
                   __type   =   "FirearmDescriptionModificatorContinousHeatingSpeed"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   15
+                  modificator   =   30
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -2992,13 +3368,13 @@ modificatorsGroups   =   [
                ModificatorHeatPercentPerShotCommon   =   {
                   barrelName   =   "pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -1.25
+                  modificator   =   -2.25
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCharged   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -8.34
+                  modificator   =   -11.67
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorContinousHeatingSpeed   =   {
@@ -3006,7 +3382,7 @@ modificatorsGroups   =   [
                   __type   =   "FirearmDescriptionModificatorContinousHeatingSpeed"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   30
+                  modificator   =   45
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -3047,13 +3423,13 @@ modificatorsGroups   =   [
                ModificatorHeatPercentPerShotCommon   =   {
                   barrelName   =   "pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -1.65
+                  modificator   =   -2.57
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCharged   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -12.5
+                  modificator   =   -15
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorContinousHeatingSpeed   =   {
@@ -3061,7 +3437,7 @@ modificatorsGroups   =   [
                   __type   =   "FirearmDescriptionModificatorContinousHeatingSpeed"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   45
+                  modificator   =   60
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -3102,7 +3478,7 @@ modificatorsGroups   =   [
                ModificatorChargeDuration   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.2
+                  modificator   =   -0.35
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
             }
@@ -3403,6 +3779,56 @@ modificatorsGroups   =   [
             }
             __type   =   "FirearmModificatorsGroup"
          }
+         arifle_auto_bolt_rifle_01_librarium   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_librarium_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_02"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_02_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         arifle_auto_bolt_rifle_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_01_art_01_auto_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_02"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_02_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
       }
    },
    {
@@ -3421,9 +3847,9 @@ modificatorsGroups   =   [
                      spline   =   [
                         0,
                         1,
-                        6,
+                        8,
                         1,
-                        11,
+                        13,
                         0.5,
                         20,
                         0.5
@@ -3508,9 +3934,9 @@ modificatorsGroups   =   [
                      spline   =   [
                         0,
                         1,
-                        7,
+                        9,
                         1,
-                        12,
+                        14,
                         0.5,
                         20,
                         0.5
@@ -3595,9 +4021,9 @@ modificatorsGroups   =   [
                      spline   =   [
                         0,
                         1,
-                        8,
+                        10,
                         1,
-                        13,
+                        15,
                         0.5,
                         20,
                         0.5
@@ -3673,7 +4099,7 @@ modificatorsGroups   =   [
             modificators   =   {
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
-                  modificator   =   80
+                  modificator   =   60
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
                ModificatorMagazine   =   {
@@ -3682,6 +4108,36 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_melta_rifle_01_relic_02_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_02"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorFireRate   =   {
+                  barrelName   =   "auto"
+                  fireRate   =   60
+                  __type   =   "FirearmDescriptionModificatorFireRate"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         shotgun_meltagun_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_melta_rifle_01_artificer_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -3781,7 +4237,7 @@ modificatorsGroups   =   [
                      type   =   {
                         properties   =   {
                            geom   =   {
-                              nameTpl   =   "wpn_bolt_rifle_heavy_01_mcrf_mag_03"
+                              nameTpl   =   "wpn_bolt_rifle_heavy_01_mcrf_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -3789,10 +4245,10 @@ modificatorsGroups   =   [
                      __type   =   "IactorDesc"
                   }
                   magazineMeshes   =   [
-                     "magazine_03"
+                     "magazine_01"
                   ]
                   magazineMeshesDropped   =   [
-                     "magazine_03_dropped"
+                     "magazine_01_dropped"
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
@@ -3821,7 +4277,7 @@ modificatorsGroups   =   [
                      type   =   {
                         properties   =   {
                            geom   =   {
-                              nameTpl   =   "wpn_bolt_rifle_heavy_inter_01_art_01_mag"
+                              nameTpl   =   "wpn_bolt_rifle_heavy_inter_01_art_01_mag_03"
                            }
                         }
                         __type   =   "clip_drop"
@@ -3829,12 +4285,22 @@ modificatorsGroups   =   [
                      __type   =   "IactorDesc"
                   }
                   magazineMeshes   =   [
-                     "magazine_01"
+                     "magazine_03"
                   ]
                   magazineMeshesDropped   =   [
-                     "magazine_01_dropped"
+                     "magazine_03_dropped"
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorClipAmmo   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   5
+                  __type   =   "FirearmDescriptionModificatorClipAmmo"
+               }
+               ModificatorAmmoPool   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   25
+                  __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
             }
             __type   =   "FirearmModificatorsGroup"
@@ -3851,7 +4317,7 @@ modificatorsGroups   =   [
                      type   =   {
                         properties   =   {
                            geom   =   {
-                              nameTpl   =   "wpn_bolt_rifle_heavy_inter_01_art_01_mag_03"
+                              nameTpl   =   "wpn_bolt_rifle_heavy_inter_01_art_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -3859,10 +4325,10 @@ modificatorsGroups   =   [
                      __type   =   "IactorDesc"
                   }
                   magazineMeshes   =   [
-                     "magazine_03"
+                     "magazine_01"
                   ]
                   magazineMeshesDropped   =   [
-                     "magazine_03_dropped"
+                     "magazine_01_dropped"
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
@@ -3883,7 +4349,7 @@ modificatorsGroups   =   [
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   40
+                  modificator   =   50
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorReloadRate   =   {
@@ -3915,37 +4381,21 @@ modificatorsGroups   =   [
          }
          arifle_heavy_bolt_rifle_03_c   =   {
             modificators   =   {
+               ModificatorUsingGodlikeModificatorPreset   =   {
+                  godlikeModificatorPresetName   =   "arifle_heavy_bolt_rifle_scope"
+                  __type   =   "FirearmDescriptionModificatorUsingGodlikePresetModificator"
+               }
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
                   modificator   =   30
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
-               }
-               ModificatorBulletSpread   =   {
-                  barrelName   =   "auto"
-                  modificator   =   -15
-                  __type   =   "FirearmDescriptionModificatorBulletSpread"
-               }
-               ModificatorRecoilRiseTimeSpeed   =   {
-                  barrelName   =   "auto"
-                  modificator   =   -20
-                  __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
-               }
-               ModificatorClipAmmo   =   {
-                  applyType   =   "ABSOLUTE"
-                  modificator   =   5
-                  __type   =   "FirearmDescriptionModificatorClipAmmo"
-               }
-               ModificatorAmmoPool   =   {
-                  applyType   =   "ABSOLUTE"
-                  modificator   =   20
-                  __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
                   magazine   =   {
                      type   =   {
                         properties   =   {
                            geom   =   {
-                              nameTpl   =   "wpn_bolt_rifle_heavy_intercessor_01_artificer_02_mag"
+                              nameTpl   =   "wpn_bolt_rifle_heavy_inter_01_art_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -3985,6 +4435,46 @@ modificatorsGroups   =   [
                      type   =   {
                         properties   =   {
                            geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_heavy_intercessor_01_relic_01_mag_02"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_02"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_02_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorClipAmmo   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   10
+                  __type   =   "FirearmDescriptionModificatorClipAmmo"
+               }
+               ModificatorAmmoPool   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   50
+                  __type   =   "FirearmDescriptionModificatorAmmoPool"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         arifle_heavy_bolt_rifle_04_a   =   {
+            modificators   =   {
+               ModificatorDamageAmount   =   {
+                  shellName   =   "bolts"
+                  modificator   =   80
+                  __type   =   "FirearmDescriptionModificatorDamageAmount"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
                               nameTpl   =   "wpn_bolt_rifle_heavy_intercessor_01_relic_01_mag"
                            }
                         }
@@ -4009,36 +4499,6 @@ modificatorsGroups   =   [
             }
             __type   =   "FirearmModificatorsGroup"
          }
-         arifle_heavy_bolt_rifle_04_a   =   {
-            modificators   =   {
-               ModificatorDamageAmount   =   {
-                  shellName   =   "bolts"
-                  modificator   =   80
-                  __type   =   "FirearmDescriptionModificatorDamageAmount"
-               }
-               ModificatorMagazine   =   {
-                  magazine   =   {
-                     type   =   {
-                        properties   =   {
-                           geom   =   {
-                              nameTpl   =   "wpn_bolt_rifle_heavy_intercessor_01_relic_01_mag_02"
-                           }
-                        }
-                        __type   =   "clip_drop"
-                     }
-                     __type   =   "IactorDesc"
-                  }
-                  magazineMeshes   =   [
-                     "magazine_02"
-                  ]
-                  magazineMeshesDropped   =   [
-                     "magazine_02_dropped"
-                  ]
-                  __type   =   "FirearmDescriptionModificatorMagazine"
-               }
-            }
-            __type   =   "FirearmModificatorsGroup"
-         }
          arifle_heavy_bolt_rifle_04_b   =   {
             modificators   =   {
                ModificatorDamageAmount   =   {
@@ -4053,7 +4513,7 @@ modificatorsGroups   =   [
                }
                ModificatorAmmoPool   =   {
                   applyType   =   "ABSOLUTE"
-                  modificator   =   60
+                  modificator   =   75
                   __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorReloadRate   =   {
@@ -4085,42 +4545,75 @@ modificatorsGroups   =   [
          }
          arifle_heavy_bolt_rifle_04_c   =   {
             modificators   =   {
+               ModificatorUsingGodlikeModificatorPreset   =   {
+                  godlikeModificatorPresetName   =   "arifle_heavy_bolt_rifle_scope"
+                  __type   =   "FirearmDescriptionModificatorUsingGodlikePresetModificator"
+               }
                ModificatorDamageAmount   =   {
                   shellName   =   "bolts"
                   modificator   =   60
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
-               }
-               ModificatorBulletSpread   =   {
-                  barrelName   =   "auto"
-                  modificator   =   -30
-                  __type   =   "FirearmDescriptionModificatorBulletSpread"
-               }
-               ModificatorRecoilRiseTimeSpeed   =   {
-                  barrelName   =   "auto"
-                  modificator   =   -40
-                  __type   =   "FirearmDescriptionModificatorRecoilRiseTimeSpeed"
-               }
-               ModificatorPenetrationPreset   =   {
-                  shellName   =   "bolts"
-                  penetrationPreset   =   "six_targets_penetration"
-                  __type   =   "FirearmDescriptionModificatorPenetrationPreset"
-               }
-               ModificatorClipAmmo   =   {
-                  applyType   =   "ABSOLUTE"
-                  modificator   =   10
-                  __type   =   "FirearmDescriptionModificatorClipAmmo"
-               }
-               ModificatorAmmoPool   =   {
-                  applyType   =   "ABSOLUTE"
-                  modificator   =   40
-                  __type   =   "FirearmDescriptionModificatorAmmoPool"
                }
                ModificatorMagazine   =   {
                   magazine   =   {
                      type   =   {
                         properties   =   {
                            geom   =   {
-                              nameTpl   =   "wpn_bolt_rifle_heavy_intercessor_01_relic_02_mag"
+                              nameTpl   =   "wpn_bolt_rifle_heavy_intercessor_01_relic_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         arifle_heavy_bolt_rifle_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_heavy_inter_01_art_01_mag_03"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_03"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_03_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         arifle_heavy_bolt_rifle_scoped_white_blue_red   =   {
+            modificators   =   {
+               ModificatorUsingGodlikeModificatorPreset   =   {
+                  godlikeModificatorPresetName   =   "arifle_heavy_bolt_rifle_scope"
+                  __type   =   "FirearmDescriptionModificatorUsingGodlikePresetModificator"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_heavy_inter_01_art_01_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -4235,6 +4728,12 @@ modificatorsGroups   =   [
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.3
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -4304,6 +4803,12 @@ modificatorsGroups   =   [
                      "magazine_03_dropped"
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.3
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
                }
             }
             __type   =   "FirearmModificatorsGroup"
@@ -4375,6 +4880,12 @@ modificatorsGroups   =   [
                   ]
                   __type   =   "FirearmDescriptionModificatorMagazine"
                }
+               ModificatorHeadshotMultiplier   =   {
+                  shellName   =   "bolts"
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   0.3
+                  __type   =   "FirearmDescriptionModificatorHeadshotMultiplier"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -4407,13 +4918,63 @@ modificatorsGroups   =   [
                }
                ModificatorFireRateCommon   =   {
                   barrelName   =   "common"
-                  fireRate   =   180
+                  fireRate   =   220
                   __type   =   "FirearmDescriptionModificatorFireRate"
                }
                ModificatorFireRateScope   =   {
                   barrelName   =   "scope"
-                  fireRate   =   180
+                  fireRate   =   220
                   __type   =   "FirearmDescriptionModificatorFireRate"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         brifle_stalker_bolt_rifle_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_01_art_01_stlr_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_03"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_03_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         "01_white_scars"   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_rifle_stalker_white_scars_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
                }
             }
             __type   =   "FirearmModificatorsGroup"
@@ -4724,8 +5285,7 @@ modificatorsGroups   =   [
                }
                ModificatorChargeDuration   =   {
                   barrelName   =   "common"
-                  applyType   =   "PERCENT"
-                  modificator   =   -15
+                  modificator   =   -40
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
             }
@@ -4765,8 +5325,7 @@ modificatorsGroups   =   [
                }
                ModificatorChargeDuration   =   {
                   barrelName   =   "common"
-                  applyType   =   "PERCENT"
-                  modificator   =   -30
+                  modificator   =   -55
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
             }
@@ -4790,9 +5349,9 @@ modificatorsGroups   =   [
                      spline   =   [
                         0,
                         1,
-                        6,
+                        8,
                         1,
-                        11,
+                        13,
                         0.5,
                         20,
                         0.5
@@ -4826,6 +5385,16 @@ modificatorsGroups   =   [
                   modificator   =   10
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
+               ModificatorFireRate   =   {
+                  barrelName   =   "blind"
+                  fireRate   =   50
+                  __type   =   "FirearmDescriptionModificatorFireRate"
+               }
+               ModificatorFireRate_1   =   {
+                  barrelName   =   "aim"
+                  fireRate   =   90
+                  __type   =   "FirearmDescriptionModificatorFireRate"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -4842,9 +5411,9 @@ modificatorsGroups   =   [
                      spline   =   [
                         0,
                         1,
-                        7,
+                        9,
                         1,
-                        12,
+                        14,
                         0.5,
                         20,
                         0.5
@@ -4878,6 +5447,16 @@ modificatorsGroups   =   [
                   modificator   =   30
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
+               ModificatorFireRate   =   {
+                  barrelName   =   "blind"
+                  fireRate   =   55
+                  __type   =   "FirearmDescriptionModificatorFireRate"
+               }
+               ModificatorFireRate_1   =   {
+                  barrelName   =   "aim"
+                  fireRate   =   100
+                  __type   =   "FirearmDescriptionModificatorFireRate"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -4894,9 +5473,9 @@ modificatorsGroups   =   [
                      spline   =   [
                         0,
                         1,
-                        8,
+                        10,
                         1,
-                        13,
+                        15,
                         0.5,
                         20,
                         0.5
@@ -4930,6 +5509,16 @@ modificatorsGroups   =   [
                   modificator   =   60
                   __type   =   "FirearmDescriptionModificatorDamageAmount"
                }
+               ModificatorFireRate   =   {
+                  barrelName   =   "blind"
+                  fireRate   =   60
+                  __type   =   "FirearmDescriptionModificatorFireRate"
+               }
+               ModificatorFireRate_1   =   {
+                  barrelName   =   "aim"
+                  fireRate   =   110
+                  __type   =   "FirearmDescriptionModificatorFireRate"
+               }
             }
             __type   =   "FirearmModificatorsGroup"
          }
@@ -4953,25 +5542,25 @@ modificatorsGroups   =   [
                ModificatorHeatPercentPerShotCommon   =   {
                   barrelName   =   "pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -1.97
+                  modificator   =   -4.58
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCharged   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -6.91
+                  modificator   =   -11.53
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCommonADS   =   {
                   barrelName   =   "minizoom_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -1.97
+                  modificator   =   -4.58
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotChargedADS   =   {
                   barrelName   =   "minizoom_big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -6.91
+                  modificator   =   -11.53
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorContinousHeatingSpeed   =   {
@@ -4979,7 +5568,7 @@ modificatorsGroups   =   [
                   __type   =   "FirearmDescriptionModificatorContinousHeatingSpeed"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   20
+                  modificator   =   40
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -5020,13 +5609,13 @@ modificatorsGroups   =   [
                ModificatorChargeDurationBlind   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.15
+                  modificator   =   -0.3
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
                ModificatorChargeDurationADS   =   {
                   barrelName   =   "minizoom_big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.15
+                  modificator   =   -0.3
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
             }
@@ -5047,25 +5636,25 @@ modificatorsGroups   =   [
                ModificatorHeatPercentPerShotCommon   =   {
                   barrelName   =   "pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -3.47
+                  modificator   =   -5.78
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCharged   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -11.24
+                  modificator   =   -14.99
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCommonADS   =   {
                   barrelName   =   "minizoom_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -3.47
+                  modificator   =   -5.78
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotChargedADS   =   {
                   barrelName   =   "minizoom_big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -11.24
+                  modificator   =   -14.99
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorContinousHeatingSpeed   =   {
@@ -5073,7 +5662,7 @@ modificatorsGroups   =   [
                   __type   =   "FirearmDescriptionModificatorContinousHeatingSpeed"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   40
+                  modificator   =   60
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -5114,13 +5703,13 @@ modificatorsGroups   =   [
                ModificatorChargeDurationBlind   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.3
+                  modificator   =   -0.45
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
                ModificatorChargeDurationADS   =   {
                   barrelName   =   "minizoom_big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.3
+                  modificator   =   -0.45
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
             }
@@ -5141,25 +5730,25 @@ modificatorsGroups   =   [
                ModificatorHeatPercentPerShotCommon   =   {
                   barrelName   =   "pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -4.66
+                  modificator   =   -6.73
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCharged   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -14.21
+                  modificator   =   -17.37
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotCommonADS   =   {
                   barrelName   =   "minizoom_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -4.66
+                  modificator   =   -6.73
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorHeatPercentPerShotChargedADS   =   {
                   barrelName   =   "minizoom_big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -14.21
+                  modificator   =   -17.37
                   __type   =   "FirearmDescriptionModificatorHeatPercentPerShot"
                }
                ModificatorContinousHeatingSpeed   =   {
@@ -5167,7 +5756,7 @@ modificatorsGroups   =   [
                   __type   =   "FirearmDescriptionModificatorContinousHeatingSpeed"
                }
                ModificatorVentingSpeedDefault   =   {
-                  modificator   =   60
+                  modificator   =   80
                   __type   =   "FirearmDescriptionModificatorVentingSpeedDefault"
                }
             }
@@ -5208,13 +5797,13 @@ modificatorsGroups   =   [
                ModificatorChargeDurationBlind   =   {
                   barrelName   =   "big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.45
+                  modificator   =   -0.6
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
                ModificatorChargeDurationADS   =   {
                   barrelName   =   "minizoom_big_pew_pew"
                   applyType   =   "ABSOLUTE"
-                  modificator   =   -0.45
+                  modificator   =   -0.6
                   __type   =   "FirearmDescriptionModificatorChargeDuration"
                }
             }
@@ -5233,6 +5822,31 @@ modificatorsGroups   =   [
                         properties   =   {
                            geom   =   {
                               nameTpl   =   "wpn_bolt_carbine_01_mark_chaos_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_02"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_02_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         brifle_marksman_bolt_carbine_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_bolt_carbine_01_mark_artr_mag"
                            }
                         }
                         __type   =   "clip_drop"
@@ -5465,6 +6079,344 @@ modificatorsGroups   =   [
             }
             __type   =   "FirearmModificatorsGroup"
          }
+         hgun_volkite_pistol_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_volkite_pistol_01_artificer_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+      }
+   },
+   {
+      firearmUid   =   "hgun_inferno_pistol"
+      modificatorsGroups   =   {
+         hgun_inferno_pistol_02   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_mcrf_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorDamageAmount   =   {
+                  shellName   =   "bolts"
+                  modificator   =   10
+                  __type   =   "FirearmDescriptionModificatorDamageAmount"
+               }
+               ModificatorAmmoPool   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   12
+                  __type   =   "FirearmDescriptionModificatorAmmoPool"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_inferno_pistol_02_a   =   {
+            modificators   =   {
+               ModificatorUsingGodlikeModificatorPreset   =   {
+                  godlikeModificatorPresetName   =   "hgun_inferno_pistol_fast_rof"
+                  __type   =   "FirearmDescriptionModificatorUsingGodlikePresetModificator"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_mcrf_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorDamageAmount   =   {
+                  shellName   =   "bolts"
+                  modificator   =   10
+                  __type   =   "FirearmDescriptionModificatorDamageAmount"
+               }
+               ModificatorDamageCoefficientSpline   =   {
+                  shellName   =   "bolts"
+                  coeffDamage   =   {
+                     spline   =   [
+                        0,
+                        1,
+                        4,
+                        1,
+                        7.5,
+                        0.45,
+                        12,
+                        0.45
+                     ]
+                     __type   =   "SplineLinear1d"
+                  }
+                  __type   =   "FirearmDescriptionModificatorDamageCoefficientSpline"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_inferno_pistol_03   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_artificer_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorDamageAmount   =   {
+                  shellName   =   "bolts"
+                  modificator   =   30
+                  __type   =   "FirearmDescriptionModificatorDamageAmount"
+               }
+               ModificatorAmmoPool   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   15
+                  __type   =   "FirearmDescriptionModificatorAmmoPool"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_inferno_pistol_03_a   =   {
+            modificators   =   {
+               ModificatorUsingGodlikeModificatorPreset   =   {
+                  godlikeModificatorPresetName   =   "hgun_inferno_pistol_fast_rof"
+                  __type   =   "FirearmDescriptionModificatorUsingGodlikePresetModificator"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_artificer_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorDamageAmount   =   {
+                  shellName   =   "bolts"
+                  modificator   =   30
+                  __type   =   "FirearmDescriptionModificatorDamageAmount"
+               }
+               ModificatorDamageCoefficientSpline   =   {
+                  shellName   =   "bolts"
+                  coeffDamage   =   {
+                     spline   =   [
+                        0,
+                        1,
+                        5,
+                        1,
+                        8.5,
+                        0.45,
+                        12,
+                        0.45
+                     ]
+                     __type   =   "SplineLinear1d"
+                  }
+                  __type   =   "FirearmDescriptionModificatorDamageCoefficientSpline"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_inferno_pistol_04   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_relic_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorDamageAmount   =   {
+                  shellName   =   "bolts"
+                  modificator   =   60
+                  __type   =   "FirearmDescriptionModificatorDamageAmount"
+               }
+               ModificatorAmmoPool   =   {
+                  applyType   =   "ABSOLUTE"
+                  modificator   =   18
+                  __type   =   "FirearmDescriptionModificatorAmmoPool"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_inferno_pistol_04_a   =   {
+            modificators   =   {
+               ModificatorUsingGodlikeModificatorPreset   =   {
+                  godlikeModificatorPresetName   =   "hgun_inferno_pistol_fast_rof"
+                  __type   =   "FirearmDescriptionModificatorUsingGodlikePresetModificator"
+               }
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_relic_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+               ModificatorDamageAmount   =   {
+                  shellName   =   "bolts"
+                  modificator   =   60
+                  __type   =   "FirearmDescriptionModificatorDamageAmount"
+               }
+               ModificatorDamageCoefficientSpline   =   {
+                  shellName   =   "bolts"
+                  coeffDamage   =   {
+                     spline   =   [
+                        0,
+                        1,
+                        6,
+                        1,
+                        9.5,
+                        0.45,
+                        12,
+                        0.45
+                     ]
+                     __type   =   "SplineLinear1d"
+                  }
+                  __type   =   "FirearmDescriptionModificatorDamageCoefficientSpline"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_inferno_pistol_01_ch   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_chaos_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
+         hgun_inferno_pistol_white_blue_red   =   {
+            modificators   =   {
+               ModificatorMagazine   =   {
+                  magazine   =   {
+                     type   =   {
+                        properties   =   {
+                           geom   =   {
+                              nameTpl   =   "wpn_inferno_pistol_01_artificer_01_mag"
+                           }
+                        }
+                        __type   =   "clip_drop"
+                     }
+                     __type   =   "IactorDesc"
+                  }
+                  magazineMeshes   =   [
+                     "magazine_01"
+                  ]
+                  magazineMeshesDropped   =   [
+                     "magazine_01_dropped"
+                  ]
+                  __type   =   "FirearmDescriptionModificatorMagazine"
+               }
+            }
+            __type   =   "FirearmModificatorsGroup"
+         }
       }
    }
 ]
@@ -5484,7 +6436,7 @@ godlikeModificatorPresets   =   {
                endEffectsType   =   "bolter_bullet"
                shotCreatorSettings   =   {
                   headshotMult   =   1.5
-                  damage   =   2.2
+                  damage   =   2.3
                   heavyHitDamage   =   0.5
                   damagerLink   =   {
                      damagerDescUid   =   "arifle_damager"
@@ -5963,7 +6915,7 @@ godlikeModificatorPresets   =   {
                endEffectsType   =   "bolter_bullet"
                shotCreatorSettings   =   {
                   headshotMult   =   1.5
-                  damage   =   2.2
+                  damage   =   2.3
                   heavyHitDamage   =   0.5
                   damagerLink   =   {
                      damagerDescUid   =   "arifle_damager"
@@ -6004,7 +6956,7 @@ godlikeModificatorPresets   =   {
                      firearmCreatorLink   =   "grenade_shot"
                      __type   =   "ShotCreatorLink"
                   }
-                  damage   =   100
+                  damage   =   50
                   heavyHitDamage   =   1
                   damagerLink   =   {
                      damagerDescUid   =   "grenage_launcher_damager"
@@ -6445,7 +7397,7 @@ godlikeModificatorPresets   =   {
                endEffectsType   =   "bolter_bullet"
                shotCreatorSettings   =   {
                   headshotMult   =   1.5
-                  damage   =   2.2
+                  damage   =   2.3
                   heavyHitDamage   =   0.5
                   damagerLink   =   {
                      damagerDescUid   =   "arifle_damager"
@@ -6486,7 +7438,7 @@ godlikeModificatorPresets   =   {
                      firearmCreatorLink   =   "grenade_shot"
                      __type   =   "ShotCreatorLink"
                   }
-                  damage   =   100
+                  damage   =   75
                   heavyHitDamage   =   1
                   damagerLink   =   {
                      damagerDescUid   =   "grenage_launcher_damager"
@@ -7110,7 +8062,7 @@ godlikeModificatorPresets   =   {
             sslModule   =   "weapons.creator.description.ammo_settings"
             typeData   =   {
                ammo_arifle   =   {
-                  maxAmount   =   120
+                  maxAmount   =   140
                   __type   =   "AmmoTypeSettings"
                }
             }
@@ -7209,6 +8161,629 @@ godlikeModificatorPresets   =   {
             __type   =   "OverheatSettingsFirearm"
          }
          __type   =   "FirearmDefaultDescription"
+      }
+      __type   =   "FirearmDescriptionModificatorGodlikeModificator"
+   }
+   arifle_heavy_bolt_rifle_scope   =   {
+      descriptionOverride   =   {
+         pickupVisualUid   =   "arifle_heavy_bolt_rifle"
+         actorName   =   "arifle_heavy_bolt_rifle"
+         category   =   "RIFLE_FA"
+         sightPreset   =   "UNIQUE"
+         shellDescriptions   =   {
+            bolts   =   {
+               projectileType   =   {
+                  projectileType   =   "bolter_bullet"
+                  __type   =   "ClientProjectileType"
+               }
+               endEffectsType   =   "bolter_bullet"
+               shotCreatorSettings   =   {
+                  headshotMult   =   1.15
+                  damage   =   2.3
+                  heavyHitDamage   =   0.5
+                  damagerLink   =   {
+                     damagerDescUid   =   "arifle_damager"
+                     __type   =   "DamagerDescriptionLink"
+                  }
+                  coeffDamage   =   {
+                     spline   =   [
+                        0,
+                        1,
+                        100,
+                        1
+                     ]
+                     __type   =   "SplineLinear1d"
+                  }
+                  penetrationPreset   =   "four_targets_penetration"
+                  __type   =   "ShotCreatorSettings"
+               }
+               flyBySettings   =   {
+                  soundDescEnemy   =   {
+                     type   =   {
+                        name   =   "wpn_projectile_bolter"
+                        __type   =   "GameSound"
+                     }
+                     __type   =   "GameSoundDesc"
+                  }
+                  __type   =   "FlyBySettings"
+               }
+               __type   =   "ShellDescription"
+            }
+         }
+         barrelDescriptions   =   {
+            auto   =   {
+               shellName   =   "bolts"
+               clipName   =   "default_clip"
+               shootSettings   =   {
+                  fireRate   =   {
+                     shotsPerMin   =   350
+                     __type   =   "FixedFireRate"
+                  }
+                  shootLogicUid   =   "autofire"
+                  __type   =   "ShootSettings"
+               }
+               recoilSettings   =   {
+                  cameraRecoilSettings   =   {
+                     recoilByTimeHorizontal   =   {
+                        spline   =   [
+                           0,
+                           0,
+                           0.85,
+                           0,
+                           4,
+                           -2,
+                           13,
+                           2
+                        ]
+                        __type   =   "SplineLinear1d"
+                     }
+                     recoilByTimeVertical   =   {
+                        spline   =   [
+                           0,
+                           0,
+                           0.85,
+                           0.8,
+                           6,
+                           5.8,
+                           13,
+                           9
+                        ]
+                        __type   =   "SplineLinear1d"
+                     }
+                     riseTimeSpeed   =   2.1
+                     recoveryDelay   =   0.21
+                     recoverSpeedVertical   =   19
+                     recoverSpeedHorizontal   =   19
+                     modifiers   =   {
+                        CameraRecoilDeviceModifier   =   {
+                           deviceType   =   "GAMEPAD"
+                           modificatorHorizontal   =   -30
+                           modificatorVertical   =   -30
+                        }
+                     }
+                     __type   =   "CameraRecoilSettings"
+                  }
+                  weaponRecoilSettings   =   {
+                     recoilPresets   =   {
+                        BLIND   =   {
+                           baseSettings   =   {
+                              spreadMin   =   17.5
+                              spreadMax   =   3.4
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           movementOverrideSettings   =   {
+                              spreadMin   =   17.5
+                              spreadMax   =   3.4
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           __type   =   "RecoilPreset"
+                        }
+                        MINI_ZOOM   =   {
+                           movementOverrideSettings   =   {
+                              spreadMin   =   2.5
+                              spreadMax   =   2.5
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           __type   =   "RecoilPreset"
+                        }
+                        SCOPE   =   {
+                           baseSettings   =   {
+                              recoil   =   0.6
+                              spreadMin   =   0.5
+                              spreadMax   =   0.5
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           movementOverrideSettings   =   {
+                              recoil   =   0.7
+                              spreadMin   =   0.6
+                              spreadMax   =   0.6
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           __type   =   "RecoilPreset"
+                        }
+                     }
+                     weaponOffSetIronSight   =   {
+                        y   =   -0.063
+                        z   =   0.25
+                        __type   =   "Vector3d"
+                     }
+                     __type   =   "WeaponRecoilSettings"
+                  }
+                  targetRecoilSettings   =   {
+                     minDistToWeapon   =   3
+                     minDistToCamera   =   2.5
+                     recoilByTime   =   {
+                        spline   =   [
+                           0,
+                           0.1
+                        ]
+                        __type   =   "SplineLinear1d"
+                     }
+                     recoilRecoverSpeed   =   2
+                     recoilSectorsCount   =   4
+                     recoilSectorAngle1   =   1
+                     recoilSectorAngle2   =   1.2
+                     recoilSectorAngle3   =   1.5
+                     recoilSectorsOrder   =   "abcdefghijkl"
+                     swingSpeed   =   1
+                     weaponTurnSpeed   =   60
+                     weaponTurnSlowDown   =   7
+                     isRotatingToCamera   =   True
+                     __type   =   "TargetRecoilSettings"
+                  }
+                  dynamicCameraDistanceSettings   =   {
+                     blindPresetUid   =   "arifle_heavy_bolt_rifle_blind"
+                     miniZoomPresetUid   =   "arifle_heavy_bolt_rifle_minizoom"
+                     __type   =   "DynamicCameraDistanceSettings"
+                  }
+                  __type   =   "RecoilSettings"
+               }
+               spreadSettings   =   {
+                  minBulletSpread   =   0.2
+                  maxBulletSpread   =   1.7
+                  spreadEnergyDesc   =   {
+                     type   =   {
+                        energyRegenerationRules   =   {
+                           SpreadRegen   =   {
+                              pushPercent   =   140
+                              __type   =   "EnergySpreadRegen"
+                           }
+                        }
+                        __type   =   "Energy"
+                     }
+                     __type   =   "EnergyDesc"
+                  }
+                  spreadSpline   =   {
+                     spline   =   [
+                        0,
+                        1,
+                        10,
+                        25,
+                        40,
+                        45,
+                        50,
+                        25,
+                        100,
+                        22
+                     ]
+                     __type   =   "SplineLinear1d"
+                  }
+                  __type   =   "SpreadControllerSettings"
+               }
+               __type   =   "BarrelDescription"
+            }
+         }
+         ammoSettings   =   {
+            typeData   =   {
+               ammo_arifle   =   {
+                  maxAmount   =   225
+                  __type   =   "AmmoTypeSettings"
+               }
+            }
+            __type   =   "AmmoSettings"
+         }
+         reloadSettings   =   {
+            reloadAnimSpeedScale   =   0.9
+            __type   =   "ReloadSettings"
+         }
+         clipsSettings   =   {
+            default_clip   =   {
+               sslModule   =   "weapons.creator.description.clip_settings"
+               ammoType   =   "ammo_arifle"
+               maxAmmo   =   45
+               magazine   =   {
+                  type   =   {
+                     properties   =   {
+                        geom   =   {
+                           nameTpl   =   "wpn_bolt_rifle_heavy_01_mag"
+                        }
+                     }
+                     __type   =   "clip_drop"
+                  }
+                  __type   =   "IactorDesc"
+               }
+               magazineMeshes   =   [
+                  "magazine_01"
+               ]
+               magazineMeshesDropped   =   [
+                  "magazine_01_dropped"
+               ]
+               __type   =   "ClipSettings"
+            }
+         }
+         aimSettings   =   {
+            sslModule   =   "weapons.creator.description.aim_settings"
+            logicUid   =   "zoom_scope"
+            fovCollection   =   {
+               DEFAULT   =   {
+                  __value   =   30
+               }
+            }
+            autoAimSettingsDefault   =   {
+               deviationAngle   =   2
+               autoaimAngle   =   2
+               autoaimDistance   =   15
+               autoaimFalloffDistance   =   10
+               autoaimNearFalloffDistance   =   0
+               __type   =   "AutoAimSettings"
+            }
+            autoAimSettingsOverrides   =   {
+               SCOPE   =   {
+                  deviationAngle   =   1.5
+                  autoaimAngle   =   1.5
+                  autoaimDistance   =   65
+                  autoaimFalloffDistance   =   55
+                  autoaimNearFalloffDistance   =   0
+                  __type   =   "AutoAimSettings"
+               }
+               ZOOM   =   {
+                  deviationAngle   =   1.7
+                  autoaimAngle   =   1.7
+                  autoaimDistance   =   65
+                  autoaimFalloffDistance   =   55
+                  autoaimNearFalloffDistance   =   0
+                  __type   =   "AutoAimSettings"
+               }
+            }
+            magnetismSettingsDefault   =   {
+               magnetismDistance   =   15
+               magnetismFalloffDistance   =   10
+               __type   =   "MagnetismSettings"
+            }
+            magnetismSettingsOverrides   =   {
+               ZOOM   =   {
+                  magnetismAngle   =   3
+                  magnetismDistance   =   85
+                  magnetismFalloffDistance   =   75
+                  magnetismNearFalloffDistance   =   5
+                  __type   =   "MagnetismSettings"
+               }
+               SCOPE   =   {
+                  magnetismAngle   =   4
+                  magnetismDistance   =   120
+                  magnetismFalloffDistance   =   110
+                  magnetismNearFalloffDistance   =   5
+                  __type   =   "MagnetismSettings"
+               }
+            }
+            __type   =   "AimSettings"
+         }
+         isOverheatAffectingShooting   =   False
+         overheatSettings   =   {
+            barrelsHeatPerShot   =   {
+               auto   =   {
+                  value   =   3.4
+                  __type   =   "HeatPercentPerShot"
+               }
+            }
+            venting   =   {
+               ticksPerSec   =   24
+               normalRegenDelaySec   =   0.3
+               normalRegenRate   =   40
+               __type   =   "VentingSettingsFirearm"
+            }
+            __type   =   "OverheatSettingsFirearm"
+         }
+         __type   =   "FirearmDefaultDescription"
+      }
+      __type   =   "FirearmDescriptionModificatorGodlikeModificator"
+   }
+   hgun_inferno_pistol_fast_rof   =   {
+      descriptionOverride   =   {
+         pickupVisualUid   =   "hgun_heavy_bolt_pistol"
+         actorName   =   "hgun_inferno_pistol"
+         category   =   "PISTOL"
+         sightPreset   =   "UNIQUE"
+         shellDescriptions   =   {
+            laser_targeting   =   {
+               shotCreatorSettings   =   {
+                  shotCreator   =   {
+                     firearmDescriberLink   =   "laser_targetting_shot_assert"
+                     __type   =   "ShotCreatorLink"
+                  }
+                  __type   =   "ShotCreatorSettings"
+               }
+               __type   =   "ShellDescription"
+            }
+            bolts   =   {
+               projectileType   =   {
+                  projectileType   =   "inferno_bullet"
+                  __type   =   "ClientProjectileType"
+               }
+               endEffectsType   =   "meltagun_bullet"
+               shotCreatorSettings   =   {
+                  shotCreator   =   {
+                     firearmDescriberLink   =   "cone"
+                     __type   =   "ShotCreatorLink"
+                  }
+                  shotPenetrationPresetsLib   =   {
+                     penetrationPresetsDescsCollection   =   {
+                        melta_penetration   =   {
+                           enablePenetrableTargetCheck   =   False
+                           __type   =   "ShotPenetrationPreset"
+                        }
+                     }
+                     __type   =   "ShotPenetrationPresetsLibrary"
+                  }
+                  damage   =   15
+                  heavyHitDamage   =   2
+                  damagerLink   =   {
+                     damagerDescUid   =   "melta_damager"
+                     __type   =   "DamagerDescriptionLink"
+                  }
+                  coeffDamage   =   {
+                     spline   =   [
+                        0,
+                        1,
+                        3,
+                        1,
+                        6.5,
+                        0.45,
+                        12,
+                        0.45
+                     ]
+                     __type   =   "SplineLinear1d"
+                  }
+                  penetrationPreset   =   "melta_penetration"
+                  coneSettings   =   {
+                     coneAngle   =   10
+                     distance   =   14
+                     startRadius   =   1
+                     checkAbleToReach   =   True
+                     bonesMaxCount   =   200
+                     endEffectsRefine   =   {
+                        cdtOnWpnBullet   =   True
+                        cdtOnWpnRocket   =   True
+                        layerAnimObj   =   True
+                        layerBipedChar   =   True
+                        layerSceneryObject   =   True
+                        flIgnoreAllHiddenObj   =   True
+                        layerSkeletonDefault   =   True
+                        __type   =   "CdtRefine"
+                     }
+                     maxActorCount   =   40
+                     __type   =   "ConeScanSettings"
+                  }
+                  stopOnNonPenetratable   =   False
+                  __type   =   "ShotCreatorSettings"
+               }
+               __type   =   "ShellDescription"
+            }
+         }
+         barrelDescriptions   =   {
+            common   =   {
+               shellName   =   "bolts"
+               clipName   =   "default_clip"
+               shootSettings   =   {
+                  fireRate   =   {
+                     shotsPerMin   =   180
+                     __type   =   "FixedFireRate"
+                  }
+                  shootLogicUid   =   "single_fire"
+                  denseCompensation   =   0.55
+                  __type   =   "ShootSettings"
+               }
+               recoilSettings   =   {
+                  cameraRecoilSettings   =   {
+                     recoilByTimeHorizontal   =   {
+                        spline   =   [
+                           0,
+                           0,
+                           2.4,
+                           0
+                        ]
+                        __type   =   "SplineCurve1d"
+                     }
+                     recoilByTimeVertical   =   {
+                        spline   =   [
+                           0,
+                           0,
+                           5,
+                           65
+                        ]
+                        __type   =   "SplineCurve1d"
+                     }
+                     riseTimeSpeed   =   1
+                     recoveryDelay   =   0.2
+                     recoverSpeedVertical   =   20
+                     recoverSpeedHorizontal   =   20
+                     __type   =   "CameraRecoilSettings"
+                  }
+                  weaponRecoilSettings   =   {
+                     recoilPresets   =   {
+                        BLIND   =   {
+                           baseSettings   =   {
+                              spreadMin   =   0
+                              spreadMax   =   0
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           movementOverrideSettings   =   {
+                              spreadMin   =   0
+                              spreadMax   =   0
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           __type   =   "RecoilPreset"
+                        }
+                        MINI_ZOOM   =   {
+                           baseSettings   =   {
+                              spreadMin   =   0
+                              spreadMax   =   0
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           movementOverrideSettings   =   {
+                              spreadMin   =   0
+                              spreadMax   =   0
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           __type   =   "RecoilPreset"
+                        }
+                        AUGMENTED_ZOOM   =   {
+                           baseSettings   =   {
+                              spreadMin   =   0
+                              spreadMax   =   0
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           movementOverrideSettings   =   {
+                              spreadMin   =   0
+                              spreadMax   =   0
+                              __type   =   "RecoilPresetSettings"
+                           }
+                           __type   =   "RecoilPreset"
+                        }
+                     }
+                     weaponOffSetIronSight   =   {
+                        y   =   -0.063
+                        z   =   0.25
+                        __type   =   "Vector3d"
+                     }
+                     __type   =   "WeaponRecoilSettings"
+                  }
+                  targetRecoilSettings   =   {
+                     minDistToWeapon   =   3
+                     minDistToCamera   =   2.5
+                     recoilByTime   =   {
+                        spline   =   [
+                           0,
+                           0.1
+                        ]
+                        __type   =   "SplineLinear1d"
+                     }
+                     recoilRecoverSpeed   =   2
+                     recoilSectorsCount   =   4
+                     recoilSectorAngle1   =   1
+                     recoilSectorAngle2   =   1.2
+                     recoilSectorAngle3   =   1.5
+                     recoilSectorsOrder   =   "abcdefghijkl"
+                     swingSpeed   =   1
+                     weaponTurnSpeed   =   60
+                     weaponTurnSlowDown   =   7
+                     isRotatingToCamera   =   True
+                     __type   =   "TargetRecoilSettings"
+                  }
+                  dynamicCameraDistanceSettings   =   {
+                     blindPresetUid   =   "shotgun_meltagun_blind"
+                     miniZoomPresetUid   =   "shotgun_meltagun_minizoom"
+                     __type   =   "DynamicCameraDistanceSettings"
+                  }
+                  __type   =   "RecoilSettings"
+               }
+               __type   =   "BarrelDescription"
+            }
+         }
+         ammoSettings   =   {
+            typeData   =   {
+               ammo_pistol   =   {
+                  maxAmount   =   16
+                  __type   =   "AmmoTypeSettings"
+               }
+            }
+            __type   =   "AmmoSettings"
+         }
+         reloadSettings   =   {
+            sslModule   =   "weapons.creator.description.reload_settings"
+            reloadAnimSpeedScale   =   1
+            reloadTimeLength   =   1
+            __type   =   "ReloadSettings"
+         }
+         clipsSettings   =   {
+            default_clip   =   {
+               sslModule   =   "weapons.creator.description.clip_settings"
+               ammoType   =   "ammo_pistol"
+               maxAmmo   =   2
+               magazine   =   {
+                  type   =   {
+                     properties   =   {
+                        geom   =   {
+                           nameTpl   =   "wpn_inferno_pistol_01_mag"
+                        }
+                     }
+                     __type   =   "clip_drop"
+                  }
+                  __type   =   "IactorDesc"
+               }
+               __type   =   "ClipSettings"
+            }
+            laser_targeting   =   {
+               ammoPercToStartBlink   =   40
+               __type   =   "ClipSettings"
+            }
+         }
+         aimSettings   =   {
+            autoAimSettingsDefault   =   {
+               deviationAngle   =   0
+               autoaimAngle   =   0
+               autoaimDistance   =   0
+               autoaimFalloffDistance   =   0
+               autoaimNearFalloffDistance   =   0
+               __type   =   "AutoAimSettings"
+            }
+            autoAimSettingsOverrides   =   {
+               ZOOM   =   {
+                  deviationAngle   =   0
+                  autoaimAngle   =   0
+                  autoaimDistance   =   0
+                  autoaimFalloffDistance   =   0
+                  autoaimNearFalloffDistance   =   0
+                  __type   =   "AutoAimSettings"
+               }
+            }
+            magnetismSettingsDefault   =   {
+               magnetismDistance   =   15
+               magnetismFalloffDistance   =   10
+               __type   =   "MagnetismSettings"
+            }
+            magnetismSettingsOverrides   =   {
+               ZOOM   =   {
+                  magnetismAngle   =   3
+                  magnetismDistance   =   15
+                  magnetismFalloffDistance   =   10
+                  magnetismNearFalloffDistance   =   5
+                  __type   =   "MagnetismSettings"
+               }
+            }
+            __type   =   "AimSettings"
+         }
+         isOverheatAffectingShooting   =   False
+         overheatSettings   =   {
+            barrelsHeatPerShot   =   {
+               common   =   {
+                  value   =   8
+                  __type   =   "HeatPercentPerShot"
+               }
+               laser_targeting   =   {
+                  value   =   0
+                  __type   =   "HeatPercentPerShot"
+               }
+            }
+            venting   =   {
+               ticksPerSec   =   24
+               normalRegenDelaySec   =   0.31
+               normalRegenRate   =   90
+               __type   =   "VentingSettingsFirearm"
+            }
+            __type   =   "OverheatSettingsFirearm"
+         }
+         __type   =   "FirearmLaserTargetingPistolDescription"
       }
       __type   =   "FirearmDescriptionModificatorGodlikeModificator"
    }

@@ -1,9 +1,10 @@
 sslModule   =   "weapons.melee.weapon_descriptions.melee_weapon_desc"
 ownerTplName   =   "cc_titus"
-weaponType   =   "HAMMER"
-weaponActorUid   =   "thunder_hammer"
-healthDamage   =   14
-morphemeWeaponType   =   1
+weaponType   =   "POWERFIST"
+weaponActorUid   =   "power_fist_fake"
+weaponTplObjUid   =   "titus_hand_R_02"
+healthDamage   =  120
+morphemeWeaponType   =   3
 meleeDetectorSettings   =   {
    RightHand   =   {
       sslModule   =   "weapons.melee.melee_detector_settings"
@@ -14,11 +15,12 @@ meleeDetectorSettings   =   {
       rootTrackerLocator   =   "GUN_R"
       endTrackerOffset   =   {
          sslModule   =   "math.vector_3d"
-         z   =   3
+         y   =   -1
+         z   =   0
          __type   =   "Vector3d"
       }
       endTrackerLocator   =   "GUN_R"
-      staticCheckEndOffset   =   -1.5
+      staticCheckEndOffset   =   -0.5
       __type   =   "MeleeDetectorSettings"
    }
    LongRightHand   =   {
@@ -30,10 +32,12 @@ meleeDetectorSettings   =   {
       rootTrackerLocator   =   "GUN_R"
       endTrackerOffset   =   {
          sslModule   =   "math.vector_3d"
-         z   =   5
+         y   =   -1.5
+         z   =   0
          __type   =   "Vector3d"
       }
       endTrackerLocator   =   "GUN_R"
+      staticCheckEndOffset   =   -1
       __type   =   "MeleeDetectorSettings"
    }
    LeftHand   =   {
@@ -49,7 +53,6 @@ meleeDetectorSettings   =   {
          __type   =   "Vector3d"
       }
       endTrackerLocator   =   "GUN_L"
-      staticCheckEndOffset   =   -0.5
       __type   =   "MeleeDetectorSettings"
    }
    RightFoot   =   {
@@ -122,14 +125,20 @@ comboDesc   =   {
       riposteEnabledDuration   =   0.495
       riposteExtraDamages   =   {
          melee_extra_damage   =   {
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
             healthDmgPercent   =   0
             heavyHitDmgPercent   =   100
+            radiusScale   =   3
             damageLocator   =   "Trajectory"
             damageOffset   =   {
                z   =   2
                __type   =   "Vector3d"
             }
-            __type   =   "MeleeExtraDamageSettingsMarineRiposte"
+            __type   =   "MeleeExtraDamageSettings"
          }
       }
       parryStanceAnim   =   {
@@ -151,7 +160,7 @@ comboDesc   =   {
       }
       riposteAnim   =   {
          sslModule   =   "animation.animation_table"
-         link   =   "Primaris.Melee.ThunderHammerRipost1"
+         link   =   "Primaris.Melee.PowerFistRipost1"
          __type   =   "AnimTableLink"
       }
       abortAnim   =   {
@@ -169,7 +178,7 @@ comboDesc   =   {
    }
    slowdownSettings   =   {
       sslModule   =   "weapons.melee.weapon_descriptions.melee_combo_slowdown_settings"
-      slowdownTime   =   0.198
+      slowdownTime   =   0.000
       slowdownDesc   =   {
          type   =   {
             __type   =   "MeleeComboSlowdownProject"
@@ -185,98 +194,97 @@ comboDesc   =   {
             MeleeComboStrike   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   8790
+                  x   =   8890
                   y   =   6050
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLight1"
+                  def   =   "Light1"
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
                   "MeleeComboStrike_1/AddStrikeToCombo"
                ]
                OnLightHold   =   [
-                  "MeleeComboStrike_3/AddStrikeToCombo"
+                  "MeleePreparing_1/AddPreparingToCombo"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
             MeleeComboStrike_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9350
+                  x   =   9450
                   y   =   6050
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLight2"
+                  def   =   "Light2"
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "MeleeComboStrike_2/AddStrikeToCombo"
+                  "Pipe_2_1_2/Input"
                ]
                OnLightHold   =   [
-                  "MeleeComboStrike_3_1/AddStrikeToCombo"
+                  "Pipe_2_1/Input"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
-            MeleeComboStrike_2   =   {
+            MeleeComboStrike_5   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   9900
-                  y   =   6050
+                  x   =   9650
+                  y   =   5050
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLight3"
+                  def   =   "LightPrepared1"
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
-                  "TriggerEvent_1_3_1_2_1_1/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_4/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "MeleeComboStrike_3_4/AddStrikeToCombo"
+                  "TriggerEvent_1_3_3/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
             MeleeComboStart   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_start"
                viewData   =   {
-                  x   =   6450
+                  x   =   6550
                   y   =   6000
                }
                OnLightTap   =   [
                   "TriggerEvent_1_3/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "If_2/Input"
+                  "TriggerEvent_1_3_5_1_1/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStart"
             }
             MeleePreparing   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_preparing"
                viewData   =   {
-                  x   =   6800
-                  y   =   6100
+                  x   =   9100
+                  y   =   5050
                }
                OnPrepared   =   [
-                  "MeleeComboStrike_3_3/AddStrikeToCombo"
+                  "MeleeComboStrike_5/AddStrikeToCombo"
                ]
                OnUnprepared   =   [
-                  "TriggerEvent_1_3_1_2_2/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_4_1/TriggerBlueprintEvent"
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.3
+                  minPreparationDuration   =   0.75
                   maxDuration   =   4
-                  needChargeBonus   =   True
-                  maxTicks   =   2
-                  bonusDamage   =   150
-                  bonusPeriodSec   =   1.45
-                  shakeUid   =   "ThammerLightHoldPrepare_v2"
+                  maxTicks   =   1
+                  bonusDamage   =   350
+                  bonusPeriodSec   =   3.9
+                  shakeUid   =   "FistLightHoldPrepare1_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
-                     link   =   "Primaris.Melee.PreparingThunderHammer"
+                     link   =   "Primaris.Melee.PowerFistPreparingMeleeStart"
                      __type   =   "AnimTableLink"
                   }
                   abortAnim   =   {
@@ -284,13 +292,10 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierStack   =   {
-                     ownerModifierTypes   =   [
-                        "MELEE_AFTERSHOCK_PREPARATION_TIME"
-                     ]
-                     __type   =   "ModifiersStack"
-                  }
-                  forceFeedBackUid   =   "Thunderhammer.ThammerLightHoldPrepare_v2"
+                  preparationDurationModifierTypes   =   [
+                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                  ]
+                  forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare1_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
                __type   =   "BlueprintNodeMeleeComboPreparing"
@@ -298,7 +303,7 @@ comboDesc   =   {
             MeleeComboStrike_3_1_1_1_5   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   7450
+                  x   =   7550
                   y   =   7000
                }
                strikeLibraryLinkRef   =   {
@@ -310,14 +315,14 @@ comboDesc   =   {
                   "TriggerEvent_1_3_1_3_1/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_1_3_1_1/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_5_E2ra9HaX/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
             If   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_if"
                viewData   =   {
-                  x   =   7150
+                  x   =   7250
                   y   =   6850
                }
                OnTrue   =   [
@@ -331,7 +336,7 @@ comboDesc   =   {
             MeleeComboStrike_4_1_3_1_1_2   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   7450
+                  x   =   7550
                   y   =   6850
                }
                strikeLibraryLinkRef   =   {
@@ -344,7 +349,7 @@ comboDesc   =   {
             HandleEvent_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   8450
+                  x   =   8540
                   y   =   6050
                }
                OnHandle   =   [
@@ -360,7 +365,7 @@ comboDesc   =   {
             TriggerEvent_1_3   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   6900
+                  x   =   6950
                   y   =   6000
                }
                eventUid   =   {
@@ -370,46 +375,14 @@ comboDesc   =   {
                }
                __type   =   "BlueprintNodeTriggerCustomEvent"
             }
-            MeleeComboStrike_3   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   9350
-                  y   =   6200
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLight4Mirror"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               OnLightHold   =   [
-                  "If_2_1/Input"
-               ]
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            MeleeComboStrike_3_1   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   9900
-                  y   =   6200
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLight4"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               OnLightHold   =   [
-                  "If_2_2/Input"
-               ]
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
             HandleEvent_1_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   9400
-                  y   =   5900
+                  x   =   9154
+                  y   =   5963.422
                }
                OnHandle   =   [
-                  "MeleeComboStrike_2/AddStrikeToCombo"
+                  "MeleeComboStrike_1/AddStrikeToCombo"
                ]
                eventUidRefParam   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -421,16 +394,16 @@ comboDesc   =   {
             MeleeComboStart_1_2_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_start"
                viewData   =   {
-                  x   =   6450
+                  x   =   6550
                   y   =   7945.081
                }
                OnLightTap   =   [
                   "MeleeComboStrike_5_1_2_1/AddStrikeToCombo",
-                  "If_E7nfvh1J/Input"
+                  "If_E7nfIjbF/Input"
                ]
                OnLightHold   =   [
                   "MeleeComboStrike_5_1_2_1/AddStrikeToCombo",
-                  "If_E7nfvh1J/Input"
+                  "If_E7nfIjbF/Input"
                ]
                priorityRef   =   {
                   def   =   1
@@ -441,7 +414,7 @@ comboDesc   =   {
             CheckBodyStateCondition_1   =   {
                sslModule   =   "body.body_state.blueprint_node_check_body_state_condition"
                viewData   =   {
-                  x   =   6450
+                  x   =   6650
                   y   =   8100
                }
                bodyStateCondition   =   {
@@ -461,7 +434,7 @@ comboDesc   =   {
             MeleeComboStart_1_1_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_start"
                viewData   =   {
-                  x   =   6450
+                  x   =   6550
                   y   =   6850
                }
                OnLightTap   =   [
@@ -479,7 +452,7 @@ comboDesc   =   {
             MeleeComboStart_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_start"
                viewData   =   {
-                  x   =   6450
+                  x   =   6550
                   y   =   7550
                }
                OnLightTap   =   [
@@ -497,7 +470,7 @@ comboDesc   =   {
             MeleeComboStrike_4   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   6750
+                  x   =   6850
                   y   =   7550
                }
                strikeLibraryLinkRef   =   {
@@ -508,14 +481,14 @@ comboDesc   =   {
                   "TriggerEvent_1_3_1_1/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_1_2_E9uaPq3W/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_5_4/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
             TriggerEvent_1_3_1_3_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   7800
+                  x   =   7900
                   y   =   7000
                }
                eventUid   =   {
@@ -528,7 +501,7 @@ comboDesc   =   {
             CheckCharacterCommandInProgress_1   =   {
                sslModule   =   "actions.commands.blueprint_commands.blueprint_node_check_character_command_in_progress"
                viewData   =   {
-                  x   =   6550
+                  x   =   6650
                   y   =   7700
                }
                commandTypeRef   =   {
@@ -537,26 +510,26 @@ comboDesc   =   {
                }
                IsInProgress   =   [
                   "MeleeComboStart_1/conditionRef/cb",
-                  "If_E7nfvh1J/condition/cb"
+                  "If_E7nfIjbF/condition/cb"
                ]
                __type   =   "BlueprintNodeCheckCharacterCommandInProgress"
             }
             MeleeComboStrike_5_1_2_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   6900
+                  x   =   7000
                   y   =   7950
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLightDash"
+                  def   =   "LightDashLeft"
                   __type   =   "StrikeSettingsLinkRefParam"
                }
                OnLightTap   =   [
                   "TriggerEvent_1_3_1_2_1/TriggerBlueprintEvent"
                ]
                OnLightHold   =   [
-                  "TriggerEvent_1_3_1_2_E9uaJffA/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_5_1/TriggerBlueprintEvent"
                ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
@@ -576,7 +549,7 @@ comboDesc   =   {
             TriggerEvent_1_3_1_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   7100
+                  x   =   7200
                   y   =   7550
                }
                eventUid   =   {
@@ -586,53 +559,306 @@ comboDesc   =   {
                }
                __type   =   "BlueprintNodeTriggerCustomEvent"
             }
-            MeleeComboStrike_3_3   =   {
+            MeleeComboStrike_5_2   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
                viewData   =   {
-                  x   =   7300
-                  y   =   6100
+                  x   =   9800
+                  y   =   6300
                }
                strikeLibraryLinkRef   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLightPrepared"
+                  def   =   "LightPrepared2"
                   __type   =   "StrikeSettingsLinkRefParam"
                }
+               OnLightTap   =   [
+                  "Pipe_2_1_2/Input"
+               ]
+               OnLightHold   =   [
+                  "Pipe_2_1/Input"
+               ]
                __type   =   "BlueprintNodeMeleeComboStrike"
             }
-            TriggerEvent_1_3_1_2_1_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+            MeleePreparing_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_preparing"
                viewData   =   {
-                  x   =   10350
+                  x   =   9450
+                  y   =   6200
+               }
+               OnPrepared   =   [
+                  "MeleeComboStrike_5_2/AddStrikeToCombo"
+               ]
+               OnUnprepared   =   [
+                  "MeleeComboStrike_1/AddStrikeToCombo"
+               ]
+               meleePreparing   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
+                  minPreparationDuration   =   0.75
+                  maxDuration   =   4
+                  maxTicks   =   1
+                  bonusDamage   =   350
+                  bonusPeriodSec   =   3.9
+                  shakeUid   =   "FistLightHoldPrepare2_v2"
+                  preparingAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.PowerFistPreparingMeleeStart2"
+                     __type   =   "AnimTableLink"
+                  }
+                  abortAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.AbortPreparing"
+                     __type   =   "AnimTableLink"
+                  }
+                  preparationDurationModifierTypes   =   [
+                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                  ]
+                  forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare2_v2"
+                  __type   =   "MeleeComboPreparingProject"
+               }
+               __type   =   "BlueprintNodeMeleeComboPreparing"
+            }
+            Pipe_2_1   =   {
+               viewData   =   {
+                  x   =   10200
+                  y   =   6100
+               }
+               Output   =   [
+                  "MeleePreparing_1_1/AddPreparingToCombo"
+               ]
+               __type   =   "BlueprintLibraryPipe"
+            }
+            Pipe_2_1_2   =   {
+               viewData   =   {
+                  x   =   10200
                   y   =   6050
                }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "restart_light_tap_combo"
-                  __type   =   "StringRefParam"
+               Output   =   [
+                  "MeleeComboStrike_1_1/AddStrikeToCombo"
+               ]
+               __type   =   "BlueprintLibraryPipe"
+            }
+            MeleeComboStrike_1_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
+               viewData   =   {
+                  x   =   10300
+                  y   =   6050
                }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
+               strikeLibraryLinkRef   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
+                  def   =   "Light3"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               OnLightTap   =   [
+                  "Pipe_2_1_2_1/Input"
+               ]
+               OnLightHold   =   [
+                  "Pipe_2_1_3/Input"
+               ]
+               __type   =   "BlueprintNodeMeleeComboStrike"
+            }
+            MeleeComboStrike_5_2_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
+               viewData   =   {
+                  x   =   10650
+                  y   =   6300
+               }
+               strikeLibraryLinkRef   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
+                  def   =   "LightPrepared3"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               OnLightTap   =   [
+                  "Pipe_2_1_2_1/Input"
+               ]
+               OnLightHold   =   [
+                  "Pipe_2_1_3/Input"
+               ]
+               __type   =   "BlueprintNodeMeleeComboStrike"
+            }
+            MeleePreparing_1_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_preparing"
+               viewData   =   {
+                  x   =   10300
+                  y   =   6200
+               }
+               OnPrepared   =   [
+                  "MeleeComboStrike_5_2_1/AddStrikeToCombo"
+               ]
+               OnUnprepared   =   [
+                  "MeleeComboStrike_1_1/AddStrikeToCombo"
+               ]
+               meleePreparing   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
+                  minPreparationDuration   =   0.75
+                  maxDuration   =   4
+                  maxTicks   =   1
+                  bonusDamage   =   350
+                  bonusPeriodSec   =   3.9
+                  shakeUid   =   "FistLightHoldPrepare3_v2"
+                  preparingAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.PowerFistPreparingMeleeStart3"
+                     __type   =   "AnimTableLink"
+                  }
+                  abortAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.AbortPreparing"
+                     __type   =   "AnimTableLink"
+                  }
+                  preparationDurationModifierTypes   =   [
+                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                  ]
+                  forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare3_v2"
+                  __type   =   "MeleeComboPreparingProject"
+               }
+               __type   =   "BlueprintNodeMeleeComboPreparing"
+            }
+            Pipe_2_1_3   =   {
+               viewData   =   {
+                  x   =   11050
+                  y   =   6100
+               }
+               Output   =   [
+                  "MeleePreparing_1_2/AddPreparingToCombo"
+               ]
+               __type   =   "BlueprintLibraryPipe"
+            }
+            Pipe_2_1_2_1   =   {
+               viewData   =   {
+                  x   =   11050
+                  y   =   6050
+               }
+               Output   =   [
+                  "MeleeComboStrike_1_2/AddStrikeToCombo"
+               ]
+               __type   =   "BlueprintLibraryPipe"
+            }
+            MeleeComboStrike_1_2   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
+               viewData   =   {
+                  x   =   11150
+                  y   =   6050
+               }
+               strikeLibraryLinkRef   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
+                  def   =   "Light4"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               OnLightHold   =   [
+                  "Pipe_2_1_4/Input"
+               ]
+               __type   =   "BlueprintNodeMeleeComboStrike"
+            }
+            MeleeComboStrike_5_2_2   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
+               viewData   =   {
+                  x   =   11500
+                  y   =   6300
+               }
+               strikeLibraryLinkRef   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
+                  def   =   "LightPrepared4"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               OnLightTap   =   [
+                  "Pipe_2_1_2_2/Input"
+               ]
+               OnLightHold   =   [
+                  "Pipe_2_1_4/Input"
+               ]
+               __type   =   "BlueprintNodeMeleeComboStrike"
+            }
+            MeleePreparing_1_2   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_preparing"
+               viewData   =   {
+                  x   =   11150
+                  y   =   6200
+               }
+               OnPrepared   =   [
+                  "MeleeComboStrike_5_2_2/AddStrikeToCombo"
+               ]
+               OnUnprepared   =   [
+                  "MeleeComboStrike_1_2/AddStrikeToCombo"
+               ]
+               meleePreparing   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
+                  minPreparationDuration   =   0.75
+                  maxDuration   =   4
+                  maxTicks   =   1
+                  bonusDamage   =   350
+                  bonusPeriodSec   =   3.9
+                  shakeUid   =   "FistLightHoldPrepare4_v2"
+                  preparingAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.PowerFistPreparingMeleeStart4"
+                     __type   =   "AnimTableLink"
+                  }
+                  abortAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.AbortPreparing"
+                     __type   =   "AnimTableLink"
+                  }
+                  preparationDurationModifierTypes   =   [
+                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                  ]
+                  forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare4_v2"
+                  __type   =   "MeleeComboPreparingProject"
+               }
+               __type   =   "BlueprintNodeMeleeComboPreparing"
+            }
+            Pipe_2_1_4   =   {
+               viewData   =   {
+                  x   =   11900
+                  y   =   6100
+               }
+               Output   =   [
+                  "MeleePreparing_1_2_1/AddPreparingToCombo"
+               ]
+               __type   =   "BlueprintLibraryPipe"
+            }
+            Pipe_2_1_2_2   =   {
+               viewData   =   {
+                  x   =   11900
+                  y   =   6050
+               }
+               Output   =   [
+                  "TriggerEvent_1_3_1_3_2/TriggerBlueprintEvent"
+               ]
+               __type   =   "BlueprintLibraryPipe"
             }
             HandleEvent_1_1_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
                   x   =   8850
-                  y   =   5900
+                  y   =   6250
                }
                OnHandle   =   [
-                  "MeleeComboStrike_1/AddStrikeToCombo"
+                  "MeleePreparing_1/AddPreparingToCombo"
                ]
                eventUidRefParam   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "restart_light_tap_combo"
+                  def   =   "continue_light_hold_combo"
                   __type   =   "StringRefParam"
                }
                __type   =   "BlueprintNodeHandleEvent"
             }
-            TriggerEvent_1_3_1_2_2   =   {
+            TriggerEvent_1_3_3   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   7300
-                  y   =   6250
+                  x   =   9980.965
+                  y   =   5150
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "continue_light_hold_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_4   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9980.965
+                  y   =   5050
                }
                eventUid   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
@@ -641,25 +867,77 @@ comboDesc   =   {
                }
                __type   =   "BlueprintNodeTriggerCustomEvent"
             }
-            MeleeComboStrike_3_4   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
+            HandleEvent_1_2   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
                viewData   =   {
-                  x   =   10450
-                  y   =   6200
+                  x   =   8600
+                  y   =   5050
                }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "ThunderHammerLight4Mirror"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               OnLightHold   =   [
-                  "If_2_3/Input"
+               OnHandle   =   [
+                  "If_2/Input"
                ]
-               __type   =   "BlueprintNodeMeleeComboStrike"
+               eventUidRefParam   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_hold_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeHandleEvent"
+            }
+            TriggerEvent_1_3_5_1   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   7350
+                  y   =   8050
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "continue_light_hold_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_5_4   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   7200
+                  y   =   7650
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_hold_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_5_1_1   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   6950
+                  y   =   6100
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_hold_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_4_1   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9650
+                  y   =   5202.848
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
             }
             CheckGroundPoundType   =   {
                viewData   =   {
-                  x   =   6950
+                  x   =   7050
                   y   =   7000
                }
                IsWallGroundPound   =   [
@@ -667,9 +945,90 @@ comboDesc   =   {
                ]
                __type   =   "BlueprintNodeCheckGroundPoundType"
             }
+            MeleeComboStrike_5_2_2_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
+               viewData   =   {
+                  x   =   12600
+                  y   =   6250
+               }
+               strikeLibraryLinkRef   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
+                  def   =   "LightPrepared5"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               OnLightTap   =   [
+                  "TriggerEvent_1_3_1_3_2/TriggerBlueprintEvent"
+               ]
+               OnLightHold   =   [
+                  "TriggerEvent_2/TriggerBlueprintEvent"
+               ]
+               __type   =   "BlueprintNodeMeleeComboStrike"
+            }
+            MeleePreparing_1_2_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_preparing"
+               viewData   =   {
+                  x   =   12050
+                  y   =   6200
+               }
+               OnPrepared   =   [
+                  "MeleeComboStrike_5_2_2_1/AddStrikeToCombo"
+               ]
+               OnUnprepared   =   [
+                  "TriggerEvent_1_3_1_3_2/TriggerBlueprintEvent"
+               ]
+               meleePreparing   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
+                  minPreparationDuration   =   0.75
+                  maxDuration   =   4
+                  maxTicks   =   1
+                  bonusDamage   =   350
+                  bonusPeriodSec   =   3.9
+                  shakeUid   =   "FistLightHoldPrepare5_v2"
+                  preparingAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.PowerFistPreparingMeleeStart5"
+                     __type   =   "AnimTableLink"
+                  }
+                  abortAnim   =   {
+                     sslModule   =   "animation.animation_table"
+                     link   =   "Primaris.Melee.AbortPreparing"
+                     __type   =   "AnimTableLink"
+                  }
+                  preparationDurationModifierTypes   =   [
+                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                  ]
+                  forceFeedBackUid   =   "Powerfist.FistLightHoldPrepare5_v2"
+                  __type   =   "MeleeComboPreparingProject"
+               }
+               __type   =   "BlueprintNodeMeleeComboPreparing"
+            }
+            TriggerEvent_1_3_1_3_2   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   12950
+                  y   =   6050
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_2   =   {
+               viewData   =   {
+                  x   =   12950
+                  y   =   6250
+               }
+               eventUid   =   {
+                  def   =   "continue_light_hold_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
             SubscribeOnAbility   =   {
                viewData   =   {
-                  x   =   6600
+                  x   =   6700
                   y   =   7150
                }
                subscribeOnInitRef   =   {
@@ -699,8 +1058,8 @@ comboDesc   =   {
             }
             UpdateBPVariable   =   {
                viewData   =   {
-                  x   =   7100
-                  y   =   7150
+                  x   =   7200
+                  y   =   7156.875
                }
                variableUidRef   =   {
                   def   =   "is_ground_pound"
@@ -720,8 +1079,8 @@ comboDesc   =   {
             }
             UpdateBPVariable_1   =   {
                viewData   =   {
-                  x   =   7100
-                  y   =   7250
+                  x   =   7200
+                  y   =   7256.875
                }
                variableUidRef   =   {
                   def   =   "is_ground_pound"
@@ -737,7 +1096,7 @@ comboDesc   =   {
             }
             GetBPVariable_2   =   {
                viewData   =   {
-                  x   =   6550
+                  x   =   6650
                   y   =   7000
                }
                variableUidRef   =   {
@@ -749,39 +1108,88 @@ comboDesc   =   {
                ]
                __type   =   "BlueprintNodeGetVariable"
             }
-            TriggerEvent_1_3_1_3_1_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+            MeleeComboStart_2   =   {
                viewData   =   {
-                  x   =   7801.642
-                  y   =   7100
+                  x   =   6700
+                  y   =   8350
                }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "auto_hold_prep_strike"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            HandleEvent_1_1_1_1   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
-               viewData   =   {
-                  x   =   6300
-                  y   =   6250
-               }
-               OnHandle   =   [
-                  "If_2/Input"
+               OnLightTap   =   [
+                  "If_1/Input"
                ]
-               eventUidRefParam   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "auto_hold_prep_strike"
-                  __type   =   "StringRefParam"
+               OnLightHold   =   [
+                  "If_1/Input"
+               ]
+               priorityRef   =   {
+                  def   =   10
+                  __type   =   "IntRefParam"
                }
-               __type   =   "BlueprintNodeHandleEvent"
+               __type   =   "BlueprintNodeMeleeComboStart"
             }
-            CheckModifierFlag   =   {
+            CheckBodyStateCondition_1_1   =   {
+               sslModule   =   "body.body_state.blueprint_node_check_body_state_condition"
                viewData   =   {
-                  x   =   6300
-                  y   =   6350
+                  x   =   6550
+                  y   =   8500
+               }
+               bodyStateCondition   =   {
+                  bodyStateArray   =   [
+                     "BLOCK"
+                  ]
+                  type   =   "ANY"
+                  __type   =   "BodyStateCondition"
+               }
+               Check   =   [
+                  "MeleeComboStart_2/conditionRef/cb"
+               ]
+               __type   =   "BlueprintNodeCheckBodyStateCondition"
+            }
+            MeleeComboStrike_3   =   {
+               viewData   =   {
+                  x   =   7250
+                  y   =   8350
+               }
+               strikeLibraryLinkRef   =   {
+                  def   =   "CombatShield1"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               __type   =   "BlueprintNodeMeleeComboStrike"
+            }
+            If_1   =   {
+               viewData   =   {
+                  x   =   7000
+                  y   =   8350
+               }
+               OnTrue   =   [
+                  "MeleeComboStrike_5_1_2_1/AddStrikeToCombo"
+               ]
+               OnFalse   =   [
+                  "MeleeComboStrike_3/AddStrikeToCombo"
+               ]
+               __type   =   "BlueprintNodeIf"
+            }
+            CheckBodyStateCondition_1_2   =   {
+               sslModule   =   "body.body_state.blueprint_node_check_body_state_condition"
+               viewData   =   {
+                  x   =   7000
+                  y   =   8500
+               }
+               bodyStateCondition   =   {
+                  bodyStateArray   =   [
+                     "DODGE",
+                     "SPRINT"
+                  ]
+                  type   =   "ANY"
+                  __type   =   "BodyStateCondition"
+               }
+               Check   =   [
+                  "If_1/condition/cb"
+               ]
+               __type   =   "BlueprintNodeCheckBodyStateCondition"
+            }
+            CheckModifierFlag_1   =   {
+               viewData   =   {
+                  x   =   8500
+                  y   =   5150
                }
                flag   =   "HEAVY_NEW_STRIKE"
                IsEnabled   =   [
@@ -789,29 +1197,61 @@ comboDesc   =   {
                ]
                __type   =   "BlueprintNodeCheckModifierFlag"
             }
-            MeleePreparing_1   =   {
+            If_2   =   {
+               viewData   =   {
+                  x   =   8900
+                  y   =   5050
+               }
+               OnTrue   =   [
+                  "MeleePreparing_2/AddPreparingToCombo"
+               ]
+               OnFalse   =   [
+                  "MeleePreparing/AddPreparingToCombo"
+               ]
+               __type   =   "BlueprintNodeIf"
+            }
+            MeleeComboStrike_5_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
+               viewData   =   {
+                  x   =   9650
+                  y   =   5350
+               }
+               strikeLibraryLinkRef   =   {
+                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
+                  def   =   "PerkLightPrepared1"
+                  __type   =   "StrikeSettingsLinkRefParam"
+               }
+               OnLightTap   =   [
+                  "TriggerEvent_1_3_4_2/TriggerBlueprintEvent"
+               ]
+               OnLightHold   =   [
+                  "TriggerEvent_1_3_3_1/TriggerBlueprintEvent"
+               ]
+               __type   =   "BlueprintNodeMeleeComboStrike"
+            }
+            MeleePreparing_2   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_preparing"
                viewData   =   {
-                  x   =   6800
-                  y   =   6400
+                  x   =   9100
+                  y   =   5350
                }
                OnPrepared   =   [
-                  "MeleeComboStrike_3_3_1/AddStrikeToCombo"
+                  "MeleeComboStrike_5_1/AddStrikeToCombo"
                ]
                OnUnprepared   =   [
-                  "TriggerEvent_1_3_1_2_2_1/TriggerBlueprintEvent"
+                  "TriggerEvent_1_3_4_1_1/TriggerBlueprintEvent"
                ]
                meleePreparing   =   {
                   sslModule   =   "weapons.controllers.melee_controller.combo.melee_preparing"
-                  minPreparationDuration   =   0.3
+                  minPreparationDuration   =   0.75
                   maxDuration   =   4
-                  maxTicks   =   2
-                  bonusDamage   =   150
-                  bonusPeriodSec   =   1.45
-                  shakeUid   =   "ThammerLightHoldPrepare_v2"
+                  maxTicks   =   1
+                  bonusDamage   =   350
+                  bonusPeriodSec   =   3.9
+                  shakeUid   =   "FistLightHoldPrepare1_v2"
                   preparingAnim   =   {
                      sslModule   =   "animation.animation_table"
-                     link   =   "Primaris.Melee.ThunderHammerPreparingMeleeStart2"
+                     link   =   "Primaris.Melee.PowerFistPreparingMeleeStart6"
                      __type   =   "AnimTableLink"
                   }
                   abortAnim   =   {
@@ -819,162 +1259,73 @@ comboDesc   =   {
                      link   =   "Primaris.Melee.AbortPreparing"
                      __type   =   "AnimTableLink"
                   }
-                  preparationDurationModifierStack   =   {
-                     ownerModifierTypes   =   [
-                        "MELEE_AFTERSHOCK_PREPARATION_TIME"
-                     ]
-                     __type   =   "ModifiersStack"
-                  }
-                  forceFeedBackUid   =   "Thunderhammer.ThammerLightHoldPrepare_v2"
+                  preparationDurationModifierTypes   =   [
+                     "MELEE_HEAVY_COMBO_PREPARATION_TIME"
+                  ]
+                  forceFeedBackUid   =   "Powerfist.FistLightHold1_v2"
                   __type   =   "MeleeComboPreparingProject"
                }
                __type   =   "BlueprintNodeMeleeComboPreparing"
             }
-            MeleeComboStrike_3_3_1   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   7300
-                  y   =   6350
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "PerkThunderHammerLightPrepared"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            TriggerEvent_1_3_1_2_2_1   =   {
+            TriggerEvent_1_3_3_1   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   7300
-                  y   =   6500
+                  x   =   9980.965
+                  y   =   5450
                }
                eventUid   =   {
                   sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_light_tap_combo"
+                  def   =   "continue_light_hold_combo_perk"
                   __type   =   "StringRefParam"
                }
                __type   =   "BlueprintNodeTriggerCustomEvent"
             }
-            CheckModifierFlag_1   =   {
+            TriggerEvent_1_3_4_2   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
                viewData   =   {
-                  x   =   9200
-                  y   =   6450
-               }
-               flag   =   "COMBO_2_ADDITIONAL_STRIKE"
-               IsEnabled   =   [
-                  "If_2_1/condition/cb"
-               ]
-               __type   =   "BlueprintNodeCheckModifierFlag"
-            }
-            CheckModifierFlag_1_1   =   {
-               viewData   =   {
-                  x   =   9750
-                  y   =   6450
-               }
-               flag   =   "COMBO_2_ADDITIONAL_STRIKE"
-               IsEnabled   =   [
-                  "If_2_2/condition/cb"
-               ]
-               __type   =   "BlueprintNodeCheckModifierFlag"
-            }
-            CheckModifierFlag_1_2   =   {
-               viewData   =   {
-                  x   =   10300
-                  y   =   6450
-               }
-               flag   =   "COMBO_2_ADDITIONAL_STRIKE"
-               IsEnabled   =   [
-                  "If_2_3/condition/cb"
-               ]
-               __type   =   "BlueprintNodeCheckModifierFlag"
-            }
-            MeleeComboStrike_3_1_1   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   9350
-                  y   =   6550
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "PerkThunderHammerLight4"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            MeleeComboStrike_3_1_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   10500
-                  y   =   6550
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "PerkThunderHammerLight4"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            MeleeComboStrike_3_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.blueprint_node_melee_combo_strike"
-               viewData   =   {
-                  x   =   9900
-                  y   =   6550
-               }
-               strikeLibraryLinkRef   =   {
-                  sslModule   =   "weapons.controllers.melee_controller.combo.strike_settings_link_ref_param"
-                  def   =   "PerkThunderHammerLight4Mirror"
-                  __type   =   "StrikeSettingsLinkRefParam"
-               }
-               __type   =   "BlueprintNodeMeleeComboStrike"
-            }
-            If_2   =   {
-               viewData   =   {
-                  x   =   6600
-                  y   =   6250
-               }
-               OnTrue   =   [
-                  "MeleePreparing_1/AddPreparingToCombo"
-               ]
-               OnFalse   =   [
-                  "MeleePreparing/AddPreparingToCombo"
-               ]
-               __type   =   "BlueprintNodeIf"
-            }
-            If_2_1   =   {
-               viewData   =   {
-                  x   =   9550
-                  y   =   6350
-               }
-               OnTrue   =   [
-                  "MeleeComboStrike_3_1_1/AddStrikeToCombo"
-               ]
-               __type   =   "BlueprintNodeIf"
-            }
-            If_2_2   =   {
-               viewData   =   {
-                  x   =   10050
-                  y   =   6350
-               }
-               OnTrue   =   [
-                  "MeleeComboStrike_3_2/AddStrikeToCombo"
-               ]
-               __type   =   "BlueprintNodeIf"
-            }
-            If_2_3   =   {
-               viewData   =   {
-                  x   =   10650
-                  y   =   6350
-               }
-               OnTrue   =   [
-                  "MeleeComboStrike_3_1_2/AddStrikeToCombo"
-               ]
-               __type   =   "BlueprintNodeIf"
-            }
-            AdditivePreparing_D92ezc7q   =   {
-               viewData   =   {
-                  x   =   6500
+                  x   =   9980.965
                   y   =   5350
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            TriggerEvent_1_3_4_1_1   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   9650
+                  y   =   5502.848
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_tap_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            HandleEvent_1_1_1_1   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
+               viewData   =   {
+                  x   =   9950
+                  y   =   6500
+               }
+               OnHandle   =   [
+                  "Pipe_2_1/Input"
+               ]
+               eventUidRefParam   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "continue_light_hold_combo_perk"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeHandleEvent"
+            }
+            AdditivePreparing_D92eyo5n   =   {
+               viewData   =   {
+                  x   =   6550
+                  y   =   5333.255
                   colors   =   [
                      "#00FFFFFF",
                      "#00FFFFFF"
@@ -982,11 +1333,24 @@ comboDesc   =   {
                }
                __type   =   "BlueprintFunctionMeleeAdditivePreparing"
             }
-            If_E7nfvh1J   =   {
+            TriggerEvent_1_3_5_E2ra9HaX   =   {
+               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
+               viewData   =   {
+                  x   =   7900
+                  y   =   7100
+               }
+               eventUid   =   {
+                  sslModule   =   "ssl.lib.blueprint.blueprint"
+                  def   =   "start_light_hold_combo"
+                  __type   =   "StringRefParam"
+               }
+               __type   =   "BlueprintNodeTriggerCustomEvent"
+            }
+            If_E7nfIjbF   =   {
                sslModule   =   "extensions.blueprints.flow.blueprint_node_if"
                viewData   =   {
-                  x   =   6700
-                  y   =   7900
+                  x   =   6800
+                  y   =   7882.497
                }
                OnTrue   =   [
                   "MeleeComboStrike_4/AddStrikeToCombo"
@@ -996,48 +1360,6 @@ comboDesc   =   {
                ]
                __type   =   "BlueprintNodeIf"
             }
-            HandleEvent_1_E9uaIFd4   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_handle_event"
-               viewData   =   {
-                  x   =   9750
-                  y   =   6350
-               }
-               OnHandle   =   [
-                  "MeleeComboStrike_3_1/AddStrikeToCombo"
-               ]
-               eventUidRefParam   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_hold_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeHandleEvent"
-            }
-            TriggerEvent_1_3_1_2_E9uaJffA   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   7350
-                  y   =   8050
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_hold_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
-            TriggerEvent_1_3_1_2_E9uaPq3W   =   {
-               sslModule   =   "extensions.blueprints.flow.blueprint_node_trigger_custom_event"
-               viewData   =   {
-                  x   =   7100
-                  y   =   7650
-               }
-               eventUid   =   {
-                  sslModule   =   "ssl.lib.blueprint.blueprint"
-                  def   =   "continue_hold_tap_combo"
-                  __type   =   "StringRefParam"
-               }
-               __type   =   "BlueprintNodeTriggerCustomEvent"
-            }
          }
          variables   =   {
             is_after_riposte_combo   =   {
@@ -1046,46 +1368,49 @@ comboDesc   =   {
             is_ground_pound   =   {
                __type   =   "BlueprintVariableBool"
             }
+            is_combat_shield_charged   =   {
+               __type   =   "BlueprintVariableBool"
+            }
          }
          groups   =   {
             "Regular Attacks"   =   {
-               x   =   6300
+               x   =   6400
                y   =   5800
                width   =   1900
-               height   =   789.209
+               height   =   598.0162
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
             "Light Combo"   =   {
-               x   =   8400
+               x   =   8500
                y   =   5800
-               width   =   3219.406
+               width   =   4950
                height   =   842.1944
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
             "Special Attacks"   =   {
-               x   =   6300
+               x   =   6400
                y   =   6600
-               width   =   1900
-               height   =   1650
+               width   =   1899.717
+               height   =   1728.179
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
             "Falling Attack"   =   {
-               x   =   6400
+               x   =   6500
                y   =   7450
-               width   =   1698.73
+               width   =   1700
                height   =   350
                comment   =   ""
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
             "Dash & Sprint Attack"   =   {
-               x   =   6400
+               x   =   6500
                y   =   7850
                width   =   1700
                height   =   350
@@ -1094,7 +1419,7 @@ comboDesc   =   {
                __type   =   "NodeGroup"
             }
             "Jetpack Attack"   =   {
-               x   =   6400
+               x   =   6500
                y   =   6750
                width   =   1700
                height   =   650
@@ -1102,8 +1427,26 @@ comboDesc   =   {
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
+            Comment   =   {
+               x   =   10026.77
+               y   =   4992.978
+               width   =   0
+               height   =   349.2173
+               comment   =   ""
+               isCollapsed   =   False
+               __type   =   "NodeGroup"
+            }
+            "Light Hold Initiation"   =   {
+               x   =   8500
+               y   =   4950
+               width   =   1750
+               height   =   800
+               comment   =   ""
+               isCollapsed   =   False
+               __type   =   "NodeGroup"
+            }
             "Additive Preparing"   =   {
-               x   =   6300
+               x   =   6400
                y   =   5100
                width   =   1899.664
                height   =   498.663
@@ -1111,45 +1454,257 @@ comboDesc   =   {
                isCollapsed   =   False
                __type   =   "NodeGroup"
             }
+            "Combat Shield"   =   {
+               x   =   6500
+               y   =   8250
+               width   =   1279
+               height   =   579.8541
+               comment   =   ""
+               isCollapsed   =   False
+               __type   =   "NodeGroup"
+            }
          }
+         sharedVariablesKeys   =   [
+            "is_combat_shield_charged"
+         ]
          __type   =   "BlueprintMeleeCombo"
       }
       __type   =   "MeleeComboBlueprintDesc"
    }
    strikeSettings   =   {
-      ThunderHammerLightDash   =   {
+      LightDashLeft   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
          maxDamagedActors   =   10
          strikeDirection   =   "CENTRE"
          playerSettingsOverrides   =   {
-            StrikeShake   =   {
-               strikeShakeUid   =   "ThammerLightDash_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            ReselectionTargetDuration   =   {
+               reselectionTargetDuration   =   0.5
+               __type   =   "MeleePlayerSettingsParamReselectionTarget"
             }
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerLightDash_v2"
+               strikeForceFeedbackUid   =   "FistDash_v2"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistDash_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
             }
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerDodgeAttack2"
+            link   =   "Primaris.Melee.PowerFistDodgeSlash"
             __type   =   "AnimTableLink"
          }
          mainDamage   =   {
             sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
             damagerLink   =   {
                sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
+               damagerDescUid   =   "melee_sphere_damager"
                __type   =   "DamagerDescriptionLink"
             }
-            impulse   =   500
+            impulse   =   900
             healthDmgPercent   =   50
             heavyHitDmgPercent   =   200
             canKnockback   =   True
             isGuardbreak   =   False
             isPervasive   =   True
             knockbackAngle   =   13
+            radiusScale   =   2
+            __type   =   "MeleeDamageSettings"
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      Light1   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   6
+         strikeDirection   =   "LEFT"
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLight1_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLight1_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistLightSlash1"
+            __type   =   "AnimTableLink"
+         }
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   500
+            healthDmgPercent   =   100
+            heavyHitDmgPercent   =   100
+            knockbackAngle   =   13
+            __type   =   "MeleeDamageSettings"
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      Light2   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   6
+         strikeDirection   =   "RIGHT"
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLight2_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLight2_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistLightSlash2"
+            __type   =   "AnimTableLink"
+         }
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   500
+            healthDmgPercent   =   120
+            heavyHitDmgPercent   =   100
+            knockbackAngle   =   13
+            __type   =   "MeleeDamageSettings"
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      Light3   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   7
+         strikeDirection   =   "LEFT"
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLight3_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLight3_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistLIghtSlash3"
+            __type   =   "AnimTableLink"
+         }
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   500
+            healthDmgPercent   =   130
+            heavyHitDmgPercent   =   100
+            knockbackAngle   =   13
+            __type   =   "MeleeDamageSettings"
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      Light4   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   7
+         strikeDirection   =   "UP"
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLight4_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLight4_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistLightSlash4"
+            __type   =   "AnimTableLink"
+         }
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   500
+            healthDmgPercent   =   140
+            heavyHitDmgPercent   =   100
+            knockbackAngle   =   13
+            __type   =   "MeleeDamageSettings"
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      LightPrepared1   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   8
+         strikeDirection   =   "CENTRE"
+         constraintSettingsOverrides   =   {
+            ConstraintWeight   =   {
+               constraintWeight   =   0
+               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
+            }
+            TargetFollowWeight   =   {
+               targetFollowWeight   =   1
+               __type   =   "MeleeConstraintSettingsParamTargetFollowWeight"
+            }
+         }
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLightHold1_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            DamageShake   =   {
+               damageShakeUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLightHold1_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistPreparingMeleeEndSlash"
+            __type   =   "AnimTableLink"
+         }
+         meleeDetectors   =   [
+            "LongRightHand"
+         ]
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   900
+            healthDmgPercent   =   200
+            heavyHitDmgPercent   =   200
+            canKnockback   =   True
+            isGuardbreak   =   False
+            isPervasive   =   True
+            knockbackAngle   =   13
+            radiusScale   =   0.5
             __type   =   "MeleeDamageSettings"
          }
          extraDamages   =   {
@@ -1160,18 +1715,18 @@ comboDesc   =   {
                   damagerDescUid   =   "melee_sphere_damager"
                   __type   =   "DamagerDescriptionLink"
                }
-               impulse   =   500
-               healthDmgPercent   =   20
+               impulse   =   900
+               healthDmgPercent   =   200
                heavyHitDmgPercent   =   200
+               canKnockback   =   True
                isGuardbreak   =   False
                isPervasive   =   True
-               knockbackAngle   =   13
-               radiusScale   =   1
+               knockbackAngle   =   15
+               radiusScale   =   2.5
                damageLocator   =   "Trajectory"
                damageOffset   =   {
-                  sslModule   =   "math.vector_3d"
-                  y   =   1.5
-                  z   =   1
+                  y   =   1
+                  z   =   2
                   __type   =   "Vector3d"
                }
                __type   =   "MeleeExtraDamageSettings"
@@ -1183,18 +1738,16 @@ comboDesc   =   {
                   damagerDescUid   =   "melee_cone_long_damager"
                   __type   =   "DamagerDescriptionLink"
                }
-               impulse   =   500
-               healthDmgPercent   =   50
+               impulse   =   900
+               healthDmgPercent   =   200
                heavyHitDmgPercent   =   200
                canKnockback   =   True
-               isGuardbreak   =   False
                isPervasive   =   True
-               knockbackAngle   =   13
-               radiusScale   =   7
+               knockbackAngle   =   15
+               radiusScale   =   4
                damageLocator   =   "Trajectory"
                damageOffset   =   {
-                  sslModule   =   "math.vector_3d"
-                  y   =   1.5
+                  y   =   1
                   z   =   0
                   __type   =   "Vector3d"
                }
@@ -1203,146 +1756,471 @@ comboDesc   =   {
          }
          __type   =   "MeleeComboStrikeSettings"
       }
-      ThunderHammerLight1   =   {
+      PerkLightPrepared1   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   10
-         strikeDirection   =   "LEFT"
-         playerSettingsOverrides   =   {
-            StrikeShake   =   {
-               strikeShakeUid   =   "ThammerLight1_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeShake"
-            }
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerLight1_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerLight1"
-            __type   =   "AnimTableLink"
-         }
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   500
-            healthDmgPercent   =   100
-            heavyHitDmgPercent   =   100
-            knockbackAngle   =   13
-            __type   =   "MeleeDamageSettings"
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      ThunderHammerLight2   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   11
+         maxDamagedActors   =   12
          strikeDirection   =   "RIGHT"
+         constraintSettingsOverrides   =   {
+            ConstraintWeight   =   {
+               constraintWeight   =   0
+               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
+            }
+         }
          playerSettingsOverrides   =   {
             StrikeShake   =   {
-               strikeShakeUid   =   "ThammerLight2_v2"
+               strikeShakeUid   =   "FistLightHold3_v2"
                __type   =   "MeleePlayerSettingsParamStrikeShake"
             }
+            DamageShake   =   {
+               damageShakeUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerLight2_v2"
+               strikeForceFeedbackUid   =   "FistLightHold3_v2"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
             }
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerLight2"
+            link   =   "Primaris.Melee.PowerFistPreparingMeleeEndSlash6"
             __type   =   "AnimTableLink"
          }
+         meleeDetectors   =   [
+            "LongRightHand"
+         ]
          mainDamage   =   {
             sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
             damagerLink   =   {
                sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
+               damagerDescUid   =   "melee_sphere_damager"
                __type   =   "DamagerDescriptionLink"
             }
-            impulse   =   500
-            healthDmgPercent   =   100
-            heavyHitDmgPercent   =   100
+            impulse   =   900
+            healthDmgPercent   =   250
+            heavyHitDmgPercent   =   200
+            canKnockback   =   True
+            isGuardbreak   =   False
+            isPervasive   =   True
             knockbackAngle   =   13
+            radiusScale   =   0.5
             __type   =   "MeleeDamageSettings"
+         }
+         extraDamages   =   {
+            melee_extra_damage   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_sphere_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isGuardbreak   =   False
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   5
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   2
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+            melee_extra_damage_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_cone_long_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   10
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   0
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
          }
          __type   =   "MeleeComboStrikeSettings"
       }
-      ThunderHammerLight3   =   {
+      LightPrepared2   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   12
+         maxDamagedActors   =   8
          strikeDirection   =   "LEFT"
-         playerSettingsOverrides   =   {
-            StrikeShake   =   {
-               strikeShakeUid   =   "ThammerLight3_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeShake"
-            }
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerLight3_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerLight3"
-            __type   =   "AnimTableLink"
-         }
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   500
-            healthDmgPercent   =   100
-            heavyHitDmgPercent   =   100
-            knockbackAngle   =   13
-            __type   =   "MeleeDamageSettings"
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      ThunderHammerLight4   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   12
-         strikeDirection   =   "DOWN"
          constraintSettingsOverrides   =   {
-            ConstraintOffset   =   {
-               constraintOffset   =   2
-               __type   =   "MeleeConstraintSettingsParamConstraintOffset"
-            }
             ConstraintWeight   =   {
                constraintWeight   =   0
                __type   =   "MeleeConstraintSettingsParamConstraintWeight"
             }
+            TargetFollowWeight   =   {
+               targetFollowWeight   =   1
+               __type   =   "MeleeConstraintSettingsParamTargetFollowWeight"
+            }
          }
          playerSettingsOverrides   =   {
-            ReselectionTargetDuration   =   {
-               reselectionTargetDuration   =   0.2
-               __type   =   "MeleePlayerSettingsParamReselectionTarget"
-            }
             StrikeShake   =   {
-               strikeShakeUid   =   "ThunderHammerLight4Mirror_v2"
+               strikeShakeUid   =   "FistLightHold2_v2"
                __type   =   "MeleePlayerSettingsParamStrikeShake"
             }
+            DamageShake   =   {
+               damageShakeUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThunderHammerLight4Mirror_v2"
+               strikeForceFeedbackUid   =   "FistLightHold2_v2"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
             }
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerLight4"
+            link   =   "Primaris.Melee.PowerFistPreparingMeleeEndSlash2"
             __type   =   "AnimTableLink"
          }
+         meleeDetectors   =   [
+            "LongRightHand"
+         ]
          mainDamage   =   {
             sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
             damagerLink   =   {
                sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   900
+            healthDmgPercent   =   200
+            heavyHitDmgPercent   =   200
+            canKnockback   =   True
+            isGuardbreak   =   False
+            isPervasive   =   True
+            knockbackAngle   =   13
+            radiusScale   =   0.5
+            __type   =   "MeleeDamageSettings"
+         }
+         extraDamages   =   {
+            melee_extra_damage   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_sphere_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isGuardbreak   =   False
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   2.5
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   2
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+            melee_extra_damage_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_cone_long_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   4
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   0
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      LightPrepared3   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   8
+         strikeDirection   =   "RIGHT"
+         constraintSettingsOverrides   =   {
+            ConstraintWeight   =   {
+               constraintWeight   =   0
+               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
+            }
+            TargetFollowWeight   =   {
+               targetFollowWeight   =   1
+               __type   =   "MeleeConstraintSettingsParamTargetFollowWeight"
+            }
+         }
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLightHold3_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            DamageShake   =   {
+               damageShakeUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLightHold3_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistPreparingMeleeEndSlash3"
+            __type   =   "AnimTableLink"
+         }
+         meleeDetectors   =   [
+            "LongRightHand"
+         ]
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   900
+            healthDmgPercent   =   250
+            heavyHitDmgPercent   =   200
+            canKnockback   =   True
+            isGuardbreak   =   False
+            isPervasive   =   True
+            knockbackAngle   =   13
+            radiusScale   =   0.5
+            __type   =   "MeleeDamageSettings"
+         }
+         extraDamages   =   {
+            melee_extra_damage   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_sphere_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isGuardbreak   =   False
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   2.5
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   2
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+            melee_extra_damage_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_cone_long_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   4
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   0
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      LightPrepared4   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   8
+         strikeDirection   =   "LEFT"
+         constraintSettingsOverrides   =   {
+            ConstraintWeight   =   {
+               constraintWeight   =   0
+               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
+            }
+            TargetFollowWeight   =   {
+               targetFollowWeight   =   1
+               __type   =   "MeleeConstraintSettingsParamTargetFollowWeight"
+            }
+         }
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLightHold4_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            DamageShake   =   {
+               damageShakeUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLightHold4_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistPreparingMeleeEndSlash4"
+            __type   =   "AnimTableLink"
+         }
+         meleeDetectors   =   [
+            "LongRightHand"
+         ]
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
+               __type   =   "DamagerDescriptionLink"
+            }
+            impulse   =   900
+            healthDmgPercent   =   250
+            heavyHitDmgPercent   =   200
+            canKnockback   =   True
+            isGuardbreak   =   False
+            isPervasive   =   True
+            knockbackAngle   =   13
+            radiusScale   =   0.5
+            __type   =   "MeleeDamageSettings"
+         }
+         extraDamages   =   {
+            melee_extra_damage   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_sphere_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isGuardbreak   =   False
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   2.5
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   2
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+            melee_extra_damage_1   =   {
+               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
+               damagerLink   =   {
+                  sslModule   =   "damage.damager.damager_description_link"
+                  damagerDescUid   =   "melee_cone_long_damager"
+                  __type   =   "DamagerDescriptionLink"
+               }
+               impulse   =   900
+               healthDmgPercent   =   200
+               heavyHitDmgPercent   =   200
+               canKnockback   =   True
+               isPervasive   =   True
+               knockbackAngle   =   15
+               radiusScale   =   4
+               damageLocator   =   "Trajectory"
+               damageOffset   =   {
+                  y   =   1
+                  z   =   0
+                  __type   =   "Vector3d"
+               }
+               __type   =   "MeleeExtraDamageSettings"
+            }
+         }
+         __type   =   "MeleeComboStrikeSettings"
+      }
+      LightPrepared5   =   {
+         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
+         maxDamagedActors   =   8
+         strikeDirection   =   "CENTRE"
+         constraintSettingsOverrides   =   {
+            ConstraintWeight   =   {
+               constraintWeight   =   0
+               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
+            }
+            TargetFollowWeight   =   {
+               targetFollowWeight   =   1
+               __type   =   "MeleeConstraintSettingsParamTargetFollowWeight"
+            }
+         }
+         playerSettingsOverrides   =   {
+            StrikeShake   =   {
+               strikeShakeUid   =   "FistLightHold5_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeShake"
+            }
+            DamageShake   =   {
+               damageShakeUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageShake"
+            }
+            StrikeForceFeedback   =   {
+               strikeForceFeedbackUid   =   "FistLightHold5_v2"
+               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
+            }
+            DamageForceFeedback   =   {
+               damageForceFeedbackUid   =   "FistPreparedHit_v2"
+               __type   =   "MeleePlayerSettingsParamDamageForceFeedback"
+            }
+         }
+         animLink   =   {
+            sslModule   =   "animation.animation_table"
+            link   =   "Primaris.Melee.PowerFistPreparingMeleeEndSlash5"
+            __type   =   "AnimTableLink"
+         }
+         meleeDetectors   =   [
+            "LongRightHand"
+         ]
+         mainDamage   =   {
+            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
+            damagerLink   =   {
+               sslModule   =   "damage.damager.damager_description_link"
+               damagerDescUid   =   "melee_sphere_damager"
                __type   =   "DamagerDescriptionLink"
             }
             impulse   =   900
@@ -1352,6 +2230,7 @@ comboDesc   =   {
             isGuardbreak   =   False
             isPervasive   =   True
             knockbackAngle   =   13
+            radiusScale   =   0.5
             __type   =   "MeleeDamageSettings"
          }
          extraDamages   =   {
@@ -1363,321 +2242,39 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   900
-               healthDmgPercent   =   300
+               healthDmgPercent   =   200
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isGuardbreak   =   False
                isPervasive   =   True
                knockbackAngle   =   15
-               radiusScale   =   2
-               damageLocator   =   "GUN_R"
+               radiusScale   =   2.5
+               damageLocator   =   "Trajectory"
                damageOffset   =   {
-                  z   =   2.5
+                  y   =   1
+                  z   =   2
                   __type   =   "Vector3d"
                }
                __type   =   "MeleeExtraDamageSettings"
             }
-            melee_extra_damage_2   =   {
+            melee_extra_damage_1   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
                damagerLink   =   {
                   sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
+                  damagerDescUid   =   "melee_cone_long_damager"
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   900
-               healthDmgPercent   =   50
+               healthDmgPercent   =   200
                heavyHitDmgPercent   =   200
                canKnockback   =   True
-               knockbackAngle   =   15
-               radiusScale   =   5
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      ThunderHammerLight4Mirror   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   12
-         strikeDirection   =   "DOWN"
-         constraintSettingsOverrides   =   {
-            ConstraintOffset   =   {
-               constraintOffset   =   2
-               __type   =   "MeleeConstraintSettingsParamConstraintOffset"
-            }
-            ConstraintWeight   =   {
-               constraintWeight   =   0
-               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
-            }
-         }
-         playerSettingsOverrides   =   {
-            ReselectionTargetDuration   =   {
-               reselectionTargetDuration   =   0.2
-               __type   =   "MeleePlayerSettingsParamReselectionTarget"
-            }
-            StrikeShake   =   {
-               strikeShakeUid   =   "ThunderHammerLight4Mirror_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeShake"
-            }
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThunderHammerLight4Mirror_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerLight4Mirrored"
-            __type   =   "AnimTableLink"
-         }
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   900
-            healthDmgPercent   =   300
-            heavyHitDmgPercent   =   200
-            canKnockback   =   True
-            isGuardbreak   =   False
-            isPervasive   =   True
-            knockbackAngle   =   13
-            __type   =   "MeleeDamageSettings"
-         }
-         extraDamages   =   {
-            melee_extra_damage   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   300
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               isGuardbreak   =   False
                isPervasive   =   True
                knockbackAngle   =   15
-               radiusScale   =   2
-               damageLocator   =   "GUN_R"
+               radiusScale   =   4
+               damageLocator   =   "Trajectory"
                damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-            melee_extra_damage_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   50
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               knockbackAngle   =   15
-               radiusScale   =   5
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      ThunderHammerLightPrepared   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   15
-         strikeDirection   =   "DOWN"
-         constraintSettingsOverrides   =   {
-            ConstraintOffset   =   {
-               constraintOffset   =   2
-               __type   =   "MeleeConstraintSettingsParamConstraintOffset"
-            }
-         }
-         playerSettingsOverrides   =   {
-            ReselectionTargetDuration   =   {
-               reselectionTargetDuration   =   0.2
-               __type   =   "MeleePlayerSettingsParamReselectionTarget"
-            }
-            StrikeShake   =   {
-               strikeShakeUid   =   "ThammerLightHoldAction_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeShake"
-            }
-            DamageShake   =   {
-               damageShakeUid   =   "ThammerLightHoldHit"
-               __type   =   "MeleePlayerSettingsParamDamageShake"
-            }
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerPrepared1_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.PreparingMeleeThunderHammer"
-            __type   =   "AnimTableLink"
-         }
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   500
-            healthDmgPercent   =   100
-            heavyHitDmgPercent   =   200
-            canKnockback   =   True
-            isGuardbreak   =   False
-            isPervasive   =   True
-            knockbackAngle   =   13
-            __type   =   "MeleeDamageSettings"
-         }
-         extraDamages   =   {
-            melee_extra_damage   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   100
-               heavyHitDmgPercent   =   300
-               canKnockback   =   True
-               isGuardbreak   =   False
-               isPervasive   =   True
-               knockbackAngle   =   15
-               radiusScale   =   3
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-            melee_extra_damage_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   5
-               heavyHitDmgPercent   =   5
-               canKnockback   =   True
-               knockbackAngle   =   15
-               radiusScale   =   6.5
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      PerkThunderHammerLightPrepared   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   15
-         strikeDirection   =   "DOWN"
-         constraintSettingsOverrides   =   {
-            ConstraintOffset   =   {
-               constraintOffset   =   2
-               __type   =   "MeleeConstraintSettingsParamConstraintOffset"
-            }
-         }
-         playerSettingsOverrides   =   {
-            ReselectionTargetDuration   =   {
-               reselectionTargetDuration   =   0.2
-               __type   =   "MeleePlayerSettingsParamReselectionTarget"
-            }
-            StrikeShake   =   {
-               strikeShakeUid   =   "ThammerLightHoldAction_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeShake"
-            }
-            DamageShake   =   {
-               damageShakeUid   =   "ThammerLightHoldHit"
-               __type   =   "MeleePlayerSettingsParamDamageShake"
-            }
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerPrepared1_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerPreparingMeleeEndSlash2"
-            __type   =   "AnimTableLink"
-         }
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   500
-            healthDmgPercent   =   100
-            heavyHitDmgPercent   =   200
-            canKnockback   =   True
-            isGuardbreak   =   False
-            isPervasive   =   True
-            knockbackAngle   =   13
-            __type   =   "MeleeDamageSettings"
-         }
-         extraDamages   =   {
-            melee_extra_damage   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   100
-               heavyHitDmgPercent   =   300
-               canKnockback   =   True
-               isGuardbreak   =   False
-               isPervasive   =   True
-               knockbackAngle   =   15
-               radiusScale   =   3
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-            melee_extra_damage_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   5
-               heavyHitDmgPercent   =   5
-               canKnockback   =   True
-               knockbackAngle   =   15
-               radiusScale   =   6.5
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
+                  y   =   1
+                  z   =   0
                   __type   =   "Vector3d"
                }
                __type   =   "MeleeExtraDamageSettings"
@@ -1688,8 +2285,8 @@ comboDesc   =   {
       JetpackAir1   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
          isLockParryStance   =   True
-         maxDamagedActors   =   30
-         strikeDirection   =   "DOWN"
+         maxDamagedActors   =   15
+         strikeDirection   =   "UP"
          constraintSettingsOverrides   =   {
             IgnoreInputsAndTargets   =   {
                needIgnoreInputsAndTargets   =   True
@@ -1698,13 +2295,13 @@ comboDesc   =   {
          }
          playerSettingsOverrides   =   {
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerJumpPackAir"
+               strikeForceFeedbackUid   =   "FistJumpPackAir"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
             }
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.JetpackWallThunderHammerAttack"
+            link   =   "Primaris.Melee.JetpackWallPowerFistAttack"
             __type   =   "AnimTableLink"
          }
          meleeDetectors   =   [  ]
@@ -1731,7 +2328,7 @@ comboDesc   =   {
                   __type   =   "DamagerDescriptionLink"
                }
                impulse   =   500
-               healthDmgPercent   =   440
+               healthDmgPercent   =   430
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -1772,8 +2369,8 @@ comboDesc   =   {
       JetpackLand1   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
          isLockParryStance   =   True
-         maxDamagedActors   =   100
-         strikeDirection   =   "DOWN"
+         maxDamagedActors   =   15
+         strikeDirection   =   "UP"
          constraintSettingsOverrides   =   {
             IgnoreInputsAndTargets   =   {
                needIgnoreInputsAndTargets   =   True
@@ -1782,7 +2379,7 @@ comboDesc   =   {
          }
          playerSettingsOverrides   =   {
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerJumpPackLand"
+               strikeForceFeedbackUid   =   "FistJumpPackLand"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
             }
             DamageShake   =   {
@@ -1792,7 +2389,7 @@ comboDesc   =   {
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.JetpackLandThunderHammerAttack"
+            link   =   "Primaris.Melee.JetpackLandPowerFistAttack"
             __type   =   "AnimTableLink"
          }
          meleeDetectors   =   [  ]
@@ -1818,8 +2415,8 @@ comboDesc   =   {
                   damagerDescUid   =   "melee_sphere_damager"
                   __type   =   "DamagerDescriptionLink"
                }
-               impulse   =   500
-               healthDmgPercent   =   440
+               impulse   =   900
+               healthDmgPercent   =   430
                heavyHitDmgPercent   =   200
                canKnockback   =   True
                isPervasive   =   True
@@ -1871,12 +2468,12 @@ comboDesc   =   {
          }
          playerSettingsOverrides   =   {
             StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThammerFallingAttack"
+               strikeForceFeedbackUid   =   "FistFallingAttack"
                __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
             }
          }
          animLink   =   {
-            link   =   "Primaris.Melee.FallThunderHammerAttack"
+            link   =   "Primaris.Melee.PowerFistJumpDownSlash"
             __type   =   "AnimTableLink"
          }
          meleeDetectors   =   [  ]
@@ -1911,39 +2508,24 @@ comboDesc   =   {
          }
          __type   =   "MeleeComboStrikeSettings"
       }
-      PerkThunderHammerLight4   =   {
+      CombatShield1   =   {
          sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   12
-         strikeDirection   =   "DOWN"
-         constraintSettingsOverrides   =   {
-            ConstraintOffset   =   {
-               constraintOffset   =   2
-               __type   =   "MeleeConstraintSettingsParamConstraintOffset"
-            }
-            ConstraintWeight   =   {
-               constraintWeight   =   0
-               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
-            }
-         }
+         maxDamagedActors   =   10
+         strikeDirection   =   "CENTRE"
          playerSettingsOverrides   =   {
-            ReselectionTargetDuration   =   {
-               reselectionTargetDuration   =   0.2
-               __type   =   "MeleePlayerSettingsParamReselectionTarget"
-            }
             StrikeShake   =   {
-               strikeShakeUid   =   "ThunderHammerLight4Mirror_v2"
+               strikeShakeUid   =   "ShieldBash"
                __type   =   "MeleePlayerSettingsParamStrikeShake"
-            }
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThunderHammerLight4Mirror_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
             }
          }
          animLink   =   {
             sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerLight4Ability"
+            link   =   "Primaris.Melee.ShieldBash1"
             __type   =   "AnimTableLink"
          }
+         meleeDetectors   =   [
+            "LeftHand"
+         ]
          mainDamage   =   {
             sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
             damagerLink   =   {
@@ -1951,13 +2533,13 @@ comboDesc   =   {
                damagerDescUid   =   "melee_point_damager"
                __type   =   "DamagerDescriptionLink"
             }
-            impulse   =   900
-            healthDmgPercent   =   300
-            heavyHitDmgPercent   =   200
-            canKnockback   =   True
+            impulse   =   200
+            healthDmgPercent   =   50
+            heavyHitDmgPercent   =   50
             isGuardbreak   =   False
             isPervasive   =   True
             knockbackAngle   =   13
+            radiusScale   =   3
             __type   =   "MeleeDamageSettings"
          }
          extraDamages   =   {
@@ -1965,135 +2547,19 @@ comboDesc   =   {
                sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
                damagerLink   =   {
                   sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
+                  damagerDescUid   =   "melee_cone_damager"
                   __type   =   "DamagerDescriptionLink"
                }
-               impulse   =   900
-               healthDmgPercent   =   300
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               isGuardbreak   =   False
+               impulse   =   200
+               healthDmgPercent   =   50
+               heavyHitDmgPercent   =   100
                isPervasive   =   True
                knockbackAngle   =   15
                radiusScale   =   2
-               damageLocator   =   "GUN_R"
+               damageLocator   =   "Trajectory"
                damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-            melee_extra_damage_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   50
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               knockbackAngle   =   15
-               radiusScale   =   5
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-         }
-         __type   =   "MeleeComboStrikeSettings"
-      }
-      PerkThunderHammerLight4Mirror   =   {
-         sslModule   =   "weapons.controllers.melee_controller.combo.melee_combo_strike_settings"
-         maxDamagedActors   =   12
-         strikeDirection   =   "DOWN"
-         constraintSettingsOverrides   =   {
-            ConstraintOffset   =   {
-               constraintOffset   =   2
-               __type   =   "MeleeConstraintSettingsParamConstraintOffset"
-            }
-            ConstraintWeight   =   {
-               constraintWeight   =   0
-               __type   =   "MeleeConstraintSettingsParamConstraintWeight"
-            }
-         }
-         playerSettingsOverrides   =   {
-            ReselectionTargetDuration   =   {
-               reselectionTargetDuration   =   0.2
-               __type   =   "MeleePlayerSettingsParamReselectionTarget"
-            }
-            StrikeShake   =   {
-               strikeShakeUid   =   "ThunderHammerLight4Mirror_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeShake"
-            }
-            StrikeForceFeedback   =   {
-               strikeForceFeedbackUid   =   "ThunderHammerLight4Mirror_v2"
-               __type   =   "MeleePlayerSettingsParamStrikeForceFeedback"
-            }
-         }
-         animLink   =   {
-            sslModule   =   "animation.animation_table"
-            link   =   "Primaris.Melee.ThunderHammerLight4MirroredAbility"
-            __type   =   "AnimTableLink"
-         }
-         mainDamage   =   {
-            sslModule   =   "weapons.controllers.melee_controller.combo.strike_damage_settings"
-            damagerLink   =   {
-               sslModule   =   "damage.damager.damager_description_link"
-               damagerDescUid   =   "melee_point_damager"
-               __type   =   "DamagerDescriptionLink"
-            }
-            impulse   =   900
-            healthDmgPercent   =   300
-            heavyHitDmgPercent   =   200
-            canKnockback   =   True
-            isGuardbreak   =   False
-            isPervasive   =   True
-            knockbackAngle   =   13
-            __type   =   "MeleeDamageSettings"
-         }
-         extraDamages   =   {
-            melee_extra_damage   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   300
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               isGuardbreak   =   False
-               isPervasive   =   True
-               knockbackAngle   =   15
-               radiusScale   =   2
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
-                  __type   =   "Vector3d"
-               }
-               __type   =   "MeleeExtraDamageSettings"
-            }
-            melee_extra_damage_2   =   {
-               sslModule   =   "weapons.controllers.melee_controller.combo.strike_extra_damage_settings"
-               damagerLink   =   {
-                  sslModule   =   "damage.damager.damager_description_link"
-                  damagerDescUid   =   "melee_sphere_damager"
-                  __type   =   "DamagerDescriptionLink"
-               }
-               impulse   =   900
-               healthDmgPercent   =   50
-               heavyHitDmgPercent   =   200
-               canKnockback   =   True
-               knockbackAngle   =   15
-               radiusScale   =   5
-               damageLocator   =   "GUN_R"
-               damageOffset   =   {
-                  z   =   2.5
+                  y   =   1.5
+                  z   =   0
                   __type   =   "Vector3d"
                }
                __type   =   "MeleeExtraDamageSettings"
