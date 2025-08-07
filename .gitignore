@@ -1,1 +1,3 @@
-my-values.zip
+*.zip
+*.cache
+*.pak
